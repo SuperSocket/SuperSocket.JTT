@@ -1,0 +1,48 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <AssemblyName>SuperSocket.JTT808</AssemblyName>
+    <RootNamespace>SuperSocket.JTT808</RootNamespace>
+    <Description>SuperSocket.JTT扩展协议。
+JTT808 道路运输车辆卫星定位系统 平台数据交换协议。</Description>
+    <Version>1.0.1-alpha</Version>
+    <Authors>SuperSocket.JTT</Authors>
+    <Company>SuperSocket.JTT</Company>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/SuperSocket/SuperSocket.JTT</PackageProjectUrl>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Product>SuperSocket.JTT</Product>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <WarningLevel>5</WarningLevel>
+    <DocumentationFile>SuperSocket.JTT808.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>SuperSocket.JTT808.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="jsonconfig\jtt808-protocol.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="jsonconfig\jtt808-protocol.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\JTTBase\JTTBase.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="SuperSocket.JTT808.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

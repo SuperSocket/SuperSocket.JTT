@@ -1,0 +1,63 @@
+﻿using JTTCustomServer.Handler;
+using SuperSocket.JTTBase.Filter;
+using SuperSocket.JTTBase.Hadnler;
+using SuperSocket.JTTBase.Interface;
+using SuperSocket.JTTBase.Model;
+using System;
+using System.Collections.Generic;
+
+namespace JTTCustomServer.Model
+{
+    /// <summary>
+    /// 自定义JTT协议
+    /// </summary>
+    public class JTTCustomProtocol : IJTTProtocol
+    {
+        public void Initialization()
+        {
+            //不指定拦截器时将会使用默认拦截器
+            JTTPipelineFilter = new JTTCustomPipelineFilter(this);
+
+            Decoder = new JTTCustomDecoder(this);
+            Encoder = new JTTCustomEncoder(this);
+        }
+
+        public FlagInfo HeadFlag { get; set; }
+
+        public FlagInfo EndFlag { get; set; }
+
+        public List<StructureInfo> Structures { get; set; }
+
+        public JTTVersion Version { get; } = JTTVersion.JTTCustom;
+
+        public Type PackageInfoType { get; set; } = typeof(JTTCustomPackageInfo);
+
+        public Type MessageHeaderType { get; set; } = typeof(JTTCustomMessageHeader);
+
+        public IJTTProtocolHandler Handler { get; set; }
+
+        public JTTProtocolHandler JTTHandler => (JTTProtocolHandler)Handler;
+
+        public JTTPipelineFilter JTTPipelineFilter { get; set; }
+
+        public IJTTDecoder Decoder { get; set; }
+
+        public IJTTEncoder Encoder { get; set; }
+
+        public bool BigEndian { get; set; }
+
+        public string ZHCNEncoding { get; set; }
+
+        public PaddingConfig Padding { get; set; }
+
+        public CrcCcittConfig CrcCcitt { get; set; }
+
+        public EncryptConfig Encrypt { get; set; }
+
+        public List<EscapesConfig> Escapes { get; set; }
+
+        public Dictionary<string, List<MatcheInfo>> DataMappings { get; set; }
+
+        public Dictionary<string, InternalEntitysMappingInfo> InternalEntitysMappings { get; set; }
+    }
+}

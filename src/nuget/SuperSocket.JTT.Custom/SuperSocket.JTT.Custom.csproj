@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>1.0.0-alpha</Version>
+    <Authors>SuperSocket.JTT</Authors>
+    <Company>SuperSocket.JTT</Company>
+    <Product>SuperSocket.JTT</Product>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/SuperSocket/SuperSocket.JTT</PackageProjectUrl>
+    <Description>SuperSocket.JTT。
+构建自定义版本JTT(道路运输车辆卫星定位系统 平台数据交换)协议的服务器。</Description>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>SuperSocket.JTT.Custom.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>SuperSocket.JTT.Custom.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\JTT\JTT.csproj" />
+  </ItemGroup>
+
+</Project>

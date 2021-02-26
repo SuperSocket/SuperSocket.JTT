@@ -1,0 +1,293 @@
+﻿{
+  "Structures": [ //消息包结构集合
+    {
+      "Id": "MessageHeader", //结构标识 默认为$"{Order}-{Property}-{Explain}"
+      "IsHeader": true, //是否为消息头
+      "Order": 1, //排序值
+      "Property": "MessageHeader", //属性名称
+      "Explain": "消息头", //说明
+      "Length": 30,
+      "StructureType": "internal", //结构类型 SuperSocket.JTTBase.Model.StructureType
+      "InternalKey": null, //内部结构的标识 为空时直接默认为第一个
+      "Internal": { //内部结构集合
+        "MessageHeaderEntity": [
+          {
+            "Id": "MessageHeaderEntity-Msg_ID",
+            "Order": 1,
+            "Property": "Msg_ID",
+            "Explain": "消息ID",
+            "Length": 2,
+            "Encode": { //数据的编码方式
+              "CodeType": "uint16"
+            }
+          },
+          {
+            "Id": "MessageHeaderEntity-Msg_Length",
+            "Order": 2,
+            "Property": "Msg_Length",
+            "Explain": "消息体属性",
+            "Length": 2,
+            "Encode": {
+              "CodeType": "uint16"
+            }
+          },
+          {
+            "Id": "MessageHeaderEntity-Endpoint_ID",
+            "Order": 3,
+            "Property": "Endpoint_ID",
+            "Explain": "终端标识",
+            "Length": 6,
+            "Encode": {
+              "CodeType": "string_bcd8421"
+            }
+          },
+          {
+            "Id": "MessageHeaderEntity-Msg_SN",
+            "Order": 4,
+            "Property": "Msg_SN",
+            "Explain": "消息体流水号",
+            "Length": 2,
+            "Encode": {
+              "CodeType": "uint16"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "Id": "MessageBody",
+      "IsBody": true,
+      "Order": 2,
+      "Property": "MessageBody",
+      "Explain": "消息体",
+      "StructureType": "internal",
+      "InternalKey": {
+        //消息包解码时 执行方法为对Property属性值先使用Encode配置编码, 再使用Decode配置解码
+        //消息包编码时 执行方法为对SuperSocket.JTTBase.Interface.IJTTProtocol.InternalEntitysMappings的Key先使用Decode配置编码, 再使用Encode配置解码
+        "Property": "MessageHeader.Msg_ID",
+        "Encode": { //属性值是否需要先编码  执行顺序为先编码后解码
+          "CodeType": "uint16_hex"
+        },
+        "Decode": { //属性值是否需要再解码
+          "CodeType": "string_hex"
+        }
+      },
+      "Internal": {
+        "0x0001": [
+          {
+            "Id": "x0001-A",
+            "Order": 1,
+            "Property": "A",
+            "Explain": "数据A",
+            "Length": 2,
+            "Encode": {
+              "CodeType": "uint16"
+            }
+          },
+          {
+            "Id": "x0001-B",
+            "Order": 2,
+            "Property": "B",
+            "Explain": "数据B",
+            "Length": 4,
+            "Encode": {
+              "CodeType": "uint32"
+            }
+          }
+        ],
+        "0x0002": [
+          {
+            "Id": "x0002-Alarm",
+            "Order": 1,
+            "Property": "Alarm",
+            "Explain": "报警",
+            "Length": 4,
+            "Encode": {
+              "CodeType": "binary"
+            },
+            "FlagStruct": {
+              "Property": "Alarm_Flag",
+              "Assembly": "JTTCustomServer",
+              "TypeName": "JTTCustomServer.Model.Flag.AlarmFlag"
+            }
+          },
+          {
+            "Id": "x0002-State",
+            "Order": 2,
+            "Property": "State",
+            "Explain": "状态",
+            "Length": 4,
+            "Encode": {
+              "CodeType": "binary"
+            },
+            "FlagStruct": {
+              "Property": "State_Flag",
+              "Assembly": "JTTCustomServer",
+              "TypeName": "JTTCustomServer.Model.Flag.StateFlag"
+            }
+          },
+          {
+            "Id": "x0200-Latitude",
+            "Order": 3,
+            "Property": "Latitude",
+            "Explain": "纬度",
+            "Length": 4,
+            "Encode": {
+              "CodeType": "uint32"
+            }
+          },
+          {
+            "Id": "x0200-Longitude",
+            "Order": 4,
+            "Property": "Longitude",
+            "Explain": "经度",
+            "Length": 4,
+            "Encode": {
+              "CodeType": "uint32"
+            }
+          },
+          {
+            "Id": "x0200-Speed",
+            "Order": 5,
+            "Property": "Speed",
+            "Explain": "速度",
+            "Length": 2,
+            "Encode": {
+              "CodeType": "uint16"
+            }
+          },
+          {
+            "Id": "x0200-Direction",
+            "Order": 6,
+            "Property": "Direction",
+            "Explain": "方向",
+            "Length": 1,
+            "Encode": {
+              "CodeType": "byte"
+            }
+          },
+          {
+            "Id": "x0200-DateTime",
+            "Order": 7,
+            "Property": "DateTime",
+            "Explain": "时间",
+            "Length": 6,
+            "Encode": {
+              "CodeType": "string_bcd8421"
+            }
+          }
+        ],
+        "0x0003": [
+          {
+            "Id": "x0003-x0002",
+            "Order": 1,
+            "Property": "x0002",
+            "Explain": "x0002",
+            "Length": 25,
+            "StructureType": "internal",
+            "InternalKey": null,
+            "Internal": {
+              "x0002": [
+                {
+                  "Id": "x0200-Alarm",
+                  "Order": 1,
+                  "Property": "Alarm",
+                  "Explain": "报警",
+                  "Length": 4,
+                  "Encode": {
+                    "CodeType": "binary"
+                  },
+                  "FlagStruct": {
+                    "Property": "Alarm_Flag",
+                    "Assembly": "JTTCustomServer",
+                    "TypeName": "JTTCustomServer.Model.Flag.AlarmFlag"
+                  }
+                },
+                {
+                  "Id": "x0200-Latitude",
+                  "Order": 2,
+                  "Property": "Latitude",
+                  "Explain": "纬度",
+                  "Length": 4,
+                  "Encode": {
+                    "CodeType": "uint32"
+                  }
+                },
+                {
+                  "Id": "x0200-Longitude",
+                  "Order": 3,
+                  "Property": "Longitude",
+                  "Explain": "经度",
+                  "Length": 4,
+                  "Encode": {
+                    "CodeType": "uint32"
+                  }
+                },
+                {
+                  "Id": "x0200-Speed",
+                  "Order": 4,
+                  "Property": "Speed",
+                  "Explain": "速度",
+                  "Length": 2,
+                  "Encode": {
+                    "CodeType": "uint16"
+                  }
+                },
+                {
+                  "Id": "x0200-Direction",
+                  "Order": 5,
+                  "Property": "Direction",
+                  "Explain": "方向",
+                  "Length": 1,
+                  "Encode": {
+                    "CodeType": "byte"
+                  }
+                },
+                {
+                  "Id": "x0200-DateTime",
+                  "Order": 6,
+                  "Property": "DateTime",
+                  "Explain": "时间",
+                  "Length": 6,
+                  "Encode": {
+                    "CodeType": "string_bcd8421"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "Id": "x0003-CompanyCode",
+            "Order": 2,
+            "Property": "CompanyCode",
+            "Explain": "单位代码",
+            "Length": 16,
+            "Encode": {
+              "CodeType": "string"
+            }
+          },
+          {
+            "Id": "x0003-DriverCode",
+            "Order": 3,
+            "Property": "DriverCode",
+            "Explain": "司机代码",
+            "Length": 19,
+            "Encode": {
+              "CodeType": "string"
+            }
+          },
+          {
+            "Id": "x0003-PlateNumber",
+            "Order": 4,
+            "Property": "PlateNumber",
+            "Explain": "车牌号",
+            "Length": 6,
+            "Encode": {
+              "CodeType": "string_ascii"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <AssemblyName>SuperSocket.JTT</AssemblyName>
+    <RootNamespace>SuperSocket.JTT</RootNamespace>
+    <Version>1.0.7-alpha</Version>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/SuperSocket/SuperSocket.JTT</PackageProjectUrl>
+    <Authors>SuperSocket.JTT</Authors>
+    <Company>SuperSocket.JTT</Company>
+    <Description>构建基于JTT(道路运输车辆卫星定位系统 平台数据交换)协议的服务器。</Description>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>SuperSocket.JTT.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>SuperSocket.JTT.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Annotations\" />
+    <Folder Include="Extension\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="5.0.0" />
+    <PackageReference Include="SuperSocket" Version="2.0.0-beta7" />
+    <PackageReference Include="SuperSocket.Udp" Version="2.0.0-beta7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\JTTBase\JTTBase.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="SuperSocket.JTT.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

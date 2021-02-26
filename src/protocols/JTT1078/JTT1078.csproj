@@ -1,0 +1,51 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <AssemblyName>SuperSocket.JTT1078</AssemblyName>
+    <RootNamespace>SuperSocket.JTT1078</RootNamespace>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/SuperSocket/SuperSocket.JTT</PackageProjectUrl>
+    <Authors>SuperSocket.JTT</Authors>
+    <Company>SuperSocket.JTT</Company>
+    <Product>SuperSocket.JTT</Product>
+    <Version>1.0.2-alpha</Version>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>SuperSocket.JTT1078.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>SuperSocket.JTT1078.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="jsonconfig\jtt1078-protocol-extensionforjtt808.json" />
+    <None Remove="jsonconfig\jtt1078-protocol-extensionforjtt809.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="jsonconfig\jtt1078-protocol-extensionforjtt808.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="jsonconfig\jtt1078-protocol-extensionforjtt809.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\JTTBase\JTTBase.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="SuperSocket.JTT1078.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties /></VisualStudio></ProjectExtensions>
+
+</Project>

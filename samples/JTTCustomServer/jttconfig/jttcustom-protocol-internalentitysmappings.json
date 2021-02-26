@@ -1,0 +1,24 @@
+﻿{
+  "InternalEntitysMappings": { //内部结构映射实体集合
+    "MessageHeaderEntity": { //映射标识
+      "Assembly": "JTTCustomServer", //命名空间（.dll）
+      "TypeName": "JTTCustomServer.Model.JTTCustomMessageHeader", //类名
+      "Length": 14 //字节长度 为空时表示可变长度
+    },
+    "0x0001": {
+      "Assembly": "JTTCustomServer",
+      "TypeName": "JTTCustomServer.Model.MessageBody.x0001",
+      "Length": 6
+    },
+    "0x0002": {
+      "Assembly": "JTTCustomServer",
+      "TypeName": "JTTCustomServer.Model.MessageBody.x0002",
+      "Length": 21
+    },
+    "0x0003": {
+      "Assembly": "JTTCustomServer",
+      "TypeName": "JTTCustomServer.Model.MessageBody.x0003",
+      "Length": 62
+    }
+  }
+}

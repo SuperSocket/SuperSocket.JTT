@@ -1,0 +1,1863 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SuperSocket.JTTBase</name>
+    </assembly>
+    <members>
+        <member name="T:SuperSocket.JTTBase.Annotations.FlagIndexAttribute">
+            <summary>
+            位标识序号
+            </summary>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Annotations.FlagIndexAttribute.#ctor(System.Int32[])">
+            <summary>
+            
+            </summary>
+            <param name="index">序号（从0开始）</param>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Annotations.FlagIndexAttribute.Index">
+            <summary>
+            序号（从0开始）
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Annotations.FlagIndexAttribute.BeginToEnd">
+            <summary>
+            开始序号到结束序号
+            </summary>
+            <remarks>
+            <para>默认 false</para>
+            <para>Index[0] 开始序号</para>
+            <para>Index[1] 结束序号</para>
+            <para>用于保留位</para>
+            </remarks>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Annotations.FlagIndexAttribute.Default">
+            <summary>
+            属性值为空时的默认值
+            </summary>
+            <remarks>默认 false</remarks>
+        </member>
+        <member name="T:SuperSocket.JTTBase.Extension.BitArrayExtension">
+            <summary>
+            位数组拓展方法
+            </summary>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Extension.BitArrayExtension.GetBitArray(System.Object,System.Type)">
+            <summary>
+            获取位标识数组
+            </summary>
+            <param name="flagStruct">结构体数据</param>
+            <param name="type">结构体类型</param>
+            <returns></returns>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Extension.BitArrayExtension.GetBitArray``1(``0)">
+            <summary>
+            获取位标识数组
+            </summary>
+            <typeparam name="T">结构体类型</typeparam>
+            <param name="flagStruct">结构体数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Extension.BitArrayExtension.GetFlagStruct(System.Collections.BitArray,System.Type)">
+            <summary>
+            获取位标识结构体数据
+            </summary>
+            <param name="bitArray">位标识数组</param>
+            <param name="type">结构体类型</param>
+            <returns></returns>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Extension.BitArrayExtension.GetFlagStruct``1(System.Collections.BitArray)">
+            <summary>
+            获取位标识结构体数据
+            </summary>
+            <typeparam name="T">结构体类型</typeparam>
+            <param name="bitArray">位标识数组</param>
+            <returns></returns>
+        </member>
+        <member name="T:SuperSocket.JTTBase.Extension.ByteExtension">
+            <summary>
+            字节数组拓展方法
+            </summary>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Extension.ByteExtension.Padding(System.Byte[],System.Int32,System.Byte,System.Boolean)">
+            <summary>
+            补位
+            </summary>
+            <param name="bytes">数据</param>
+            <param name="length">总长度</param>
+            <param name="padding">配位字符</param>
+            <param name="right">右侧</param>
+            <returns></returns>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Extension.ByteExtension.ClearnPadding(System.Byte[],System.Byte,System.Boolean)">
+            <summary>
+            清理补位
+            </summary>
+            <param name="bytes">数据</param>
+            <param name="padding">补位字符</param>
+            <param name="right">右侧</param>
+            <returns></returns>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Extension.ByteExtension.Get0xByte(System.String)">
+            <summary>
+            转为16进制byte数组
+            </summary>
+            <param name="x2String">十六进制字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Extension.ByteExtension.Get0xBytes(System.String)">
+            <summary>
+            转为16进制byte数组
+            </summary>
+            <param name="x2String">十六进制字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Extension.ByteExtension.Get0xBytes(System.String[])">
+            <summary>
+            转为16进制byte数组
+            </summary>
+            <param name="x2String">十六进制字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Extension.ByteExtension.Get0xString(System.Byte)">
+            <summary>
+            转为16进制字符串
+            </summary>
+            <param name="x2Byte">十六进制byte</param>
+            <returns></returns>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Extension.ByteExtension.Get0xString(System.Byte[])">
+            <summary>
+            转为16进制字符串
+            </summary>
+            <param name="x2Bytes">十六进制byte</param>
+            <returns></returns>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Extension.ByteExtension.GetHexString(System.Byte)">
+            <summary>
+            转为16进制字符串
+            </summary>
+            <param name="x2Byte">十六进制byte</param>
+            <returns></returns>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Extension.ByteExtension.GetHexString(System.Byte[])">
+            <summary>
+            转为16进制字符串
+            </summary>
+            <param name="x2Byte">十六进制byte</param>
+            <returns></returns>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Extension.ByteExtension.ToHexBytes(System.String)">
+            <summary>
+            16进制字符串转16进制数组
+            </summary>
+            <param name="String0x"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SuperSocket.JTTBase.Extension.CrcCcitt">
+            <summary>
+            Crc校验
+            </summary>
+        </member>
+        <member name="F:SuperSocket.JTTBase.Extension.CrcCcitt.polynominal">
+            <summary>
+            多项式
+            </summary>
+        </member>
+        <member name="F:SuperSocket.JTTBase.Extension.CrcCcitt.table">
+            <summary>
+            查询表
+            </summary>
+        </member>
+        <member name="F:SuperSocket.JTTBase.Extension.CrcCcitt.initialValue">
+            <summary>
+            初始值
+            </summary>
+        </member>
+        <member name="F:SuperSocket.JTTBase.Extension.CrcCcitt.initialCrcValue">
+            <summary>
+            初始值
+            </summary>
+        </member>
+        <member name="F:SuperSocket.JTTBase.Extension.CrcCcitt.crcType">
+            <summary>
+            类型（位数）
+            </summary>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Extension.CrcCcitt.#ctor(SuperSocket.JTTBase.Model.CrcType,SuperSocket.JTTBase.Model.InitialCrcValue)">
+            <summary>
+            
+            </summary>
+            <param name="type">位数</param>
+            <param name="initialValue">初始值</param>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Extension.CrcCcitt.ComputeChecksum_16(System.Byte[])">
+            <summary>
+            计算分片数
+            </summary>
+            <param name="bytes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Extension.CrcCcitt.ComputeChecksum_8(System.Byte[])">
+            <summary>
+            计算分片数
+            </summary>
+            <param name="bytes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Extension.CrcCcitt.ComputeChecksum(System.Byte[])">
+            <summary>
+            计算分片数量
+            </summary>
+            <param name="bytes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Extension.CrcCcitt.ComputeChecksumBytes(System.Byte[])">
+            <summary>
+            计算分片数
+            </summary>
+            <param name="bytes"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SuperSocket.JTTBase.Extension.JTTProtocolExtension">
+            <summary>
+            JTT协议拓展方法
+            </summary>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Extension.JTTProtocolExtension.GetProtocol``1(System.String,System.String)">
+            <summary>
+            获取协议
+            </summary>
+            <typeparam name="TJTTProtocol">JTT协议类型</typeparam>
+            <param name="configFilePath">Json配置文件路径</param>
+            <param name="section">板块</param>
+            <returns></returns>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Extension.JTTProtocolExtension.OrderBy(System.Collections.Generic.List{SuperSocket.JTTBase.Model.StructureInfo})">
+            <summary>
+            排序并赋值初始Id
+            </summary>
+            <param name="structures"></param>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Extension.JTTProtocolExtension.GetProtocol``1(System.String,SuperSocket.JTTBase.Model.JTTVersion)">
+            <summary>
+            获取协议
+            </summary>
+            <typeparam name="TJTTProtocol">JTT协议类型</typeparam>
+            <param name="configFilePath">Json配置文件路径</param>
+            <param name="version">版本</param>
+            <returns></returns>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Extension.JTTProtocolExtension.GetCustomProtocol``1(System.String,System.String)">
+            <summary>
+            获取自定义协议
+            </summary>
+            <typeparam name="TJTTProtocol">JTT协议类型</typeparam>
+            <param name="configFilePath">Json配置文件路径</param>
+            <param name="section">板块</param>
+            <returns></returns>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Extension.JTTProtocolExtension.GetFilter(SuperSocket.JTTBase.Interface.IJTTProtocol)">
+            <summary>
+            获取JTT协议流数据拦截器
+            </summary>
+            <param name="protocol">JTT协议</param>
+            <returns></returns>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Extension.JTTProtocolExtension.GetHandler(SuperSocket.JTTBase.Interface.IJTTProtocol)">
+            <summary>
+            获取JTT协议处理类
+            </summary>
+            <param name="protocol">JTT协议</param>
+            <returns></returns>
+        </member>
+        <member name="T:SuperSocket.JTTBase.Extension.NativeSocketMethod">
+            <summary>
+            本机Socket方法
+            </summary>
+        </member>
+        <member name="T:SuperSocket.JTTBase.Extension.ReflectionExtension">
+            <summary>
+            反射功能拓展方法
+            </summary>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Extension.ReflectionExtension.ContainsProperty(System.Object,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            是否存在指定属性
+            </summary>
+            <param name="obj">对象</param>
+            <param name="fieldWithMultiLevel">
+            多层级字段
+            <para>例如: ["FieldA", "FieldB", "FieldC"] => ModelA.FieldA.Field.B.FieldC</para>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Extension.ReflectionExtension.GetProperty(System.Object,System.Collections.Generic.IEnumerable{System.String},System.Boolean)">
+            <summary>
+            获取指定属性
+            </summary>
+            <param name="obj">对象</param>
+            <param name="fieldWithMultiLevel">
+            多层级字段
+            <para>例如: ["FieldA", "FieldB", "FieldC"] => ModelA.FieldA.Field.B.FieldC</para>
+            </param>
+            <param name="returnNull">为找到时返回null</param>
+            <returns></returns>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Extension.ReflectionExtension.GetPropertyValue(System.Object,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            获取属性值
+            </summary>
+            <param name="obj">数据</param>
+            <param name="fieldWithMultiLevel">
+            多层级字段
+            <para>例如: ["FieldA", "FieldB", "FieldC"] => ModelA.FieldA.Field.B.FieldC</para>
+            </param>
+            <returns>属性值</returns>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Extension.ReflectionExtension.SetValueToProperty(System.Object,System.Collections.Generic.IEnumerable{System.String},System.Object)">
+            <summary>
+            设置属性值
+            </summary>
+            <param name="obj">实例</param>
+            <param name="fieldWithMultiLevel">
+            多层级字段
+            <para>例如: ["FieldA", "FieldB", "FieldC"] => ModelA.FieldA.Field.B.FieldC</para>
+            </param>
+            <param name="value">值</param>
+            <returns></returns>
+        </member>
+        <member name="T:SuperSocket.JTTBase.Extension.StructureExtension">
+            <summary>
+            JTT结构拓展方法
+            </summary>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Extension.StructureExtension.GetDefaultStructureId(SuperSocket.JTTBase.Model.StructureInfo)">
+            <summary>
+            获取默认的结构标识
+            </summary>
+            <param name="structure"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SuperSocket.JTTBase.Filter.JTTPipelineFilter">
+            <summary>
+            JTT协议流数据拦截器
+            </summary>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Filter.JTTPipelineFilter.#ctor(SuperSocket.JTTBase.Interface.IJTTProtocol)">
+            <summary>
+            
+            </summary>
+            <param name="protocol">JTT协议</param>
+        </member>
+        <member name="T:SuperSocket.JTTBase.Hadnler.JTTDecoder">
+            <summary>
+            JTT协议解码器
+            </summary>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Hadnler.JTTDecoder.Decode(System.Buffers.ReadOnlySequence{System.Byte}@,System.Object)">
+            <summary>
+            解码
+            </summary>
+            <param name="buffer"></param>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Hadnler.JTTDecoder.Analysis(SuperSocket.JTTBase.Interface.IJTTPackageInfo,System.ReadOnlySpan{System.Byte},System.Int32@)">
+            <summary>
+            分析结构
+            </summary>
+            <param name="packageInfo">消息包</param>
+            <param name="bytes">转义后的数据</param>
+            <param name="offset">偏移量</param>
+            <returns></returns>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Hadnler.JTTDecoder.AnalysisStructure(SuperSocket.JTTBase.Interface.IJTTPackageInfo,System.Object,SuperSocket.JTTBase.Model.StructureInfo,System.ReadOnlySpan{System.Byte},System.Int32@)">
+            <summary>
+            分析结构
+            </summary>
+            <param name="packageInfo">消息包</param>
+            <param name="obj">当前对象</param>
+            <param name="structure">结构信息</param>
+            <param name="bytes">转义后的数据</param>
+            <param name="offset">偏移量</param>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Hadnler.JTTDecoder.AnalysisNormalStructure(System.Object,SuperSocket.JTTBase.Model.StructureInfo,System.ReadOnlySpan{System.Byte},System.Int32@)">
+            <summary>
+            分析普通结构
+            </summary>
+            <param name="obj">当前对象</param>
+            <param name="structure">结构</param>
+            <param name="bytes">转义后的数据</param>
+            <param name="offset">偏移量</param>
+            <returns>获得的数据</returns>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Hadnler.JTTDecoder.AnalysisInternalStructure(SuperSocket.JTTBase.Interface.IJTTPackageInfo,System.Object,SuperSocket.JTTBase.Model.StructureInfo,System.ReadOnlySpan{System.Byte},System.Int32@)">
+            <summary>
+            分析内部结构
+            </summary>
+            <param name="packageInfo">消息包</param>
+            <param name="obj">当前对象</param>
+            <param name="structure">结构</param>
+            <param name="bytes">转义后的数据</param>
+            <param name="offset">偏移量</param>
+            <returns>内部结构映射的实例</returns>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Hadnler.JTTDecoder.AnalysisAdditionalStructure(SuperSocket.JTTBase.Interface.IJTTPackageInfo,System.Object,SuperSocket.JTTBase.Model.StructureInfo,System.ReadOnlySpan{System.Byte},System.Int32@)">
+            <summary>
+            分析附加信息
+            </summary>
+            <param name="packageInfo">消息包</param>
+            <param name="obj">当前对象</param>
+            <param name="structure">结构</param>
+            <param name="bytes">转义后的数据</param>
+            <param name="offset">偏移量</param>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Hadnler.JTTDecoder.CompileDynamic(System.Object,SuperSocket.JTTBase.Model.StructureInfo,System.Object,System.Type,System.Type)">
+            <summary>
+            计算动态表达式
+            </summary>
+            <param name="obj">当前对象</param>
+            <param name="structure">结构</param>
+            <param name="value">值</param>
+            <param name="valueType">值类型</param>
+            <param name="resultType">计算结果数据类型</param>
+            <returns></returns>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Hadnler.JTTDecoder.DataMapping(System.Object,SuperSocket.JTTBase.Model.StructureInfo,System.ReadOnlySpan{System.Byte},System.Object)">
+            <summary>
+            数据映射
+            </summary>
+            <param name="obj">当前对象</param>
+            <param name="structure">结构</param>
+            <param name="bytes">原始值</param>
+            <param name="value">解码值</param>
+            <returns></returns>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Hadnler.JTTDecoder.ToFlagStruct(System.Object,SuperSocket.JTTBase.Model.StructureInfo,System.Object)">
+            <summary>
+            将位标识数组转为结构体数据
+            </summary>
+            <param name="obj">当前对象</param>
+            <param name="structure">结构</param>
+            <param name="value">解码值</param>
+            <returns></returns>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Hadnler.JTTDecoder.Decrypt(SuperSocket.JTTBase.Interface.IJTTPackageInfo,System.ReadOnlySpan{System.Byte},SuperSocket.JTTBase.Model.StructureInfo,System.Int32)">
+            <summary>
+            解密
+            </summary>
+            <param name="packageInfo">消息包</param>
+            <param name="buffer">数据</param>
+            <param name="structure">结构</param>
+            <param name="offset">偏移量</param>
+            <returns></returns>
+        </member>
+        <member name="F:SuperSocket.JTTBase.Hadnler.JTTDecoder.protocol">
+            <summary>
+            JTT协议
+            </summary>
+        </member>
+        <member name="F:SuperSocket.JTTBase.Hadnler.JTTDecoder.handler">
+            <summary>
+            JTT协议处理类
+            </summary>
+        </member>
+        <member name="F:SuperSocket.JTTBase.Hadnler.JTTDecoder.zhcnencoding">
+            <summary>
+            汉字编码
+            </summary>
+        </member>
+        <member name="F:SuperSocket.JTTBase.Hadnler.JTTDecoder.expressionContext">
+            <summary>
+            计算表达式上下文
+            </summary>
+        </member>
+        <member name="T:SuperSocket.JTTBase.Hadnler.JTTEncoder">
+            <summary>
+            JTT协议编码器
+            </summary>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Hadnler.JTTEncoder.Encode(System.Buffers.IBufferWriter{System.Byte},SuperSocket.JTTBase.Interface.IJTTPackageInfo)">
+            <summary>
+            编码
+            </summary>
+            <param name="writer"></param>
+            <param name="pack"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Hadnler.JTTEncoder.SetupPackInfo(SuperSocket.JTTBase.Interface.IJTTPackageInfo)">
+            <summary>
+            设置消息包
+            </summary>
+            <param name="packageInfo">消息包</param>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Hadnler.JTTEncoder.Analysis(SuperSocket.JTTBase.Interface.IJTTPackageInfo)">
+            <summary>
+            分析结构
+            </summary>
+            <param name="packageInfo">消息包</param>
+            <returns></returns>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Hadnler.JTTEncoder.CompileDynamic(System.Object,SuperSocket.JTTBase.Model.StructureInfo,System.Type,System.Type)">
+            <summary>
+            计算动态表达式
+            </summary>
+            <param name="value">值</param>
+            <param name="structure">结构</param>
+            <param name="valueType">值类型</param>
+            <param name="resultType">计算结果数据类型</param>
+            <returns></returns>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Hadnler.JTTEncoder.ToFlagStruct(System.Object,SuperSocket.JTTBase.Model.StructureInfo)">
+            <summary>
+            将结构体数据转为位标识数组
+            </summary>
+            <param name="obj">当前对象</param>
+            <param name="structure">结构</param>
+            <returns></returns>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Hadnler.JTTEncoder.Encrypt(SuperSocket.JTTBase.Interface.IJTTPackageInfo,System.Byte[],SuperSocket.JTTBase.Model.StructureInfo)">
+            <summary>
+            加密
+            </summary>
+            <param name="packageInfo">消息包</param>
+            <param name="buffer">数据</param>
+            <param name="structure">结构</param>
+            <returns></returns>
+        </member>
+        <member name="F:SuperSocket.JTTBase.Hadnler.JTTEncoder.protocol">
+            <summary>
+            JTT协议
+            </summary>
+        </member>
+        <member name="F:SuperSocket.JTTBase.Hadnler.JTTEncoder.handler">
+            <summary>
+            JTT协议处理类
+            </summary>
+        </member>
+        <member name="F:SuperSocket.JTTBase.Hadnler.JTTEncoder.zhcnencoding">
+            <summary>
+            汉字编码
+            </summary>
+        </member>
+        <member name="F:SuperSocket.JTTBase.Hadnler.JTTEncoder.expressionContext">
+            <summary>
+            计算表达式上下文
+            </summary>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Hadnler.JTTEncoder.AnalysisStructure(SuperSocket.JTTBase.Interface.IJTTPackageInfo,System.Object,SuperSocket.JTTBase.Model.StructureInfo)">
+            <summary>
+            分析结构
+            </summary>
+            <param name="packageInfo">消息包</param>
+            <param name="obj">当前对象</param>
+            <param name="structure">结构</param>
+            <returns></returns>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Hadnler.JTTEncoder.AnalysisNormalStructure(System.Object,SuperSocket.JTTBase.Model.StructureInfo)">
+            <summary>
+            分析普通结构
+            </summary>
+            <param name="obj">当前对象</param>
+            <param name="structure">结构</param>
+            <returns>获得的数据</returns>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Hadnler.JTTEncoder.AnalysisInternalStructure(SuperSocket.JTTBase.Interface.IJTTPackageInfo,System.Object,SuperSocket.JTTBase.Model.StructureInfo)">
+            <summary>
+            分析内部结构
+            </summary>
+            <param name="packageInfo">消息包</param>
+            <param name="obj">当前实例</param>
+            <param name="structure">结构</param>
+            <returns>内部结构映射的实例</returns>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Hadnler.JTTEncoder.AnalysisAdditionalStructure(SuperSocket.JTTBase.Interface.IJTTPackageInfo,System.Object,SuperSocket.JTTBase.Model.StructureInfo)">
+            <summary>
+            分析附加信息
+            </summary>
+            <param name="packageInfo">消息包</param>
+            <param name="obj">当前对象</param>
+            <param name="structure">结构</param>
+        </member>
+        <member name="T:SuperSocket.JTTBase.Hadnler.JTTProtocolHandler">
+            <summary>
+            JTT协议处理类
+            </summary>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Hadnler.JTTProtocolHandler.#ctor(SuperSocket.JTTBase.Interface.IJTTProtocol)">
+            <summary>
+            
+            </summary>
+            <param name="protocol">JTT协议</param>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Hadnler.JTTProtocolHandler.Protocol">
+            <summary>
+            JTT协议
+            </summary>
+        </member>
+        <member name="F:SuperSocket.JTTBase.Hadnler.JTTProtocolHandler.HeadFlag">
+            <summary>
+            头标识
+            </summary>
+        </member>
+        <member name="F:SuperSocket.JTTBase.Hadnler.JTTProtocolHandler.EndFlag">
+            <summary>
+            尾标识
+            </summary>
+        </member>
+        <member name="F:SuperSocket.JTTBase.Hadnler.JTTProtocolHandler.Escapes">
+            <summary>
+            转义标识
+            </summary>
+        </member>
+        <member name="F:SuperSocket.JTTBase.Hadnler.JTTProtocolHandler.UnEscapes">
+            <summary>
+            转义还原标识
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Hadnler.JTTProtocolHandler.ZHCNEncoding">
+            <summary>
+            JTT协议汉字编码
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Hadnler.JTTProtocolHandler.PaddingValue">
+            <summary>
+            JTT协议补位字符
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Hadnler.JTTProtocolHandler.CrcCcitt">
+            <summary>
+            Crc校验对象
+            </summary>
+        </member>
+        <member name="F:SuperSocket.JTTBase.Hadnler.JTTProtocolHandler.localDefaultDateTime">
+            <summary>
+            本地默认时间
+            </summary>
+            <remarks>1970-01-01</remarks>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Hadnler.JTTProtocolHandler.GetZHCNEncoding">
+            <summary>
+            获取汉字编码
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Hadnler.JTTProtocolHandler.GetPadding">
+            <summary>
+            获取补位字符
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Hadnler.JTTProtocolHandler.GetCrcCcitt">
+            <summary>
+            获取Crc校验对象
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Hadnler.JTTProtocolHandler.GetHeadFlagValue">
+            <summary>
+            获取头标识
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Hadnler.JTTProtocolHandler.GetEndFlagValue">
+            <summary>
+            获取尾标识
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Hadnler.JTTProtocolHandler.GetEscapesValue">
+            <summary>
+            获取转义标识
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Hadnler.JTTProtocolHandler.GetUnEscapesValue">
+            <summary>
+            获取转义还原标识
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Hadnler.JTTProtocolHandler.Escape(System.Byte[])">
+            <summary>
+            转义
+            </summary>
+            <param name="buffer">流数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Hadnler.JTTProtocolHandler.UnEscape(System.Byte[])">
+            <summary>
+            转义还原
+            </summary>
+            <param name="buffer">流数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Hadnler.JTTProtocolHandler.Decode(System.Byte[],SuperSocket.JTTBase.Model.CodeInfo)">
+            <summary>
+            解码
+            </summary>
+            <param name="bytes">数据</param>
+            <param name="info">编码信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Hadnler.JTTProtocolHandler.Encode(System.Object,SuperSocket.JTTBase.Model.CodeInfo,System.Nullable{System.Int32},System.Boolean,System.Boolean)">
+            <summary>
+            编码
+            </summary>
+            <param name="obj">数据</param>
+            <param name="info">编码信息</param>
+            <param name="length">总长度（不足时在右侧进行补位）</param>
+            <param name="escape">转义</param>
+            <param name="padding">补位</param>
+            <returns></returns>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Hadnler.JTTProtocolHandler.CheckCrcCode(System.Byte[],System.Byte[]@,System.Byte[]@,System.Byte[]@)">
+            <summary>
+            检查Crc校验码
+            </summary>
+            <param name="buffer">数据头+数据体+校验码</param>
+            <param name="data">数据头+数据体</param>
+            <param name="crc_code">校验码</param>
+            <param name="crc_code_compute">计算后的值</param>
+            <returns>是否一致</returns>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Hadnler.JTTProtocolHandler.ComputeCrcCode(SuperSocket.JTTBase.Interface.IJTTPackageInfo)">
+            <summary>
+            计算Crc校验码
+            </summary>
+            <param name="info"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Hadnler.JTTProtocolHandler.ComputeCrcValue(System.Byte[])">
+            <summary>
+            计算Crc校验码(未转义)
+            </summary>
+            <param name="buffer">流数据</param>
+            <returns>crc校验值</returns>
+        </member>
+        <member name="T:SuperSocket.JTTBase.Interface.IJTTDecoder">
+            <summary>
+            JTT协议解码器
+            </summary>
+            <remarks>
+            <para>解码发生异常 <see cref="T:System.ApplicationException"/>时,</para>
+            <para>应当设置 <see cref="P:SuperSocket.JTTBase.Interface.IJTTPackageInfo.Success"/>为false,</para>
+            <para>并写入异常 <see cref="P:SuperSocket.JTTBase.Interface.IJTTPackageInfo.Exception"/>,</para>
+            <para>最后调用 <see cref="!:IPackageDecoder.Decode(ref ReadOnlySequence&lt;byte&gt;, object)"/>方法输出消息包.</para>
+            </remarks>
+        </member>
+        <member name="T:SuperSocket.JTTBase.Interface.IJTTEncoder">
+            <summary>
+            JTT协议编码器
+            </summary>
+        </member>
+        <member name="T:SuperSocket.JTTBase.Interface.IJTTMessageBody">
+            <summary>
+            消息体
+            </summary>
+        </member>
+        <member name="T:SuperSocket.JTTBase.Interface.IJTTMessageHeader">
+            <summary>
+            消息头
+            </summary>
+        </member>
+        <member name="T:SuperSocket.JTTBase.Interface.IJTTPackageInfo">
+            <summary>
+            消息包
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Interface.IJTTPackageInfo.Buffer">
+            <summary>
+            流数据
+            </summary>
+            <remarks>至包含消息头、消息体，不包含头标识、CRC校验码、尾标识</remarks>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Interface.IJTTPackageInfo.HeadFlag">
+            <summary>
+            头标识
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Interface.IJTTPackageInfo.MessageHeader">
+            <summary>
+            消息头
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Interface.IJTTPackageInfo.MessageBody">
+            <summary>
+            消息体
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Interface.IJTTPackageInfo.Crc_Code">
+            <summary>
+            Crc校验码
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Interface.IJTTPackageInfo.EndFlag">
+            <summary>
+            尾标识
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Interface.IJTTPackageInfo.Success">
+            <summary>
+            是否成功解析
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Interface.IJTTPackageInfo.Step">
+            <summary>
+            步骤
+            </summary>
+            <remarks><see cref="T:SuperSocket.JTTBase.Model.DecoderStep"/></remarks>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Interface.IJTTPackageInfo.Exception">
+            <summary>
+            异常信息
+            </summary>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Interface.IJTTPackageInfo.ToString">
+            <summary>
+            消息包转字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Interface.IJTTPackageInfo.GetBytes">
+            <summary>
+            获取流数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SuperSocket.JTTBase.Interface.IJTTProtocol">
+            <summary>
+            JTT协议
+            </summary>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Interface.IJTTProtocol.Initialization">
+            <summary>
+            初始化
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Interface.IJTTProtocol.Version">
+            <summary>
+            协议名称
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Interface.IJTTProtocol.PackageInfoType">
+            <summary>
+            消息包类型
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Interface.IJTTProtocol.MessageHeaderType">
+            <summary>
+            消息头类型
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Interface.IJTTProtocol.JTTPipelineFilter">
+            <summary>
+            流数据拦截器
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Interface.IJTTProtocol.Handler">
+            <summary>
+            处理类
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Interface.IJTTProtocol.Decoder">
+            <summary>
+            解码器
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Interface.IJTTProtocol.Encoder">
+            <summary>
+            编码器
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Interface.IJTTProtocol.BigEndian">
+            <summary>
+            数据流是否遵循大端
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Interface.IJTTProtocol.ZHCNEncoding">
+            <summary>
+            汉字编码
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Interface.IJTTProtocol.Padding">
+            <summary>
+            定长字符的补位配置
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Interface.IJTTProtocol.CrcCcitt">
+            <summary>
+            CRC数据校验配置
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Interface.IJTTProtocol.Encrypt">
+            <summary>
+            加密配置
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Interface.IJTTProtocol.Escapes">
+            <summary>
+            转义集合
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Interface.IJTTProtocol.DataMappings">
+            <summary>
+            数据映射集合
+            </summary>
+            <remarks>key 映射标识</remarks>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Interface.IJTTProtocol.InternalEntitysMappings">
+            <summary>
+            内部结构映射实体集合
+            </summary>
+            <remarks>key 映射标识</remarks>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Interface.IJTTProtocol.HeadFlag">
+            <summary>
+            头标识
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Interface.IJTTProtocol.EndFlag">
+            <summary>
+            尾标识
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Interface.IJTTProtocol.Structures">
+            <summary>
+            结构集合
+            </summary>
+        </member>
+        <member name="T:SuperSocket.JTTBase.Interface.IJTTProtocolHandler">
+            <summary>
+            JTT协议处理类
+            </summary>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Interface.IJTTProtocolHandler.GetZHCNEncoding">
+            <summary>
+            获取汉字编码
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Interface.IJTTProtocolHandler.GetPadding">
+            <summary>
+            获取补位字符
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Interface.IJTTProtocolHandler.GetCrcCcitt">
+            <summary>
+            获取Crc校验对象
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Interface.IJTTProtocolHandler.GetHeadFlagValue">
+            <summary>
+            获取头标识
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Interface.IJTTProtocolHandler.GetEndFlagValue">
+            <summary>
+            获取尾标识
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Interface.IJTTProtocolHandler.GetEscapesValue">
+            <summary>
+            获取转义标识
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Interface.IJTTProtocolHandler.GetUnEscapesValue">
+            <summary>
+            获取转义还原标识
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Interface.IJTTProtocolHandler.Escape(System.Byte[])">
+            <summary>
+            转义
+            </summary>
+            <param name="buffer">流数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Interface.IJTTProtocolHandler.UnEscape(System.Byte[])">
+            <summary>
+            转义还原
+            </summary>
+            <param name="buffer">流数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Interface.IJTTProtocolHandler.Decode(System.Byte[],SuperSocket.JTTBase.Model.CodeInfo)">
+            <summary>
+            解码
+            </summary>
+            <param name="bytes">数据</param>
+            <param name="info">编码信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Interface.IJTTProtocolHandler.Encode(System.Object,SuperSocket.JTTBase.Model.CodeInfo,System.Nullable{System.Int32},System.Boolean,System.Boolean)">
+            <summary>
+            编码
+            </summary>
+            <param name="obj">数据</param>
+            <param name="info">编码信息</param>
+            <param name="length">总长度（不足时在右侧进行补位）</param>
+            <param name="escape">转义</param>
+            <param name="padding">补位</param>
+            <returns></returns>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Interface.IJTTProtocolHandler.CheckCrcCode(System.Byte[],System.Byte[]@,System.Byte[]@,System.Byte[]@)">
+            <summary>
+            检查Crc校验码
+            </summary>
+            <param name="buffer">数据头+数据体+校验码</param>
+            <param name="data">数据头+数据体</param>
+            <param name="crc_code">校验码(已转义)</param>
+            <param name="crc_code_compute">计算后的值(已转义)</param>
+            <returns>是否一致</returns>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Interface.IJTTProtocolHandler.ComputeCrcCode(SuperSocket.JTTBase.Interface.IJTTPackageInfo)">
+            <summary>
+            计算Crc校验码(已转义)
+            </summary>
+            <param name="info"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Interface.IJTTProtocolHandler.ComputeCrcValue(System.Byte[])">
+            <summary>
+            计算Crc校验码(未转义)
+            </summary>
+            <param name="buffer">流数据</param>
+            <returns>crc校验值</returns>
+        </member>
+        <member name="T:SuperSocket.JTTBase.Model.AdditionalInfo">
+            <summary>
+            附件数据信息
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Model.AdditionalInfo.Length">
+            <summary>
+            长度
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Model.AdditionalInfo.Decode">
+            <summary>
+            解码信息
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Model.AdditionalInfo.Encode">
+            <summary>
+            编码信息
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Model.AdditionalInfo.Structures">
+            <summary>
+            结构信息
+            </summary>
+        </member>
+        <member name="T:SuperSocket.JTTBase.Model.CodeInfo">
+            <summary>
+            编码信息
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Model.CodeInfo.CodeType">
+            <summary>
+            编码类型
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Model.CodeInfo.Assembly">
+            <summary>
+            命名空间
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Model.CodeInfo.TypeName">
+            <summary>
+            实体
+            </summary>
+        </member>
+        <member name="T:SuperSocket.JTTBase.Model.CodeType">
+            <summary>
+            编码类型
+            </summary>
+        </member>
+        <member name="F:SuperSocket.JTTBase.Model.CodeType.binary">
+            <summary>
+            BitArray
+            </summary>
+        </member>
+        <member name="F:SuperSocket.JTTBase.Model.CodeType.boolean">
+            <summary>
+            BitConverter.ToBoolean(bytes);
+            </summary>
+        </member>
+        <member name="F:SuperSocket.JTTBase.Model.CodeType.uint16">
+            <summary>
+            解码 BinaryPrimitives.ReadUInt16
+            编码 BinaryPrimitives.WriteUInt16
+            </summary>
+        </member>
+        <member name="F:SuperSocket.JTTBase.Model.CodeType.uint32">
+            <summary>
+            解码 BinaryPrimitives.ReadUInt32
+            编码 BinaryPrimitives.WriteUInt32
+            </summary>
+        </member>
+        <member name="F:SuperSocket.JTTBase.Model.CodeType.uint64">
+            <summary>
+            解码 BinaryPrimitives.ReadUInt64
+            编码 BinaryPrimitives.WriteUInt64
+            </summary>
+        </member>
+        <member name="F:SuperSocket.JTTBase.Model.CodeType.int16">
+            <summary>
+            解码 BinaryPrimitives.ReadInt16
+            编码 BinaryPrimitives.WriteInt16
+            </summary>
+        </member>
+        <member name="F:SuperSocket.JTTBase.Model.CodeType.int32">
+            <summary>
+            解码 BinaryPrimitives.ReadInt32
+            编码 BinaryPrimitives.WriteInt32
+            </summary>
+        </member>
+        <member name="F:SuperSocket.JTTBase.Model.CodeType.int64">
+            <summary>
+            解码 BinaryPrimitives.ReadInt64
+            编码 BinaryPrimitives.WriteInt64
+            </summary>
+        </member>
+        <member name="F:SuperSocket.JTTBase.Model.CodeType.uint16_hex">
+            <summary>
+            Convert.ToUInt16("0x", 16)
+            </summary>
+        </member>
+        <member name="F:SuperSocket.JTTBase.Model.CodeType.uint32_hex">
+            <summary>
+            Convert.ToUInt32("0x", 16)
+            </summary>
+        </member>
+        <member name="F:SuperSocket.JTTBase.Model.CodeType.uint64_hex">
+            <summary>
+            Convert.ToUInt64("0x", 16)
+            </summary>
+        </member>
+        <member name="F:SuperSocket.JTTBase.Model.CodeType.uint64_unix">
+            <summary>
+            时间戳
+            转为C# DateTime
+            </summary>
+        </member>
+        <member name="F:SuperSocket.JTTBase.Model.CodeType.byte_hex">
+            <summary>
+            Convert.ToByte("0x", 16)
+            </summary>
+        </member>
+        <member name="F:SuperSocket.JTTBase.Model.CodeType.int16_hex">
+            <summary>
+            Convert.ToInt16("0x", 16)
+            </summary>
+        </member>
+        <member name="F:SuperSocket.JTTBase.Model.CodeType.int32_hex">
+            <summary>
+            Convert.ToInt32("0x", 16)
+            </summary>
+        </member>
+        <member name="F:SuperSocket.JTTBase.Model.CodeType.int64_hex">
+            <summary>
+            Convert.ToInt64("0x", 16)
+            </summary>
+        </member>
+        <member name="F:SuperSocket.JTTBase.Model.CodeType.enum">
+            <summary>
+            Enum.Parse(type, Encoding.GetEncoding("gbk").GetString(data).Replace("\0", ""))
+            </summary>
+        </member>
+        <member name="F:SuperSocket.JTTBase.Model.CodeType.string">
+            <summary>
+            Encoding.GetEncoding("gbk").GetString(data).Replace("\0", "");
+            </summary>
+        </member>
+        <member name="F:SuperSocket.JTTBase.Model.CodeType.string_x_0">
+            <summary>
+            string.Join('\0', data.ToList().ForEach(o => o.ToString("x").PadLeft(2, '0')));
+            </summary>
+        </member>
+        <member name="F:SuperSocket.JTTBase.Model.CodeType.string_x2">
+            <summary>
+            data.ToString("x2");
+            </summary>
+        </member>
+        <member name="F:SuperSocket.JTTBase.Model.CodeType.string_hex">
+            <summary>
+            $"0x{data.ToString("x2")}";
+            </summary>
+        </member>
+        <member name="F:SuperSocket.JTTBase.Model.CodeType.string_ascii">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:SuperSocket.JTTBase.Model.CodeType.string_bcd8421">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:SuperSocket.JTTBase.Model.CodeType.char_bcd8421">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:SuperSocket.JTTBase.Model.CodeType.datetime_bcd8421">
+            <summary>
+            yy-MM-dd HH:mm:ss
+            </summary>
+        </member>
+        <member name="F:SuperSocket.JTTBase.Model.CodeType.date_bcd8421">
+            <summary>
+            yy-MM-dd
+            </summary>
+        </member>
+        <member name="F:SuperSocket.JTTBase.Model.CodeType.time_bcd8421">
+            <summary>
+            HH:MM
+            </summary>
+        </member>
+        <member name="F:SuperSocket.JTTBase.Model.CodeType.data">
+            <summary>
+            string.Join(' ', data);
+            </summary>
+        </member>
+        <member name="F:SuperSocket.JTTBase.Model.CodeType.data_split">
+            <summary>
+            使用空格分隔
+            </summary>
+        </member>
+        <member name="F:SuperSocket.JTTBase.Model.CodeType.json">
+            <summary>
+            Encoding.GetEncoding(jT.Encoding).GetBytes(value.ToJson())
+            </summary>
+        </member>
+        <member name="T:SuperSocket.JTTBase.Model.CollectionInfo">
+            <summary>
+            数据集合信息
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Model.CollectionInfo.CountProperty">
+            <summary>
+            存储数据量的属性的名称
+            <para>多级使用.分隔</para>
+            <para>例如 A.b.c</para>
+            </summary>
+            <remarks>该属性必须为数值类型</remarks>
+        </member>
+        <member name="T:SuperSocket.JTTBase.Model.CompileConfig">
+            <summary>
+            动态计算配置
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Model.CompileConfig.Expression">
+            <summary>
+            动态计算表达式
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Model.CompileConfig.RestoreExpression">
+            <summary>
+            动态计算还原表达式
+            </summary>
+            <remarks>在发送数据时对其进行还原后再进行编码</remarks>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Model.CompileConfig.Property">
+            <summary>
+            属性名称
+            </summary>
+            <remarks>
+            <para>多级使用.分隔</para>
+            <para>用于存储替换值的属性</para>
+            </remarks>
+        </member>
+        <member name="T:SuperSocket.JTTBase.Model.CrcCcittConfig">
+            <summary>
+            CRC数据校验配置
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Model.CrcCcittConfig.Check">
+            <summary>
+            解码时是否进行CRC校验
+            </summary>
+            <remarks>默认 true</remarks>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Model.CrcCcittConfig.Type">
+            <summary>
+            类型
+            </summary>
+            <remarks>位数</remarks>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Model.CrcCcittConfig.InitialValue">
+            <summary>
+            初始值
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Model.CrcCcittConfig.IgnoreLength">
+            <summary>
+            需要跳过部分的长度
+            <para>可选</para>
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Model.CrcCcittConfig.ValueLength">
+            <summary>
+            取值长度
+            <para>可选</para>
+            <para>负数为跳过指定长度后再取剩下的值</para>
+            <para>如果crc校验码位于流数据末端，则应该设置为负数</para>
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Model.CrcCcittConfig.Property">
+            <summary>
+            属性名称
+            <para>可选</para>
+            <para>将Crc校验码写入PackageInfo</para>
+            </summary>
+        </member>
+        <member name="T:SuperSocket.JTTBase.Model.CrcIgnoreLength">
+            <summary>
+            Crc校验时忽略部分的长度
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Model.CrcIgnoreLength.Front">
+            <summary>
+            前段
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Model.CrcIgnoreLength.Posterior">
+            <summary>
+            后段
+            </summary>
+        </member>
+        <member name="T:SuperSocket.JTTBase.Model.CrcType">
+            <summary>
+            CRC类型
+            </summary>
+        </member>
+        <member name="T:SuperSocket.JTTBase.Model.DataMappingConfig">
+            <summary>
+            数据映射配置
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Model.DataMappingConfig.Key">
+            <summary>
+            映射标识
+            </summary>
+            <remarks>对应<see cref="P:SuperSocket.JTTBase.Interface.IJTTProtocol.DataMappings"/>的Key</remarks>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Model.DataMappingConfig.SetProperty">
+            <summary>
+            存储映射值的属性
+            </summary>
+            <remarks>
+            <para>多级使用.分隔</para>
+            </remarks>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Model.DataMappingConfig.UseDecodeValue">
+            <summary>
+            使用解码后的值进行匹配
+            </summary>
+            <remarks>
+            <para>默认 true</para>
+            <para>true 对使用<see cref="P:SuperSocket.JTTBase.Model.StructureInfo.Encode"/>配置解码后的值, 先使用<see cref="P:SuperSocket.JTTBase.Model.DataMappingConfig.Encode"/>配置编码, 再使用<see cref="P:SuperSocket.JTTBase.Model.DataMappingConfig.Decode"/>配置解码后进行匹配</para>
+            <para>false 对原始数据（流数据）, 使用<see cref="P:SuperSocket.JTTBase.Model.DataMappingConfig.Decode"/>配置解码后进行匹配</para>
+            </remarks>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Model.DataMappingConfig.Encode">
+            <summary>
+            是否需要编码后再进行匹配
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Model.DataMappingConfig.Decode">
+            <summary>
+            是否需要解码后再进行匹配
+            </summary>
+        </member>
+        <member name="T:SuperSocket.JTTBase.Model.DecoderStep">
+            <summary>
+            解码步骤
+            </summary>
+        </member>
+        <member name="F:SuperSocket.JTTBase.Model.DecoderStep.None">
+            <summary>
+            无
+            </summary>
+        </member>
+        <member name="F:SuperSocket.JTTBase.Model.DecoderStep.AnalysisBuffer">
+            <summary>
+            分析数据
+            </summary>
+        </member>
+        <member name="F:SuperSocket.JTTBase.Model.DecoderStep.AnalysisStructure">
+            <summary>
+            分析结构
+            </summary>
+        </member>
+        <member name="F:SuperSocket.JTTBase.Model.DecoderStep.Done">
+            <summary>
+            结束
+            </summary>
+        </member>
+        <member name="T:SuperSocket.JTTBase.Model.EnCodeInfo">
+            <summary>
+            编码信息
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Model.EnCodeInfo.EncodeType">
+            <summary>
+            编码类型
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Model.EnCodeInfo.Assembly">
+            <summary>
+            命名空间
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Model.EnCodeInfo.TypeName">
+            <summary>
+            实体
+            </summary>
+        </member>
+        <member name="T:SuperSocket.JTTBase.Model.EncryptConfig">
+            <summary>
+            加密配置
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Model.EncryptConfig.M1">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Model.EncryptConfig.IA1">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Model.EncryptConfig.IC1">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Model.EncryptConfig.Targets">
+            <summary>
+            目标集合
+            <para>键 <see cref="P:SuperSocket.JTTBase.Model.StructureInfo.Id"/></para>
+            </summary>
+        </member>
+        <member name="T:SuperSocket.JTTBase.Model.EncryptProperty">
+            <summary>
+            加密标识和秘钥来自于哪些属性
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Model.EncryptProperty.Flag">
+            <summary>
+            加密标识属性名称
+            </summary>
+            <remarks>用该属性的值来判断是否需要解密</remarks>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Model.EncryptProperty.Key">
+            <summary>
+            秘钥属性名称
+            </summary>
+            <remarks>用该属性的值来获取用于解密的密钥</remarks>
+        </member>
+        <member name="T:SuperSocket.JTTBase.Model.EscapesConfig">
+            <summary>
+            转义配置
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Model.EscapesConfig.Target">
+            <summary>
+            目标值
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Model.EscapesConfig.Trans">
+            <summary>
+            转换值
+            </summary>
+            <remarks>2节数</remarks>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Model.EscapesConfig.Encode">
+            <summary>
+            应该以何种方式编码Target值和Trans值
+            </summary>
+        </member>
+        <member name="T:SuperSocket.JTTBase.Model.FlagStructInfo">
+            <summary>
+            位标识数据对应的结构体数据
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Model.FlagStructInfo.Property">
+            <summary>
+            属性名称
+            </summary>
+            <remarks>用来存储转换结构体数据的属性</remarks>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Model.FlagStructInfo.Assembly">
+            <summary>
+            命名空间
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Model.FlagStructInfo.TypeName">
+            <summary>
+            实体
+            </summary>
+        </member>
+        <member name="T:SuperSocket.JTTBase.Model.FlagInfo">
+            <summary>
+            帧标识信息
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Model.FlagInfo.Encode">
+            <summary>
+            应该以何种方式编码Value值
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Model.FlagInfo.Value">
+            <summary>
+            值
+            </summary>
+        </member>
+        <member name="T:SuperSocket.JTTBase.Model.InitialCrcValue">
+            <summary>
+            初始CRC值
+            </summary>
+        </member>
+        <member name="T:SuperSocket.JTTBase.Model.InternalEntitysMappingInfo">
+            <summary>
+            内部结构映射实体信息
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Model.InternalEntitysMappingInfo.Assembly">
+            <summary>
+            命名空间
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Model.InternalEntitysMappingInfo.TypeName">
+            <summary>
+            类名
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Model.InternalEntitysMappingInfo.Length">
+            <summary>
+            字节长度
+            </summary>
+            <remarks>为空时表示可变长度</remarks>
+        </member>
+        <member name="T:SuperSocket.JTTBase.Model.InternalKeyInfo">
+            <summary>
+            内部结构的Key所属的属性信息
+            </summary>
+            <remarks>
+            <para>消息包解码时 执行方法为对<see cref="P:SuperSocket.JTTBase.Model.InternalKeyInfo.Property"/>属性值先使用<see cref="P:SuperSocket.JTTBase.Model.InternalKeyInfo.Encode"/>配置编码, 再使用<see cref="P:SuperSocket.JTTBase.Model.InternalKeyInfo.Decode"/>配置解码</para>
+            <para>消息包编码时 执行方法为对<see cref="P:SuperSocket.JTTBase.Interface.IJTTProtocol.InternalEntitysMappings"/>的Key先使用<see cref="P:SuperSocket.JTTBase.Model.InternalKeyInfo.Decode"/>配置编码, 再使用<see cref="P:SuperSocket.JTTBase.Model.InternalKeyInfo.Encode"/>配置解码</para>
+            </remarks>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Model.InternalKeyInfo.Property">
+            <summary>
+            属性名称
+            <para>多级使用.分隔</para>
+            <para>例如 A.b.c</para>
+            <para>.A.b表示当前层级的对象的A属性的b属性</para>
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Model.InternalKeyInfo.Encode">
+            <summary>
+            属性值是否需要编码
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Model.InternalKeyInfo.Decode">
+            <summary>
+            属性值是否需要解码
+            </summary>
+        </member>
+        <member name="T:SuperSocket.JTTBase.Model.InternalLengthInfo">
+            <summary>
+            内部结构的长度信息
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Model.InternalLengthInfo.Property">
+            <summary>
+            存储内部结构总长度的属性名称
+            <para>多级使用.分隔</para>
+            <para>例如 A.b.c</para>
+            <para>.A.b表示当前层级的对象的A属性的b属性</para>
+            </summary>
+        </member>
+        <member name="T:SuperSocket.JTTBase.Model.JTTException">
+            <summary>
+            JTT异常
+            </summary>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Model.JTTException.#ctor(System.String,System.Exception)">
+            <summary>
+            
+            </summary>
+            <param name="message">信息</param>
+            <param name="ex">原始异常</param>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Model.JTTException.#ctor(System.String,System.String,System.Exception)">
+            <summary>
+            
+            </summary>
+            <param name="title">标题</param>
+            <param name="message">信息</param>
+            <param name="ex">原始异常</param>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Model.JTTException.#ctor(System.String,System.Byte[],System.Exception)">
+            <summary>
+            
+            </summary>
+            <param name="message">信息</param>
+            <param name="buffer">流数据</param>
+            <param name="ex">原始异常</param>
+        </member>
+        <member name="M:SuperSocket.JTTBase.Model.JTTException.#ctor(System.String,System.String,System.Byte[],System.Exception)">
+            <summary>
+            
+            </summary>
+            <param name="title">标题</param>
+            <param name="message">信息</param>
+            <param name="buffer">流数据</param>
+            <param name="ex">原始异常</param>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Model.JTTException.Buffer">
+            <summary>
+            流数据
+            </summary>
+        </member>
+        <member name="T:SuperSocket.JTTBase.Model.JTTVersion">
+            <summary>
+            协议版本
+            </summary>
+            <remarks> http://jtst.mot.gov.cn/search/std </remarks>
+        </member>
+        <member name="F:SuperSocket.JTTBase.Model.JTTVersion.JTT808">
+            <summary>
+            JTT808
+            </summary>
+            <remarks> https://github.com/SuperSocket/SuperSocket.JTT/blob/master/specs/JTT808-2019.PDF </remarks>
+        </member>
+        <member name="F:SuperSocket.JTTBase.Model.JTTVersion.JTT809">
+            <summary>
+            JTT809
+            </summary>
+            <remarks> https://github.com/SuperSocket/SuperSocket.JTT/blob/master/specs/JTT809-2019.PDF </remarks>
+        </member>
+        <member name="F:SuperSocket.JTTBase.Model.JTTVersion.JTT1078">
+            <summary>
+            JTT1078
+            </summary>
+            <remarks> https://github.com/SuperSocket/SuperSocket.JTT/blob/master/specs/JTT1078-2016.pdf </remarks>
+        </member>
+        <member name="F:SuperSocket.JTTBase.Model.JTTVersion.JTTCustom">
+            <summary>
+            自定义
+            </summary>
+        </member>
+        <member name="T:SuperSocket.JTTBase.Model.MatcheInfo">
+            <summary>
+            匹配项
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Model.MatcheInfo.Matching">
+            <summary>
+            匹配值
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Model.MatcheInfo.Value">
+            <summary>
+            替换值
+            </summary>
+        </member>
+        <member name="T:SuperSocket.JTTBase.Model.PaddingConfig">
+            <summary>
+            定长字符的补位配置
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Model.PaddingConfig.Encode">
+            <summary>
+            应该以何种方式编码Value值
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Model.PaddingConfig.Value">
+            <summary>
+            值
+            </summary>
+        </member>
+        <member name="T:SuperSocket.JTTBase.Model.StructureInfo">
+            <summary>
+            结构信息
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Model.StructureInfo.Id">
+            <summary>
+            标识
+            <para>用于排查错误</para>
+            <para>默认值 $"{Order}-{Property}-{Explain}"</para>
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Model.StructureInfo.IsHeader">
+            <summary>
+            是否为消息头
+            </summary>
+            <remarks>默认 false</remarks>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Model.StructureInfo.IsBody">
+            <summary>
+            是否为消息体
+            </summary>
+            <remarks>默认 false</remarks>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Model.StructureInfo.Order">
+            <summary>
+            排序值
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Model.StructureInfo.Property">
+            <summary>
+            属性名称
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Model.StructureInfo.IsNullable">
+            <summary>
+            是否可为空
+            </summary>
+            <remarks>值为空时将不使用该属性</remarks>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Model.StructureInfo.Explain">
+            <summary>
+            说明
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Model.StructureInfo.Length">
+            <summary>
+            长度
+            </summary>
+            <remarks>转义前的长度</remarks>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Model.StructureInfo.StructureType">
+            <summary>
+            结构类型
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Model.StructureInfo.Encode">
+            <summary>
+            数据的编码方式
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Model.StructureInfo.CompileFirst">
+            <summary>
+            先进行动态计算
+            </summary>
+            <remarks>
+            <para>默认 true</para>
+            <para>当同时配置了动态计算和数据映射时，决定先执行哪个操作</para>
+            <para>true 动态计算优先于数据映射</para>
+            <para>false 动态计算迟于数据映射</para>
+            </remarks>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Model.StructureInfo.Compile">
+            <summary>
+            动态计算
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Model.StructureInfo.DataMapping">
+            <summary>
+            数据映射
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Model.StructureInfo.InternalKey">
+            <summary>
+            内部结构的标识
+            <para>Internal的Key值</para>
+            <para>决定使用哪个内部结构</para>
+            <para>为null时默认取第一个</para>
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Model.StructureInfo.InternalLength">
+            <summary>
+            内部结构的长度信息集合
+            <para>Key对应Internal的Key值</para>
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Model.StructureInfo.Collection">
+            <summary>
+            数据集合
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Model.StructureInfo.Internal">
+            <summary>
+            内部结构集合
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Model.StructureInfo.Additional">
+            <summary>
+            附加信息
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Model.StructureInfo.FlagStruct">
+            <summary>
+            位标识数据对应的结构体数据
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Model.StructureInfo.NeedCompile">
+            <summary>
+            是否需要动态计算
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Model.StructureInfo.NeedDataMapping">
+            <summary>
+            是否需要数据映射
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Model.StructureInfo.NeedToFlagStruct">
+            <summary>
+            是否需要将位标识数组转为结构体数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:SuperSocket.JTTBase.Model.StructureInfo.IsCollection">
+            <summary>
+            是否为数据集合
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SuperSocket.JTTBase.Model.StructureType">
+            <summary>
+            结构类型
+            </summary>
+        </member>
+        <member name="F:SuperSocket.JTTBase.Model.StructureType.normal">
+            <summary>
+            普通
+            </summary>
+        </member>
+        <member name="F:SuperSocket.JTTBase.Model.StructureType.internal">
+            <summary>
+            内部结构
+            </summary>
+        </member>
+        <member name="F:SuperSocket.JTTBase.Model.StructureType.additional">
+            <summary>
+            附加信息
+            </summary>
+        </member>
+        <member name="F:SuperSocket.JTTBase.Model.StructureType.empty">
+            <summary>
+            空
+            </summary>
+            <remarks>不进行任何处理</remarks>
+        </member>
+    </members>
+</doc>

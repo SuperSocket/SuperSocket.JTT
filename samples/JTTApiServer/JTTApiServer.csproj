@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <UserSecretsId>1bf85f23-ec03-448d-b166-512310497b02</UserSecretsId>
+    <DockerDefaultTargetOS>Windows</DockerDefaultTargetOS>
+    <DockerfileContext>..\..</DockerfileContext>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Library.Configuration" Version="1.2.3-alpha" />
+    <PackageReference Include="Library.Container" Version="1.0.6-alpha" />
+    <PackageReference Include="Library.DataMapping" Version="1.0.10-alpha" />
+    <PackageReference Include="Library.Extension" Version="1.0.20-alpha" />
+    <PackageReference Include="Library.Log" Version="1.0.8-alpha" />
+    <PackageReference Include="Library.OpenApi" Version="1.0.8.5-alpha" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.10" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\nuget\SuperSocket.JTT.All\SuperSocket.JTT.All.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Model\" />
+  </ItemGroup>
+
+</Project>

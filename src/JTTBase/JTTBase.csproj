@@ -1,0 +1,60 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <RootNamespace>SuperSocket.JTTBase</RootNamespace>
+    <AssemblyName>SuperSocket.JTTBase</AssemblyName>
+    <Version>1.0.10-alpha</Version>
+    <Authors>SuperSocket.JTT</Authors>
+    <Company>SuperSocket.JTT</Company>
+    <Product>SuperSocket.JTT</Product>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Description>SuperSocket.JTT基础内容。</Description>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>SuperSocket.JTTBase.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>SuperSocket.JTTBase.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="jsonconfig\jtt-protocol-template.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="jsonconfig\jtt-protocol-template.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="jsonconfig\jtt-protocol-template.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Flee" Version="1.2.2" />
+    <PackageReference Include="Library.Configuration" Version="1.2.3-alpha" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="SuperSocket.ProtoBase" Version="2.0.0-beta7" />
+    <PackageReference Include="System.Memory" Version="4.5.4" />
+    <PackageReference Include="System.Text.Encoding.CodePages" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="SuperSocket.JTTBase.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties jsonconfig_4jtt-protocol-template_1json__JsonSchema="https://json.schemastore.org/appsettings" /></VisualStudio></ProjectExtensions>
+
+</Project>
