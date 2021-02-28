@@ -42,12 +42,6 @@
     <ProjectReference Include="..\..\JTTBase\JTTBase.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <None Update="SuperSocket.JTT809.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-
   <ProjectExtensions><VisualStudio><UserProperties jsonconfig_4jtt809-protocol_1json__JsonSchema="https://json.schemastore.org/appsettings" /></VisualStudio></ProjectExtensions>
 
 </Project>

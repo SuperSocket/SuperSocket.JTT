@@ -42,12 +42,6 @@
     <ProjectReference Include="..\..\JTTBase\JTTBase.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <None Update="SuperSocket.JTT1078.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-
   <ProjectExtensions><VisualStudio><UserProperties /></VisualStudio></ProjectExtensions>
 
 </Project>
