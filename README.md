@@ -14,7 +14,7 @@ SuperSocket's Protocol implementation for the GPS tracking standards of Ministry
 
 SuperSocket.JTT 是使用.NET语言开发的开源项目，用于搭建基于中华人民共和国交通部部标协议的TCP/UDP服务器。
 
-- **Project homepage**:		暂无
+- **Project homepage**:		  暂无
 - **Documentation**:		暂无
 - **License**: 				[https://www.apache.org/licenses/LICENSE-2.0](https://www.apache.org/licenses/LICENSE-2.0)
 
