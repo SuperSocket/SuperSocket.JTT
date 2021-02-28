@@ -1,0 +1,53 @@
+name: publish nuget packages
+
+on:
+  push:
+    tags:
+    - '*'
+      
+jobs:
+    build:
+    
+        runs-on: windows-latest
+        
+        steps:
+            - uses: actions/checkout@v1
+            
+            - name: Setup .NET Core
+              uses: actions/setup-dotnet@v1
+              with:
+                dotnet-version: 5.0.100
+                
+            - name: Set env
+              run: echo "DOTNET_CLI_TELEMETRY_OPTOUT=1" >> $GITHUB_ENV
+              
+            - name: Clean
+              run: |
+                dotnet clean SuperSocket.JTT.sln --configuration Release
+                dotnet nuget locals all --clear
+              
+            - uses: dotnet/nbgv@master
+              id: nbgv
+                
+            - name: BuildWithPack
+              run: dotnet build ./src/nuget/SuperSocket.JTT.All/SuperSocket.JTT.All.csproj -c Release -p:PackageVersion=${{ steps.nbgv.outputs.NuGetPackageVersion }}-alpha
+              
+            - name: Pack all-in-one-packages
+              run:  |
+                dotnet pack ./src/nuget/SuperSocket.JTT.All/SuperSocket.JTT.All.csproj -c Release --no-build -p:PackageVersion=${{ steps.nbgv.outputs.NuGetPackageVersion }}-alpha
+                
+            - name: Install Nuget
+              run: |
+                $sourceNugetExe = "https://dist.nuget.org/win-x86-commandline/latest/nuget.exe"
+                $targetNugetExe = "nuget.exe"
+                Invoke-WebRequest $sourceNugetExe -OutFile $targetNugetExe
+              shell: pwsh
+              
+            - name: Add public GitHub registry to NuGet
+              run: |
+                .\nuget sources add -name github -Source https://nuget.pkg.github.com/Lc3586/index.json -Username Lc3586 -Password ${{ secrets.GIT_TOKEN }}
+                
+            - name: Push generated package to GitHub registry
+              run: |
+                .\nuget push **/SuperSocket.JTT.*.nupkg -Source github -SkipDuplicate
+                .\nuget push **/SuperSocket.JTT.*.nupkg -Source https://api.nuget.org/v3/index.json -SkipDuplicate -ApiKey ${{ secrets.NUGETAPIKEYS_MICROSERVICE_LIBRARY }} -NoSymbols
