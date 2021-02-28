@@ -1,15 +1,13 @@
-﻿using System;
+﻿using Microservice.Library.Configuration;
+using SuperSocket.JTT.JTTBase.Filter;
+using SuperSocket.JTT.JTTBase.Hadnler;
+using SuperSocket.JTT.JTTBase.Interface;
+using SuperSocket.JTT.JTTBase.Model;
+using SuperSocket.ProtoBase;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using SuperSocket.JTTBase.Hadnler;
-using SuperSocket.JTTBase.Interface;
-using SuperSocket.JTTBase.Model;
-using Library.Configuration;
-using SuperSocket.JTTBase.Filter;
-using SuperSocket.ProtoBase;
 
-namespace SuperSocket.JTTBase.Extension
+namespace SuperSocket.JTT.JTTBase.Extension
 {
     /// <summary>
     /// JTT协议拓展方法

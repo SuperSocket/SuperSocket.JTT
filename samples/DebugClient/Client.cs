@@ -1,25 +1,22 @@
-﻿using System;
-using System.Threading.Tasks;
-using System.Linq;
-using Library.Container;
-using Library.ConsoleTool;
-using System.Text;
-using SuperSocket.JTT809;
-using System.Threading;
-using SuperSocket.JTTBase.Extension;
-using NLog;
-using SuperSocket.Client;
-using SuperSocket.ProtoBase;
-using System.Net;
-using SuperSocket.JTT809.MessageBody;
-using Library.Extension;
-using Extension = Library.ConsoleTool.Extension;
-using SuperSocket.JTTBase.Interface;
+﻿using DebugClient.Log;
 using DebugClient.MessageBody;
+using Microservice.Library.ConsoleTool;
+using Microservice.Library.Container;
+using Microservice.Library.Extension;
+using SuperSocket.Client;
+using SuperSocket.JTT.JTT809;
+using SuperSocket.JTT.JTT809.MessageBody;
+using SuperSocket.JTT.JTTBase.Extension;
+using SuperSocket.JTT.JTTBase.Interface;
+using SuperSocket.ProtoBase;
+using System;
 using System.Buffers;
+using System.Linq;
+using System.Net;
 using System.Reflection;
-using SuperSocket.JTT1078.MessageBody.Internal;
-using SuperSocket.JTT1078.MessageBody;
+using System.Threading;
+using System.Threading.Tasks;
+using Extension = Microservice.Library.ConsoleTool.Extension;
 
 namespace DebugClient
 {
@@ -81,28 +78,29 @@ namespace DebugClient
 
                 if (connected)
                 {
-                    LoggerHelper.Log(
-                        Microsoft.Extensions.Logging.LogLevel.Information,
-                        Library.Models.LogType.系统跟踪,
+                    Logger.Log(
+                        NLog.LogLevel.Trace,
+                        LogType.系统跟踪,
                         $"已连接服务器, " +
                         $"\r\t\nServer: {Config.ServerHost}:{Config.ServerPort}.");
 
                     StartReceive();
                 }
                 else
-                    LoggerHelper.Log(
-                        Microsoft.Extensions.Logging.LogLevel.Information,
-                        Library.Models.LogType.系统跟踪,
+                    Logger.Log(
+                        NLog.LogLevel.Trace,
+                        LogType.系统跟踪,
                         $"连接服务器失败, " +
                         $"\r\t\nServer: {Config.ServerHost}:{Config.ServerPort}.");
             }
             catch (Exception ex)
             {
-                LoggerHelper.Log(
-                    Microsoft.Extensions.Logging.LogLevel.Error,
-                    Library.Models.LogType.系统异常,
+                Logger.Log(
+                    NLog.LogLevel.Error,
+                    LogType.系统异常,
                     $"连接服务器时发生错误, " +
                     $"\r\t\nServer: {Config.ServerHost}:{Config.ServerPort}.",
+                    null,
                     ex);
             }
         }
@@ -112,9 +110,9 @@ namespace DebugClient
         /// </summary>
         public void StartReceive()
         {
-            LoggerHelper.Log(
-                Microsoft.Extensions.Logging.LogLevel.Information,
-                Library.Models.LogType.系统跟踪,
+            Logger.Log(
+                NLog.LogLevel.Trace,
+                LogType.系统跟踪,
                 $"开始接收服务器消息, " +
                 $"\r\t\nServer: {Config.ServerHost}:{Config.ServerPort}.");
 
@@ -138,9 +136,9 @@ namespace DebugClient
         void Closed(object? sender, EventArgs e)
 #pragma warning restore CS8632 // 只能在 "#nullable" 注释上下文内的代码中使用可为 null 的引用类型的注释。
         {
-            LoggerHelper.Log(
-                Microsoft.Extensions.Logging.LogLevel.Information,
-                Library.Models.LogType.系统跟踪,
+            Logger.Log(
+                NLog.LogLevel.Trace,
+                LogType.系统跟踪,
                 $"连接已关闭, " +
                 $"\r\t\nServer: {Config.ServerHost}:{Config.ServerPort}.");
         }
@@ -188,9 +186,9 @@ namespace DebugClient
 
             try
             {
-                LoggerHelper.Log(
-                    Microsoft.Extensions.Logging.LogLevel.Information,
-                    Library.Models.LogType.系统跟踪,
+                Logger.Log(
+                    NLog.LogLevel.Trace,
+                    LogType.系统跟踪,
                     $"发送登录信息, " +
                     $"\r\t\nServer: {Config.ServerHost}:{Config.ServerPort}.");
 
@@ -198,11 +196,12 @@ namespace DebugClient
             }
             catch (Exception ex)
             {
-                LoggerHelper.Log(
-                    Microsoft.Extensions.Logging.LogLevel.Error,
-                    Library.Models.LogType.系统异常,
+                Logger.Log(
+                    NLog.LogLevel.Error,
+                    LogType.系统异常,
                     $"发送登录信息时异常, " +
                     $"\r\t\nServer: {Config.ServerHost}:{Config.ServerPort}.",
+                    null,
                     ex);
             }
         }
@@ -220,9 +219,9 @@ namespace DebugClient
 
             try
             {
-                LoggerHelper.Log(
-                    Microsoft.Extensions.Logging.LogLevel.Information,
-                    Library.Models.LogType.系统跟踪,
+                Logger.Log(
+                    NLog.LogLevel.Trace,
+                    LogType.系统跟踪,
                     $"发送获取转发终端清单请求消息, " +
                     $"\r\t\nServer: {Config.ServerHost}:{Config.ServerPort}.");
 
@@ -230,11 +229,12 @@ namespace DebugClient
             }
             catch (Exception ex)
             {
-                LoggerHelper.Log(
-                    Microsoft.Extensions.Logging.LogLevel.Error,
-                    Library.Models.LogType.系统异常,
+                Logger.Log(
+                    NLog.LogLevel.Error,
+                    LogType.系统异常,
                     $"发送获取转发终端清单请求消息时异常, " +
                     $"\r\t\nServer: {Config.ServerHost}:{Config.ServerPort}.",
+                    null,
                     ex);
             }
         }
@@ -253,9 +253,9 @@ namespace DebugClient
 
             try
             {
-                LoggerHelper.Log(
-                    Microsoft.Extensions.Logging.LogLevel.Information,
-                    Library.Models.LogType.系统跟踪,
+                Logger.Log(
+                    NLog.LogLevel.Trace,
+                    LogType.系统跟踪,
                     $"发送开始转发信息, " +
                     $"\r\t\nServer: {Config.ServerHost}:{Config.ServerPort}.");
 
@@ -263,11 +263,12 @@ namespace DebugClient
             }
             catch (Exception ex)
             {
-                LoggerHelper.Log(
-                    Microsoft.Extensions.Logging.LogLevel.Error,
-                    Library.Models.LogType.系统异常,
+                Logger.Log(
+                    NLog.LogLevel.Error,
+                    LogType.系统异常,
                     $"发送开始转发信息时异常, " +
                     $"\r\t\nServer: {Config.ServerHost}:{Config.ServerPort}.",
+                    null,
                     ex);
             }
         }
@@ -285,9 +286,9 @@ namespace DebugClient
 
             try
             {
-                LoggerHelper.Log(
-                    Microsoft.Extensions.Logging.LogLevel.Information,
-                    Library.Models.LogType.系统跟踪,
+                Logger.Log(
+                    NLog.LogLevel.Trace,
+                    LogType.系统跟踪,
                     $"发送测试转发请求消息, " +
                     $"\r\t\nServer: {Config.ServerHost}:{Config.ServerPort}.");
 
@@ -295,11 +296,12 @@ namespace DebugClient
             }
             catch (Exception ex)
             {
-                LoggerHelper.Log(
-                    Microsoft.Extensions.Logging.LogLevel.Error,
-                    Library.Models.LogType.系统异常,
+                Logger.Log(
+                    NLog.LogLevel.Error,
+                    LogType.系统异常,
                     $"发送测试转发请求消息时异常, " +
                     $"\r\t\nServer: {Config.ServerHost}:{Config.ServerPort}.",
+                    null,
                     ex);
             }
         }
@@ -317,9 +319,9 @@ namespace DebugClient
 
             try
             {
-                LoggerHelper.Log(
-                    Microsoft.Extensions.Logging.LogLevel.Information,
-                    Library.Models.LogType.系统跟踪,
+                Logger.Log(
+                    NLog.LogLevel.Trace,
+                    LogType.系统跟踪,
                     $"发送取消转发信息, " +
                     $"\r\t\nServer: {Config.ServerHost}:{Config.ServerPort}.");
 
@@ -327,11 +329,12 @@ namespace DebugClient
             }
             catch (Exception ex)
             {
-                LoggerHelper.Log(
-                    Microsoft.Extensions.Logging.LogLevel.Error,
-                    Library.Models.LogType.系统异常,
+                Logger.Log(
+                    NLog.LogLevel.Error,
+                    LogType.系统异常,
                     $"发送取消转发信息时异常, " +
                     $"\r\t\nServer: {Config.ServerHost}:{Config.ServerPort}.",
+                    null,
                     ex);
             }
         }
@@ -360,7 +363,7 @@ namespace DebugClient
 
                 //return;
 
-                var options = typeof(SuperSocket.JTT1078.Const.DataType).GetFields()
+                var options = typeof(SuperSocket.JTT.JTT1078.Const.DataType).GetFields()
                 .ToDictionary(k => k.Name, v => $"0x{v.GetValue(null):x2}");
 
                 options.ForEach(o => o.Value.ConsoleWrite(ConsoleColor.White, o.Key, true, 1));
@@ -387,7 +390,7 @@ namespace DebugClient
                             string value_;
                             if (o.Property == "DataType")
                             {
-                                var suboptions = typeof(SuperSocket.JTT1078.Const.SubDataType).GetFields()
+                                var suboptions = typeof(SuperSocket.JTT.JTT1078.Const.SubDataType).GetFields()
                                     .ToDictionary(k => k.Name, v => $"0x{v.GetValue(null):x2}");
 
                                 suboptions.ForEach(o => o.Value.ConsoleWrite(ConsoleColor.White, o.Key, true, 1));
@@ -441,9 +444,9 @@ namespace DebugClient
                         obj.SetValueToProperty(o.Property.Split('.'), value);
                     });
 
-                LoggerHelper.Log(
-                  Microsoft.Extensions.Logging.LogLevel.Information,
-                  Library.Models.LogType.系统跟踪,
+                Logger.Log(
+                  NLog.LogLevel.Trace,
+                  LogType.系统跟踪,
                   $"发送JTT1078消息, " +
                   $"\r\t\nServer: {Config.ServerHost}:{Config.ServerPort} " +
                   $"\r\t\n业务类型: {datatype} " +
@@ -453,11 +456,12 @@ namespace DebugClient
             }
             catch (Exception ex)
             {
-                LoggerHelper.Log(
-                    Microsoft.Extensions.Logging.LogLevel.Error,
-                    Library.Models.LogType.系统异常,
+                Logger.Log(
+                    NLog.LogLevel.Error,
+                    LogType.系统异常,
                     $"发送JTT1078消息时异常, " +
                     $"\r\t\nServer: {Config.ServerHost}:{Config.ServerPort}.",
+                    null,
                     ex);
             }
         }
@@ -477,9 +481,9 @@ namespace DebugClient
                 {
                     case MsgID.LoginReply:
                         var body_LoginReply = jtt809PackageInfo.MessageBody as LoginReplyBody;
-                        LoggerHelper.Log(
-                            Microsoft.Extensions.Logging.LogLevel.Information,
-                            Library.Models.LogType.系统跟踪,
+                        Logger.Log(
+                            NLog.LogLevel.Trace,
+                            LogType.系统跟踪,
                             $"接收[主链路登录应答信息], " +
                             $"\r\n\tServer: {Config.ServerHost}:{Config.ServerPort}, " +
                             $"\r\n\tResult: {body_LoginReply.Result}, " +
@@ -488,9 +492,9 @@ namespace DebugClient
                         break;
                     case MsgID.GetForwardEndpointReply:
                         var body_GetForwardEndpointReply = jtt809PackageInfo.MessageBody as GetForwardEndpointReplyBody;
-                        LoggerHelper.Log(
-                            Microsoft.Extensions.Logging.LogLevel.Information,
-                            Library.Models.LogType.系统跟踪,
+                        Logger.Log(
+                            NLog.LogLevel.Trace,
+                            LogType.系统跟踪,
                             $"接收[获取转发终端清单请求应答消息], " +
                             $"\r\n\tServer: {Config.ServerHost}:{Config.ServerPort}, " +
                             $"\r\n\tTotal: {body_GetForwardEndpointReply.Total}, " +
@@ -498,9 +502,9 @@ namespace DebugClient
                         break;
                     case MsgID.ForwardReply:
                         var body_ForwardReply = jtt809PackageInfo.MessageBody as ForwardReplyBody;
-                        LoggerHelper.Log(
-                            Microsoft.Extensions.Logging.LogLevel.Information,
-                            Library.Models.LogType.系统跟踪,
+                        Logger.Log(
+                            NLog.LogLevel.Trace,
+                            LogType.系统跟踪,
                             $"接收[开始转发应答信息], " +
                             $"\r\n\tServer: {Config.ServerHost}:{Config.ServerPort}, " +
                             $"\r\n\tResult: {body_ForwardReply.Result}, " +
@@ -508,9 +512,9 @@ namespace DebugClient
                         break;
                     case MsgID.CancelForwardReply:
                         var body_CancelForwardReply = jtt809PackageInfo.MessageBody as CancelForwardReplyBody;
-                        LoggerHelper.Log(
-                            Microsoft.Extensions.Logging.LogLevel.Information,
-                            Library.Models.LogType.系统跟踪,
+                        Logger.Log(
+                            NLog.LogLevel.Trace,
+                            LogType.系统跟踪,
                             $"接收[取消转发应答信息], " +
                             $"\r\n\tServer: {Config.ServerHost}:{Config.ServerPort}, " +
                             $"\r\n\tResult: {body_CancelForwardReply.Result}, " +
@@ -518,21 +522,21 @@ namespace DebugClient
                         break;
                     case MsgID.ForwardErrorBody:
                         var body_ForwardError = jtt809PackageInfo.MessageBody as ForwardErrorBody;
-                        LoggerHelper.Log(
-                            Microsoft.Extensions.Logging.LogLevel.Information,
-                            Library.Models.LogType.系统跟踪,
+                        Logger.Log(
+                            NLog.LogLevel.Trace,
+                            LogType.系统跟踪,
                             $"接收[转发异常消息], " +
                             $"\r\n\tServer: {Config.ServerHost}:{Config.ServerPort}, " +
                             $"\r\n\tReason: {body_ForwardError.Reason}, " +
                             $"\r\n\tReason_Mapping: {body_ForwardError.Reason_Mapping}.");
                         break;
                     default:
-                        LoggerHelper.Log(
-                            Microsoft.Extensions.Logging.LogLevel.Information,
-                            Library.Models.LogType.系统跟踪,
+                        Logger.Log(
+                            NLog.LogLevel.Trace,
+                            LogType.系统跟踪,
                             $"接收[其他信息], " +
                             $"\r\n\tServer: {Config.ServerHost}:{Config.ServerPort}, " +
-                            $"\r\n\tMsg_ID: {Protocol.JTT809Handler.Decode(Protocol.JTT809Handler.Encode(jtt809PackageInfo.JTT809MessageHeader.Msg_ID, new SuperSocket.JTTBase.Model.CodeInfo { CodeType = SuperSocket.JTTBase.Model.CodeType.uint16_hex }), new SuperSocket.JTTBase.Model.CodeInfo { CodeType = SuperSocket.JTTBase.Model.CodeType.string_hex })}, " +
+                            $"\r\n\tMsg_ID: {Protocol.JTT809Handler.Decode(Protocol.JTT809Handler.Encode(jtt809PackageInfo.JTT809MessageHeader.Msg_ID, new SuperSocket.JTT.JTTBase.Model.CodeInfo { CodeType = SuperSocket.JTT.JTTBase.Model.CodeType.uint16_hex }), new SuperSocket.JTT.JTTBase.Model.CodeInfo { CodeType = SuperSocket.JTT.JTTBase.Model.CodeType.string_hex })}, " +
                             $"\r\n\tbuffer: {string.Join('\t', jtt809PackageInfo.Buffer.ToArray().Select(o => o.To0XString()))}.");
                         break;
                 }
@@ -541,12 +545,13 @@ namespace DebugClient
             }
             catch (Exception ex)
             {
-                LoggerHelper.Log(
-                    Microsoft.Extensions.Logging.LogLevel.Error,
-                    Library.Models.LogType.系统异常,
+                Logger.Log(
+                    NLog.LogLevel.Error,
+                    LogType.系统异常,
                     $"处理消息包时异常, " +
                     $"\r\n\tServer: {Config.ServerHost}:{Config.ServerPort}, " +
                     $"\r\n\tbuffer: {string.Join('\t', packageInfo.Buffer.ToArray().Select(o => o.To0XString()))}.",
+                    null,
                     ex);
 
                 await Task.FromResult(false);

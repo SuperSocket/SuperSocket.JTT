@@ -116,7 +116,7 @@
         <member name="P:SuperSocket.JTT.Model.JTTProtocolOptions.JTTCustomAssemblyName">
             <summary>
             <para>使用自定义JTT协议时，必须手动指定以下文件所在的命名空间</para>
-            <para><see cref="T:SuperSocket.JTTBase.Interface.IJTTProtocol"/></para>
+            <para><see cref="T:SuperSocket.JTT.JTTBase.Interface.IJTTProtocol"/></para>
             </summary>
         </member>
         <member name="P:SuperSocket.JTT.Model.JTTProtocolOptions.ConfigFilePath">
@@ -212,7 +212,7 @@
             配置服务
             </summary>
             <remarks>
-            <para><see cref="T:SuperSocket.JTTBase.Interface.IJTTProtocol"/>已注册为单例</para>
+            <para><see cref="T:SuperSocket.JTT.JTTBase.Interface.IJTTProtocol"/>已注册为单例</para>
             </remarks>
         </member>
         <member name="P:SuperSocket.JTT.Model.JTTServerOptions.ConfigureAppConfiguration">

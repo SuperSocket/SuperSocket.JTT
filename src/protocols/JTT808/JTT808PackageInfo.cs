@@ -1,11 +1,11 @@
-﻿using SuperSocket.JTTBase.Interface;
-using SuperSocket.JTTBase.Model;
+﻿using SuperSocket.JTT.JTTBase.Interface;
+using SuperSocket.JTT.JTTBase.Model;
 using System;
 using System.Buffers;
 using System.Collections.Generic;
 using System.Text;
 
-namespace SuperSocket.JTT808
+namespace SuperSocket.JTT.JTT808
 {
     public class JTT808PackageInfo : IJTTPackageInfo
     {

@@ -1,17 +1,13 @@
-﻿using JTTServer.MessageBody;
-using Library.Extension;
-using Library.Log;
-using Library.Models;
-using Microsoft.Extensions.Logging;
+﻿using JTTServer.Log;
+using JTTServer.MessageBody;
+using Microservice.Library.Extension;
 using SuperSocket;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
-using System.Text;
 using System.Threading.Tasks;
-using LogLevel = Microsoft.Extensions.Logging.LogLevel;
 
 namespace JTTServer
 {
@@ -60,7 +56,10 @@ namespace JTTServer
             ClientWithSessionsID = new ConcurrentDictionary<EndPoint, string>();
             SessionsIDWithTarget = new ConcurrentDictionary<string, EndPoint>();
             Run();
-            LoggerHelper.Log(LogLevel.Debug, LogType.系统跟踪, "转发中间件已启动");
+            Logger.Log(
+                 NLog.LogLevel.Trace,
+                 LogType.系统跟踪,
+                 "转发中间件已启动");
         }
 
         /// <summary>
@@ -72,7 +71,10 @@ namespace JTTServer
             if (TCS == null)
                 TCS = new TaskCompletionSource<bool>();
             TCS?.SetResult(false);
-            LoggerHelper.Log(LogLevel.Debug, LogType.系统跟踪, "转发中间件已关闭");
+            Logger.Log(
+                 NLog.LogLevel.Trace,
+                 LogType.系统跟踪,
+                 "转发中间件已关闭");
         }
 
         /// <summary>
@@ -176,13 +178,14 @@ namespace JTTServer
                 }
                 catch (Exception ex)
                 {
-                    LoggerHelper.Log(
-                        LogLevel.Error,
+                    Logger.Log(
+                        NLog.LogLevel.Error,
                         LogType.系统异常,
                         $"新增转发会话时异常, " +
                         $"\r\n\tSessionID: {session.SessionID}, " +
                         $"\r\n\tip: {ip}, " +
                         $"\r\n\tport: {port}.",
+                        null,
                         ex);
 
                     await session.SendAsync(new ForwardReplyBody
@@ -263,10 +266,11 @@ namespace JTTServer
                 }
                 catch (Exception ex)
                 {
-                    LoggerHelper.Log(
-                        LogLevel.Error,
+                    Logger.Log(
+                        NLog.LogLevel.Error,
                         LogType.系统异常,
                         "处理转发时异常.",
+                        null,
                         ex);
                 }
             }
@@ -280,8 +284,8 @@ namespace JTTServer
             var Queue = BufferQueue;
             var Count = Queue.Count;
 
-            await LoggerHelper.LogAsync(
-                LogLevel.Debug,
+            Logger.Log(
+                NLog.LogLevel.Trace,
                 LogType.系统跟踪,
                 $"转发中间件正在转发, 总量: {Count}.");
 
@@ -313,13 +317,14 @@ namespace JTTServer
                 {
                     await item.sessionID.SendAsync(new ForwardErrorBody { Reason = ForwardErrorReason.系统繁忙 });
 
-                    await LoggerHelper.LogAsync(
-                        LogLevel.Error,
+                    Logger.Log(
+                        NLog.LogLevel.Error,
                         LogType.系统异常,
                         $"处理转发时异常, " +
                         $"\r\n\tsessionID: {item.sessionID}, " +
                         $"\r\n\tEndPoint: {item.endPoint}, " +
                         $"\r\n\tBuffer: {item.buffer.To0XString()}.",
+                        null,
                         ex);
                 }
             }

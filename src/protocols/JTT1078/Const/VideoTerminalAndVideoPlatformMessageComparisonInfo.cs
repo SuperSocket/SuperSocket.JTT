@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SuperSocket.JTT1078.Const
+namespace SuperSocket.JTT.JTT1078.Const
 {
     /// <summary>
     /// 视频终端与视频平台间消息对照信表

@@ -1,9 +1,8 @@
-﻿using Library.Configuration.Annotations;
-using Library.Models;
-using SuperSocket.JTTBase.Model;
+﻿using JTTServer.Log;
+using Microservice.Library.Configuration.Annotations;
+using SuperSocket.JTT.JTTBase.Model;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace JTTServer.Config
 {
@@ -18,9 +17,24 @@ namespace JTTServer.Config
         public string ProjectName { get; set; }
 
         /// <summary>
+        /// 日志组件名称
+        /// </summary>
+        public string LoggerName { get; set; } = "SystemLog";
+
+        /// <summary>
         /// 日志存储类型
         /// </summary>
         public LoggerType LoggerType { get; set; }
+
+        /// <summary>
+        /// 日志组件布局
+        /// </summary>
+        public string LoggerLayout { get; set; }
+
+        /// <summary>
+        /// 需要记录的日志的最低等级
+        /// </summary>
+        public int MinLogLevel { get; set; }
 
         /// <summary>
         /// 接入码

@@ -1,9 +1,9 @@
-﻿using SuperSocket.JTTBase.Annotations;
+﻿using SuperSocket.JTT.JTTBase.Annotations;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace SuperSocket.JTT1078.Flag
+namespace SuperSocket.JTT.JTT1078.Flag
 {
     /// <summary>
     /// 视频报警标志位定义

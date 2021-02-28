@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SuperSocket.JTT1078.Const
+namespace SuperSocket.JTT.JTT1078.Const
 {
     /// <summary>
     /// 子业务类型
@@ -33,7 +33,7 @@ namespace SuperSocket.JTT1078.Const
         /// </summary>
         /// <remarks>
         /// <para>0x9702</para>
-        /// <para>从链路时效口令业务类消息 <see cref="DataType.DOWN_BASE_DATA_MSG"/></para>
+        /// <para>从链路时效口令业务类消息 DataType.DOWN_BASE_DATA_MSG/></para>
         /// <para>（上面的业务数据类型是文档中所指定的类型，可能是错的，正确的应该是 <see cref="DataType.DOWN_AUTHORIZE_MSG"/>）</para>
         /// </remarks>
         public const UInt16 DOWN_AUTHORIZE_MSG_STARTUP_REQ_ACK = 0x9702;

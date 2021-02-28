@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SuperSocket.JTTBase.Model
+namespace SuperSocket.JTT.JTTBase.Model
 {
     /// <summary>
     /// 数据映射配置
@@ -12,7 +12,7 @@ namespace SuperSocket.JTTBase.Model
         /// <summary>
         /// 映射标识
         /// </summary>
-        /// <remarks>对应<see cref="SuperSocket.JTTBase.Interface.IJTTProtocol.DataMappings"/>的Key</remarks>
+        /// <remarks>对应<see cref="SuperSocket.JTT.JTTBase.Interface.IJTTProtocol.DataMappings"/>的Key</remarks>
         public string Key { get; set; }
 
         /// <summary>

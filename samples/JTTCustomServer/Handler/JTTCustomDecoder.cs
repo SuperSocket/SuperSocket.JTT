@@ -1,7 +1,7 @@
 ﻿using JTTCustomServer.Model;
-using SuperSocket.JTTBase.Hadnler;
-using SuperSocket.JTTBase.Interface;
-using SuperSocket.JTTBase.Model;
+using SuperSocket.JTT.JTTBase.Hadnler;
+using SuperSocket.JTT.JTTBase.Interface;
+using SuperSocket.JTT.JTTBase.Model;
 using System;
 
 namespace JTTCustomServer.Handler
@@ -47,7 +47,9 @@ namespace JTTCustomServer.Handler
         /// <summary>
         /// JTT协议
         /// </summary>
+#pragma warning disable IDE0052 // 删除未读的私有成员
         readonly JTTCustomProtocol jttCustomprotocol;
+#pragma warning restore IDE0052 // 删除未读的私有成员
 
         #endregion
     }

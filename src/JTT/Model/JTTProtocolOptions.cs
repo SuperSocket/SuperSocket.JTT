@@ -1,6 +1,6 @@
-﻿using SuperSocket.JTTBase.Filter;
-using SuperSocket.JTTBase.Interface;
-using SuperSocket.JTTBase.Model;
+﻿using SuperSocket.JTT.JTTBase.Filter;
+using SuperSocket.JTT.JTTBase.Interface;
+using SuperSocket.JTT.JTTBase.Model;
 using SuperSocket.ProtoBase;
 using System;
 using System.Collections.Generic;

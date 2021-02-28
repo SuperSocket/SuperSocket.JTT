@@ -1,9 +1,9 @@
-﻿using SuperSocket.JTTBase.Annotations;
+﻿using SuperSocket.JTT.JTTBase.Annotations;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace SuperSocket.JTT808.Flag
+namespace SuperSocket.JTT.JTT808.Flag
 {
     /// <summary>
     /// 状态位定义

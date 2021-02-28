@@ -36,8 +36,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Library.Container" Version="1.0.6-alpha" />
-    <PackageReference Include="Library.Log" Version="1.0.8-alpha" />
+    <PackageReference Include="Microservice.Library.ConsoleTool" Version="0.0.0-g266fcfe23f-alpha" />
+    <PackageReference Include="Microservice.Library.Container" Version="0.0.0-g266fcfe23f-alpha" />
+    <PackageReference Include="Microservice.Library.NLogger" Version="0.0.0-g266fcfe23f-alpha" />
   </ItemGroup>
 
   <ItemGroup>

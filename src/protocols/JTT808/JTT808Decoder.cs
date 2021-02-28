@@ -1,10 +1,10 @@
 ﻿using Flee.PublicTypes;
-using SuperSocket.JTT808.Const;
-using SuperSocket.JTT808.Internal;
-using SuperSocket.JTTBase.Extension;
-using SuperSocket.JTTBase.Hadnler;
-using SuperSocket.JTTBase.Interface;
-using SuperSocket.JTTBase.Model;
+using SuperSocket.JTT.JTT808.Const;
+using SuperSocket.JTT.JTT808.Internal;
+using SuperSocket.JTT.JTTBase.Extension;
+using SuperSocket.JTT.JTTBase.Hadnler;
+using SuperSocket.JTT.JTTBase.Interface;
+using SuperSocket.JTT.JTTBase.Model;
 using System;
 using System.Buffers;
 using System.Collections;
@@ -16,7 +16,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading;
 
-namespace SuperSocket.JTT808
+namespace SuperSocket.JTT.JTT808
 {
     public class JTT808Decoder : JTTDecoder
     {
@@ -32,7 +32,7 @@ namespace SuperSocket.JTT808
 
         #region 公共方法
 
-        public virtual void Analysis(IJTTPackageInfo packageInfo, ReadOnlySpan<byte> bytes, ref int offset)
+        public override void Analysis(IJTTPackageInfo packageInfo, ReadOnlySpan<byte> bytes, ref int offset)
         {
             foreach (var structure in protocol.Structures)
             {

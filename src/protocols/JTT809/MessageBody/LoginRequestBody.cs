@@ -1,9 +1,9 @@
-﻿using SuperSocket.JTTBase.Interface;
+﻿using SuperSocket.JTT.JTTBase.Interface;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace SuperSocket.JTT809.MessageBody
+namespace SuperSocket.JTT.JTT809.MessageBody
 {
     /// <summary>
     /// 主链路登录请求消息数据体

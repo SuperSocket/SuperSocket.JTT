@@ -2,7 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using SuperSocket.Channel;
-using SuperSocket.JTTBase.Interface;
+using SuperSocket.JTT.JTTBase.Interface;
 using System;
 using System.Collections.Generic;
 using System.Text;

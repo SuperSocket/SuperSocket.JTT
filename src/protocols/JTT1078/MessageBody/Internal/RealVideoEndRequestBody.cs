@@ -1,9 +1,9 @@
-﻿using SuperSocket.JTTBase.Interface;
+﻿using SuperSocket.JTT.JTTBase.Interface;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace SuperSocket.JTT1078.MessageBody.Internal
+namespace SuperSocket.JTT.JTT1078.MessageBody.Internal
 {
     /// <summary>
     /// 主动请求停止实时音视频传输消息数据体

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SuperSocket.JTTBase.Annotations
+namespace SuperSocket.JTT.JTTBase.Annotations
 {
     /// <summary>
     /// 位标识序号

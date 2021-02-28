@@ -73,7 +73,17 @@
             <para>包括头标识、数据头、数据体和尾标识</para>
             </remarks>
         </member>
-        <!-- Badly formed XML comment ignored for member "P:SuperSocket.JTT809.JTT809MessageHeader.Msg_SN" -->
+        <member name="P:SuperSocket.JTT809.JTT809MessageHeader.Msg_SN">
+            <summary>
+            报文序列号
+            </summary>
+            <remarks>
+            <para>4字节</para>
+            <para>为发送信息的序列号，用于接收方检测是否有信息的丢失。</para>
+            <para>上级平台和下级平台按自己发送数据包的个数计数，互不影响。</para>
+            <para>程序开始运行时等于零，发送第一帧数据时开始计数，到最大数后自动归零</para>
+            </remarks>
+        </member>
         <member name="P:SuperSocket.JTT809.JTT809MessageHeader.Msg_ID">
             <summary>
             协议号/业务数据类型

@@ -6,7 +6,7 @@
     <RootNamespace>SuperSocket.JTT</RootNamespace>
     <Version>1.0.7-alpha</Version>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/SuperSocket/SuperSocket.JTT</PackageProjectUrl>
     <Authors>SuperSocket.JTT</Authors>
@@ -31,8 +31,8 @@
     <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.1" />
     <PackageReference Include="Microsoft.Extensions.Options" Version="5.0.0" />
-    <PackageReference Include="SuperSocket" Version="2.0.0-beta7" />
-    <PackageReference Include="SuperSocket.Udp" Version="2.0.0-beta7" />
+    <PackageReference Include="SuperSocket" Version="2.0.0-beta.8" />
+    <PackageReference Include="SuperSocket.Udp" Version="2.0.0-beta.8" />
   </ItemGroup>
 
   <ItemGroup>

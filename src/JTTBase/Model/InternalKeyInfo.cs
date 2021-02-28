@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SuperSocket.JTTBase.Model
+namespace SuperSocket.JTT.JTTBase.Model
 {
     /// <summary>
     /// 内部结构的Key所属的属性信息
     /// </summary>
     /// <remarks>
     /// <para>消息包解码时 执行方法为对<see cref="Property"/>属性值先使用<see cref="Encode"/>配置编码, 再使用<see cref="Decode"/>配置解码</para>
-    /// <para>消息包编码时 执行方法为对<see cref="SuperSocket.JTTBase.Interface.IJTTProtocol.InternalEntitysMappings"/>的Key先使用<see cref="Decode"/>配置编码, 再使用<see cref="Encode"/>配置解码</para>
+    /// <para>消息包编码时 执行方法为对<see cref="SuperSocket.JTT.JTTBase.Interface.IJTTProtocol.InternalEntitysMappings"/>的Key先使用<see cref="Decode"/>配置编码, 再使用<see cref="Encode"/>配置解码</para>
     /// </remarks>
     public class InternalKeyInfo
     {

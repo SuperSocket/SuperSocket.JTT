@@ -2,24 +2,26 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
-    <AssemblyName>SuperSocket.JTT1078</AssemblyName>
+    <AssemblyName>SuperSocket.JTT.JTT1078</AssemblyName>
     <RootNamespace>SuperSocket.JTT1078</RootNamespace>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/SuperSocket/SuperSocket.JTT</PackageProjectUrl>
-    <Authors>SuperSocket.JTT</Authors>
-    <Company>SuperSocket.JTT</Company>
+    <Authors>SuperSocket</Authors>
+    <Company>SuperSocket</Company>
     <Product>SuperSocket.JTT</Product>
-    <Version>1.0.2-alpha</Version>
+    <Version>0.0.0.1-alpha</Version>
+    <PackageId>SuperSocket.JTT.JTT1078</PackageId>
+    <Description>JTT-1078协议扩展包。</Description>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>SuperSocket.JTT1078.xml</DocumentationFile>
+    <DocumentationFile>SuperSocket.JTT.JTT1078.xml</DocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>SuperSocket.JTT1078.xml</DocumentationFile>
+    <DocumentationFile>SuperSocket.JTT.JTT1078.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

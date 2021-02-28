@@ -2,27 +2,27 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
-    <AssemblyName>SuperSocket.JTT808</AssemblyName>
-    <RootNamespace>SuperSocket.JTT808</RootNamespace>
-    <Description>SuperSocket.JTT扩展协议。
-JTT808 道路运输车辆卫星定位系统 平台数据交换协议。</Description>
+    <AssemblyName>SuperSocket.JTT.JTT808</AssemblyName>
+    <RootNamespace>SuperSocket.JTT.JTT808</RootNamespace>
+    <Description>JTT-808协议扩展包。</Description>
     <Version>1.0.1-alpha</Version>
-    <Authors>SuperSocket.JTT</Authors>
-    <Company>SuperSocket.JTT</Company>
+    <Authors>SuperSocket</Authors>
+    <Company>SuperSocket</Company>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/SuperSocket/SuperSocket.JTT</PackageProjectUrl>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Product>SuperSocket.JTT</Product>
+    <PackageId>SuperSocket.JTT.JTT808</PackageId>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <WarningLevel>5</WarningLevel>
-    <DocumentationFile>SuperSocket.JTT808.xml</DocumentationFile>
+    <DocumentationFile>SuperSocket.JTT.JTT808.xml</DocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>SuperSocket.JTT808.xml</DocumentationFile>
+    <DocumentationFile>SuperSocket.JTT.JTT808.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

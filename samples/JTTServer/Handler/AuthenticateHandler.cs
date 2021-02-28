@@ -1,9 +1,10 @@
 ﻿using JTTServer.Config;
-using Library.Container;
+using JTTServer.Log;
+using Microservice.Library.Container;
 using Microsoft.Extensions.DependencyInjection;
 using SuperSocket;
-using SuperSocket.JTT809.Const;
-using SuperSocket.JTT809.MessageBody;
+using SuperSocket.JTT.JTT809.Const;
+using SuperSocket.JTT.JTT809.MessageBody;
 using System;
 using System.Collections.Concurrent;
 using System.Linq;
@@ -70,9 +71,9 @@ namespace JTTServer
                (userID, gnsscenterID),
                (key, oldValue) => oldValue = (userID, gnsscenterID));
 
-            LoggerHelper.Log(
-                Microsoft.Extensions.Logging.LogLevel.Information,
-                Library.Models.LogType.系统跟踪,
+            Logger.Log(
+                NLog.LogLevel.Trace,
+                LogType.系统跟踪,
                 $"登录, " +
                 $"\r\n\tSessionID: {sessionID}, " +
                 $"\r\n\tUserID: {userID}, " +
@@ -88,9 +89,9 @@ namespace JTTServer
             if (!VerifiedSession.TryRemove(sessionID, out (UInt32 userID, UInt32 gnsscenterID) value))
                 return;
 
-            LoggerHelper.Log(
-                Microsoft.Extensions.Logging.LogLevel.Information,
-                Library.Models.LogType.系统跟踪,
+            Logger.Log(
+                NLog.LogLevel.Trace,
+                LogType.系统跟踪,
                 $"注销, " +
                 $"\r\n\tSessionID: {sessionID}, " +
                 $"\r\n\tUserID: {value.userID}, " +

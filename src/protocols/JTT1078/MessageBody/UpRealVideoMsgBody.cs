@@ -1,9 +1,9 @@
-﻿using SuperSocket.JTTBase.Interface;
+﻿using SuperSocket.JTT.JTTBase.Interface;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace SuperSocket.JTT1078.MessageBody
+namespace SuperSocket.JTT.JTT1078.MessageBody
 {
     /// <summary>
     /// 主链路实时音视频交互消息数据体

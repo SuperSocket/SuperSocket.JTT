@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SuperSocket.JTT808.Extension
+namespace SuperSocket.JTT.JTT808.Extension
 {
     /// <summary>
     /// 分包数据过期策略

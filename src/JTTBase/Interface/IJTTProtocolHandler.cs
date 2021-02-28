@@ -1,10 +1,10 @@
-﻿using SuperSocket.JTTBase.Extension;
-using SuperSocket.JTTBase.Model;
+﻿using SuperSocket.JTT.JTTBase.Extension;
+using SuperSocket.JTT.JTTBase.Model;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace SuperSocket.JTTBase.Interface
+namespace SuperSocket.JTT.JTTBase.Interface
 {
     /// <summary>
     /// JTT协议处理类

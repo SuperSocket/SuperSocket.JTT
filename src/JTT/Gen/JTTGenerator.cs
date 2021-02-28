@@ -1,8 +1,8 @@
 ﻿using SuperSocket.JTT.Model;
-using SuperSocket.JTTBase.Extension;
-using SuperSocket.JTTBase.Filter;
-using SuperSocket.JTTBase.Interface;
-using SuperSocket.JTTBase.Model;
+using SuperSocket.JTT.JTTBase.Extension;
+using SuperSocket.JTT.JTTBase.Filter;
+using SuperSocket.JTT.JTTBase.Interface;
+using SuperSocket.JTT.JTTBase.Model;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.DependencyInjection;
@@ -15,7 +15,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using Microsoft.Extensions.Configuration;
-using SuperSocket.JTTBase.Hadnler;
+using SuperSocket.JTT.JTTBase.Hadnler;
 
 namespace SuperSocket.JTT.Gen
 {

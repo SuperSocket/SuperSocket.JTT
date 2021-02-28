@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SuperSocket.JTTBase.Model
+namespace SuperSocket.JTT.JTTBase.Model
 {
     /// <summary>
     /// 加密标识和秘钥来自于哪些属性

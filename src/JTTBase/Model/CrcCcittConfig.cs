@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SuperSocket.JTTBase.Model
+namespace SuperSocket.JTT.JTTBase.Model
 {
     /// <summary>
     /// CRC数据校验配置

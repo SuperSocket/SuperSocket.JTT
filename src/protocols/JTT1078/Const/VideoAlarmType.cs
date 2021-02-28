@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SuperSocket.JTT1078.Const
+namespace SuperSocket.JTT.JTT1078.Const
 {
     /// <summary>
     /// 通过平台上报的视频报警类型编码

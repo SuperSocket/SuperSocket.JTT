@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SuperSocket.JTTBase.Model
+namespace SuperSocket.JTT.JTTBase.Model
 {
     /// <summary>
     /// 编码类型

@@ -2,10 +2,10 @@
 using System.Buffers;
 using System.Collections.Generic;
 using System.Text;
-using SuperSocket.JTTBase.Filter;
-using SuperSocket.JTTBase.Interface;
+using SuperSocket.JTT.JTTBase.Filter;
+using SuperSocket.JTT.JTTBase.Interface;
 
-namespace SuperSocket.JTT808
+namespace SuperSocket.JTT.JTT808
 {
     /// <summary>
     /// JTT808协议流数据拦截器

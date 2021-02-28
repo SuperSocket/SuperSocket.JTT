@@ -1,13 +1,13 @@
-﻿using SuperSocket.JTT808.Const;
-using SuperSocket.JTT808.Internal;
-using SuperSocket.JTTBase.Hadnler;
-using SuperSocket.JTTBase.Interface;
-using SuperSocket.JTTBase.Model;
+﻿using SuperSocket.JTT.JTT808.Const;
+using SuperSocket.JTT.JTT808.Internal;
+using SuperSocket.JTT.JTTBase.Hadnler;
+using SuperSocket.JTT.JTTBase.Interface;
+using SuperSocket.JTT.JTTBase.Model;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace SuperSocket.JTT808
+namespace SuperSocket.JTT.JTT808
 {
     /// <summary>
     /// JTT808协议处理类

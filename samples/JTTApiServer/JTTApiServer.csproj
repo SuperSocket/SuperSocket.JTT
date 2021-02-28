@@ -8,12 +8,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Library.Configuration" Version="1.2.3-alpha" />
-    <PackageReference Include="Library.Container" Version="1.0.6-alpha" />
-    <PackageReference Include="Library.DataMapping" Version="1.0.10-alpha" />
-    <PackageReference Include="Library.Extension" Version="1.0.20-alpha" />
-    <PackageReference Include="Library.Log" Version="1.0.8-alpha" />
-    <PackageReference Include="Library.OpenApi" Version="1.0.8.5-alpha" />
+    <PackageReference Include="Microservice.Library.Configuration" Version="0.0.0-g266fcfe23f-alpha" />
+    <PackageReference Include="Microservice.Library.ConsoleTool" Version="0.0.0-g266fcfe23f-alpha" />
+    <PackageReference Include="Microservice.Library.Container" Version="0.0.0-g266fcfe23f-alpha" />
+    <PackageReference Include="Microservice.Library.DataMapping" Version="0.0.0-g266fcfe23f-alpha" />
+    <PackageReference Include="Microservice.Library.Extension" Version="0.0.0-g266fcfe23f-alpha" />
+    <PackageReference Include="Microservice.Library.NLogger" Version="0.0.0-g266fcfe23f-alpha" />
+    <PackageReference Include="Microservice.Library.OpenApi" Version="0.0.0-g266fcfe23f-alpha" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.10" />
   </ItemGroup>
 

@@ -4,7 +4,7 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 
-namespace SuperSocket.JTTBase.Extension
+namespace SuperSocket.JTT.JTTBase.Extension
 {
     /// <summary>
     /// 字节数组拓展方法

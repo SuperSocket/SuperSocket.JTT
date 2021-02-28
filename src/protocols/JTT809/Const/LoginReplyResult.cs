@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SuperSocket.JTT809.Const
+namespace SuperSocket.JTT.JTT809.Const
 {
     /// <summary>
     /// 登录应答消息处理结果

@@ -1,10 +1,10 @@
-﻿using SuperSocket.JTTBase.Annotations;
+﻿using SuperSocket.JTT.JTTBase.Annotations;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace SuperSocket.JTT808.Internal
+namespace SuperSocket.JTT.JTT808.Internal
 {
     /// <summary>
     /// 消息体属性

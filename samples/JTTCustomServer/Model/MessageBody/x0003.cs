@@ -1,4 +1,4 @@
-﻿using SuperSocket.JTTBase.Interface;
+﻿using SuperSocket.JTT.JTTBase.Interface;
 
 namespace JTTCustomServer.Model.MessageBody
 {

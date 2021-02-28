@@ -1,4 +1,4 @@
-﻿using SuperSocket.JTTBase.Annotations;
+﻿using SuperSocket.JTT.JTTBase.Annotations;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 
-namespace SuperSocket.JTTBase.Extension
+namespace SuperSocket.JTT.JTTBase.Extension
 {
     /// <summary>
     /// 位数组拓展方法

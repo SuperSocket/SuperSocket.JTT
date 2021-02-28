@@ -1,7 +1,7 @@
 ﻿using Flee.PublicTypes;
-using SuperSocket.JTTBase.Extension;
-using SuperSocket.JTTBase.Interface;
-using SuperSocket.JTTBase.Model;
+using SuperSocket.JTT.JTTBase.Extension;
+using SuperSocket.JTT.JTTBase.Interface;
+using SuperSocket.JTT.JTTBase.Model;
 using System;
 using System.Buffers;
 using System.Collections;
@@ -11,7 +11,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 
-namespace SuperSocket.JTTBase.Hadnler
+namespace SuperSocket.JTT.JTTBase.Hadnler
 {
     /// <summary>
     /// JTT协议解码器

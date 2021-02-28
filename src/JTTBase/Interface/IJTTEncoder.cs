@@ -4,7 +4,7 @@ using System.Buffers;
 using System.Collections.Generic;
 using System.Text;
 
-namespace SuperSocket.JTTBase.Interface
+namespace SuperSocket.JTT.JTTBase.Interface
 {
     /// <summary>
     /// JTT协议编码器

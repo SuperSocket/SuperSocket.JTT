@@ -580,7 +580,15 @@
             <para>手机号不足位的，则在前补充数字0</para>
             </remarks>
         </member>
-        <!-- Badly formed XML comment ignored for member "P:SuperSocket.JTT808.JTT808MessageHeader.Msg_SN" -->
+        <member name="P:SuperSocket.JTT808.JTT808MessageHeader.Msg_SN">
+            <summary>
+            消息流水号
+            </summary>
+            <remarks>
+            <para>2字节</para>
+            <para>按发送顺序从0开始循环累加。</para>
+            </remarks>
+        </member>
         <member name="P:SuperSocket.JTT808.JTT808MessageHeader.SubPackage">
             <summary>
             消息包封装项

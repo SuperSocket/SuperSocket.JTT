@@ -1,11 +1,11 @@
-﻿using SuperSocket.JTTBase.Filter;
-using SuperSocket.JTTBase.Hadnler;
-using SuperSocket.JTTBase.Model;
+﻿using SuperSocket.JTT.JTTBase.Filter;
+using SuperSocket.JTT.JTTBase.Hadnler;
+using SuperSocket.JTT.JTTBase.Model;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace SuperSocket.JTTBase.Interface
+namespace SuperSocket.JTT.JTTBase.Interface
 {
     /// <summary>
     /// JTT协议

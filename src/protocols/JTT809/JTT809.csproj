@@ -2,26 +2,26 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
-    <AssemblyName>SuperSocket.JTT809</AssemblyName>
+    <AssemblyName>SuperSocket.JTT.JTT809</AssemblyName>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <Version>1.0.2-alpha</Version>
-    <Authors>SuperSocket.JTT</Authors>
-    <Company>SuperSocket.JTT</Company>
+    <Version>0.0.0.1-alpha</Version>
+    <Authors>SuperSocket</Authors>
+    <Company>SuperSocket</Company>
     <Product>SuperSocket.JTT</Product>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/SuperSocket/SuperSocket.JTT</PackageProjectUrl>
-    <Description>SuperSocket.JTT扩展协议。
-JTT809 道路运输车辆卫星定位系统 平台数据交换协议。</Description>
-    <RootNamespace>SuperSocket.JTT809</RootNamespace>
+    <Description>JTT-809协议扩展包。</Description>
+    <RootNamespace>SuperSocket.JTT.JTT809</RootNamespace>
+    <PackageId>SuperSocket.JTT.JTT809</PackageId>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>SuperSocket.JTT809.xml</DocumentationFile>
+    <DocumentationFile>SuperSocket.JTT.JTT809.xml</DocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>SuperSocket.JTT809.xml</DocumentationFile>
+    <DocumentationFile>SuperSocket.JTT.JTT809.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

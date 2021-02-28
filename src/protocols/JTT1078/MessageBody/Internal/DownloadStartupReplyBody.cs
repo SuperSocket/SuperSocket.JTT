@@ -1,9 +1,9 @@
-﻿using SuperSocket.JTTBase.Interface;
+﻿using SuperSocket.JTT.JTTBase.Interface;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace SuperSocket.JTT1078.MessageBody.Internal
+namespace SuperSocket.JTT.JTT1078.MessageBody.Internal
 {
     /// <summary>
     /// 远程录像下载请求应答消息数据体

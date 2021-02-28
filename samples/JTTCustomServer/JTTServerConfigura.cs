@@ -1,23 +1,18 @@
 ﻿using JTTCustomServer.Handler;
-using JTTCustomServer.Logger;
 using JTTCustomServer.Model.Config;
-using Library.Container;
-using Microsoft.AspNetCore.Builder;
+using Microservice.Library.Container;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using SuperSocket;
-using SuperSocket.JTT.Gen;
+using Microsoft.Extensions.Logging;
 using System.Reflection;
-using System.Threading.Tasks;
 
 namespace JTTCustomServer
 {
     /// <summary>
     /// JTT协议服务器配置类
     /// </summary>
-    public class JTTServerConfigura
+    public static class JTTServerConfigura
     {
-        public static void RegisterServices(IServiceCollection services, SystemConfig config)
+        public static IServiceCollection RegisterServices(this IServiceCollection services, SystemConfig config)
         {
             services.AddJTT(options =>
             {
@@ -61,9 +56,11 @@ namespace JTTCustomServer
                 {
                     AddConsole = true,
                     AddDebug = true,
-                    Provider = new NLoggerProvider()
+                    Provider = AutofacHelper.GetService<ILoggerProvider>()
                 };
             });
+
+            return services;
         }
     }
 }

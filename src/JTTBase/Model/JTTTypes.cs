@@ -1,10 +1,10 @@
-﻿using SuperSocket.JTTBase.Filter;
-using SuperSocket.JTTBase.Interface;
+﻿using SuperSocket.JTT.JTTBase.Filter;
+using SuperSocket.JTT.JTTBase.Interface;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace SuperSocket.JTTBase.Model
+namespace SuperSocket.JTT.JTTBase.Model
 {
 
     public static class JTTTypes

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SuperSocket.JTT808.Const
+namespace SuperSocket.JTT.JTT808.Const
 {
     public struct EncryptType
     {

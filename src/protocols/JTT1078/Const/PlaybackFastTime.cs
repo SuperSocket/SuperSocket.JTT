@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SuperSocket.JTT1078.Const
+namespace SuperSocket.JTT.JTT1078.Const
 {
     /// <summary>
     /// 回放控制快进或快退倍数

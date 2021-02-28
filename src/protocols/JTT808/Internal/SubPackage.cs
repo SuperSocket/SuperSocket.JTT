@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 
-namespace SuperSocket.JTT808.Internal
+namespace SuperSocket.JTT.JTT808.Internal
 {
     /// <summary>
     /// 消息包封装项内容

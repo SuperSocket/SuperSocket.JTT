@@ -1,13 +1,13 @@
-﻿using SuperSocket.JTT808.Extension;
-using SuperSocket.JTTBase.Filter;
-using SuperSocket.JTTBase.Hadnler;
-using SuperSocket.JTTBase.Interface;
-using SuperSocket.JTTBase.Model;
+﻿using SuperSocket.JTT.JTT808.Extension;
+using SuperSocket.JTT.JTTBase.Filter;
+using SuperSocket.JTT.JTTBase.Hadnler;
+using SuperSocket.JTT.JTTBase.Interface;
+using SuperSocket.JTT.JTTBase.Model;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace SuperSocket.JTT808
+namespace SuperSocket.JTT.JTT808
 {
     /// <summary>
     /// JTT809协议

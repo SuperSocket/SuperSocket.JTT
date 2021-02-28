@@ -3,7 +3,7 @@ using System.Buffers;
 using System.Collections.Generic;
 using System.Text;
 
-namespace SuperSocket.JTTBase.Interface
+namespace SuperSocket.JTT.JTTBase.Interface
 {
     /// <summary>
     /// 消息体

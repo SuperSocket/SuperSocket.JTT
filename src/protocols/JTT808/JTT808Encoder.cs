@@ -1,8 +1,8 @@
-﻿using SuperSocket.JTT808.Internal;
-using SuperSocket.JTTBase.Extension;
-using SuperSocket.JTTBase.Hadnler;
-using SuperSocket.JTTBase.Interface;
-using SuperSocket.JTTBase.Model;
+﻿using SuperSocket.JTT.JTT808.Internal;
+using SuperSocket.JTT.JTTBase.Extension;
+using SuperSocket.JTT.JTTBase.Hadnler;
+using SuperSocket.JTT.JTTBase.Interface;
+using SuperSocket.JTT.JTTBase.Model;
 using SuperSocket.ProtoBase;
 using System;
 using System.Buffers;
@@ -11,7 +11,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 
-namespace SuperSocket.JTT808
+namespace SuperSocket.JTT.JTT808
 {
     public class JTT808Encoder : JTTEncoder
     {

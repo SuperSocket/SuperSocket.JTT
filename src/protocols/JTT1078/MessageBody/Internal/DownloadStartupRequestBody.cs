@@ -1,11 +1,11 @@
-﻿using SuperSocket.JTT1078.Flag;
-using SuperSocket.JTTBase.Interface;
+﻿using SuperSocket.JTT.JTT1078.Flag;
+using SuperSocket.JTT.JTTBase.Interface;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 
-namespace SuperSocket.JTT1078.MessageBody.Internal
+namespace SuperSocket.JTT.JTT1078.MessageBody.Internal
 {
     /// <summary>
     /// 远程录像下载请求消息数据体

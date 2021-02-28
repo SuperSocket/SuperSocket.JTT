@@ -1,12 +1,12 @@
-﻿using SuperSocket.JTT808.Const;
-using SuperSocket.JTT808.Internal;
-using SuperSocket.JTTBase.Interface;
+﻿using SuperSocket.JTT.JTT808.Const;
+using SuperSocket.JTT.JTT808.Internal;
+using SuperSocket.JTT.JTTBase.Interface;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 
-namespace SuperSocket.JTT808
+namespace SuperSocket.JTT.JTT808
 {
     /// <summary>
     /// 
@@ -55,7 +55,6 @@ namespace SuperSocket.JTT808
         /// <summary>
         /// 消息流水号
         /// </summary>
-        /// <remarks>
         /// <remarks>
         /// <para>2字节</para>
         /// <para>按发送顺序从0开始循环累加。</para>

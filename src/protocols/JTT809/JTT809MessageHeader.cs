@@ -1,9 +1,9 @@
-﻿using SuperSocket.JTTBase.Interface;
+﻿using SuperSocket.JTT.JTTBase.Interface;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace SuperSocket.JTT809
+namespace SuperSocket.JTT.JTT809
 {
     /// <summary>
     /// 
@@ -22,7 +22,6 @@ namespace SuperSocket.JTT809
         /// <summary>
         /// 报文序列号
         /// </summary>
-        /// <remarks>
         /// <remarks>
         /// <para>4字节</para>
         /// <para>为发送信息的序列号，用于接收方检测是否有信息的丢失。</para>

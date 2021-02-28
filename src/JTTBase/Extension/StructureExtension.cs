@@ -1,9 +1,9 @@
-﻿using SuperSocket.JTTBase.Model;
+﻿using SuperSocket.JTT.JTTBase.Model;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace SuperSocket.JTTBase.Extension
+namespace SuperSocket.JTT.JTTBase.Extension
 {
     /// <summary>
     /// JTT结构拓展方法

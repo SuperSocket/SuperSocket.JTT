@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Web;
 
-namespace SuperSocket.JTT1078.Extension
+namespace SuperSocket.JTT.JTT1078.Extension
 {
     /// <summary>
     /// 拓展工具类

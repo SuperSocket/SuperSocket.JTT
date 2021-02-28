@@ -1,23 +1,21 @@
 ﻿using JTTServer.Config;
+using Microservice.Library.Container;
 using Microsoft.Extensions.DependencyInjection;
-using SuperSocket.JTT809;
-using SuperSocket.JTTBase.Model;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using Microsoft.Extensions.Logging;
+using SuperSocket.JTT.JTT809;
 
 namespace JTTServer
 {
     /// <summary>
     /// 配置JTT809服务器
     /// </summary>
-    public class JTT809ServerConfigura
+    public static class JTT809ServerConfigura
     {
         /// <summary>
         /// 注册服务
         /// </summary>
         /// <param name="services"></param>
-        public static void RegisterServices(IServiceCollection services, SystemConfig config)
+        public static IServiceCollection RegisterServices(this IServiceCollection services, SystemConfig config)
         {
             services.AddJTT(options =>
             {
@@ -58,9 +56,11 @@ namespace JTTServer
                 {
                     AddConsole = true,
                     AddDebug = true,
-                    Provider = new NLoggerProvider()
+                    Provider = AutofacHelper.GetService<ILoggerProvider>()
                 };
             });
+
+            return services;
         }
     }
 }

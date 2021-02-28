@@ -1,11 +1,10 @@
 ﻿using Autofac.Extensions.DependencyInjection;
-using Library.Configuration;
-using Library.Container;
-using Library.Log;
-using Library.ConsoleTool;
+using DebugClient.Log;
+using Microservice.Library.Configuration;
+using Microservice.Library.ConsoleTool;
+using Microservice.Library.Container;
 using Microsoft.Extensions.DependencyInjection;
 using System;
-using System.Threading;
 using System.Threading.Tasks;
 
 namespace DebugClient
@@ -14,49 +13,37 @@ namespace DebugClient
     {
         static async Task Main(string[] args)
         {
-            //注册控制台跟踪日志
-            LoggerConfigura.RegisterConsoleTargetForTrace();
-
-            var log = new NLogHelper("Launch Trace").GetLogger();
-
-            log.Trace("系统启动中.");
-            log.Trace("正在读取配置.");
+            "系统启动中.".ConsoleWrite();
+            "正在读取配置.".ConsoleWrite();
 
             var config = new ConfigHelper()
                 .GetModel<SystemConfig>("SystemConfig");
 
             if (config == null)
             {
-                log.Trace("系统配置读取失败, appsettings.json Section: SystemConfig.");
+                "系统配置读取失败, appsettings.json Section: SystemConfig.".ConsoleWrite();
                 return;
             }
 
             Console.Title = config.ProjectName;
 
-            log.Trace($"使用{config.JTTVersion}协议.");
+            $"使用{config.JTTVersion}协议.".ConsoleWrite();
 
-            var service = new ServiceCollection();
+            var services = new ServiceCollection();
 
-            service.AddSingleton(config);
-
-            //注册文件日志
-            if (config.LoggerType == Library.Models.LoggerType.File)
-            {
-                LoggerConfigura.RegisterFileTarget();
-                service.AddSingleton(new NLogHelper(LoggerConfig.LoggerName).GetLogger());
-            }
-            else
-                service.AddSingleton(log);
+            services.AddSingleton(config)
+                .AddLogging()
+                .RegisterNLog(config);
 
             AutofacHelper.Container = new AutofacServiceProviderFactory()
-                .CreateBuilder(service)
+                .CreateBuilder(services)
                 .Build();
 
-            log.Trace("已应用Autofac容器.");
+            "已应用Autofac容器.".ConsoleWrite();
 
             var client = new Client();
 
-            log.Trace("已创建TCP客户端.");
+            "已创建TCP客户端.".ConsoleWrite();
 
             var command = string.Empty;
             while (command != "exit")
@@ -89,7 +76,7 @@ namespace DebugClient
                         await client.SendJTT1078Msg();
                         break;
                     default:
-                        log.Trace($"不支持的指令: <{command}>.");
+                        $"不支持的指令: <{command}>.".ConsoleWrite();
                         break;
                 }
             }

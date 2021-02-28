@@ -2,11 +2,11 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using SuperSocket.JTTBase.Extension;
+using SuperSocket.JTT.JTTBase.Extension;
 using System.Buffers;
-using SuperSocket.JTTBase.Interface;
+using SuperSocket.JTT.JTTBase.Interface;
 
-namespace SuperSocket.JTTBase.Filter
+namespace SuperSocket.JTT.JTTBase.Filter
 {
     /// <summary>
     /// JTT协议流数据拦截器

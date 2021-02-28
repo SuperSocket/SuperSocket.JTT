@@ -744,7 +744,7 @@
             <para>解码发生异常 <see cref="T:System.ApplicationException"/>时,</para>
             <para>应当设置 <see cref="P:SuperSocket.JTTBase.Interface.IJTTPackageInfo.Success"/>为false,</para>
             <para>并写入异常 <see cref="P:SuperSocket.JTTBase.Interface.IJTTPackageInfo.Exception"/>,</para>
-            <para>最后调用 <see cref="!:IPackageDecoder.Decode(ref ReadOnlySequence&lt;byte&gt;, object)"/>方法输出消息包.</para>
+            <para>最后调用 <see cref="M:SuperSocket.ProtoBase.IPackageDecoder`1.Decode(System.Buffers.ReadOnlySequence{System.Byte}@,System.Object)"/>方法输出消息包.</para>
             </remarks>
         </member>
         <member name="T:SuperSocket.JTTBase.Interface.IJTTEncoder">

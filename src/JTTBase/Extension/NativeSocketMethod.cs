@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Text;
 
-namespace SuperSocket.JTTBase.Extension
+namespace SuperSocket.JTT.JTTBase.Extension
 {
     /// <summary>
     /// 本机Socket方法
