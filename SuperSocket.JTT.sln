@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JTTServer", "samples\JTTSer
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JTT", "src\JTT\JTT.csproj", "{50DE433B-ED2C-4C89-84A0-D48866C5D2AE}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "protocols", "protocols", "{3363129B-4388-49FE-A466-405093D2C9CF}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Protocols", "Protocols", "{3363129B-4388-49FE-A466-405093D2C9CF}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JTT809", "src\Protocols\JTT809\JTT809.csproj", "{00E41185-E24B-4691-BF38-E5F00B820DEC}"
 EndProject
@@ -28,7 +28,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nuget", "nuget", "{351D3B01-7536-4C74-856B-6F508139E535}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Nuget", "Nuget", "{351D3B01-7536-4C74-856B-6F508139E535}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SuperSocket.JTT.All", "src\nuget\SuperSocket.JTT.All\SuperSocket.JTT.All.csproj", "{2FB88F87-2970-4A43-ABD1-0BA495BF1475}"
 EndProject
@@ -38,7 +38,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JTTApiServer", "samples\JTT
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JTTCustomServer", "samples\JTTCustomServer\JTTCustomServer.csproj", "{396C4CCB-B95C-4074-BA27-6E6CCE4C7715}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperSocket.JTT.Server", "src\nuget\SuperSocket.JTT.Server\SuperSocket.JTT.Server.csproj", "{4F2D6EAA-F1A5-4FE6-B2DD-76F1C99CE12F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SuperSocket.JTT.Server", "src\nuget\SuperSocket.JTT.Server\SuperSocket.JTT.Server.csproj", "{4F2D6EAA-F1A5-4FE6-B2DD-76F1C99CE12F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
