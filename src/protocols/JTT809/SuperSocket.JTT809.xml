@@ -1,0 +1,240 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SuperSocket.JTT809</name>
+    </assembly>
+    <members>
+        <member name="T:SuperSocket.JTT809.Const.LoginReplyResult">
+            <summary>
+            登录应答消息处理结果
+            </summary>
+        </member>
+        <member name="F:SuperSocket.JTT809.Const.LoginReplyResult.资源紧张">
+            <summary>
+            资源紧张，稍后再连接（已经占用）
+            </summary>
+        </member>
+        <member name="M:SuperSocket.JTT809.JTT809Decoder.Decrypt(SuperSocket.JTTBase.Interface.IJTTPackageInfo,System.ReadOnlySpan{System.Byte},SuperSocket.JTTBase.Model.StructureInfo,System.Int32)">
+            <summary>
+            解密
+            </summary>
+            <param name="packageInfo">消息包</param>
+            <param name="buffer">数据</param>
+            <param name="structure">结构</param>
+            <param name="offset">偏移量</param>
+            <returns></returns>
+        </member>
+        <member name="F:SuperSocket.JTT809.JTT809Decoder.jtt809protocol">
+            <summary>
+            JTT协议
+            </summary>
+        </member>
+        <member name="F:SuperSocket.JTT809.JTT809Encoder.jtt809protocol">
+            <summary>
+            JTT协议
+            </summary>
+        </member>
+        <member name="F:SuperSocket.JTT809.JTT809Encoder.msg_sn">
+            <summary>
+            报文序列号
+            </summary>
+        </member>
+        <member name="M:SuperSocket.JTT809.JTT809Encoder.GetMsgSN">
+            <summary>
+            获取报文序列号
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SuperSocket.JTT809.JTT809Encoder.AnalysisBodyStructure(SuperSocket.JTTBase.Interface.IJTTPackageInfo)">
+            <summary>
+            分析消息体结构
+            </summary>
+            <param name="packageInfo">消息包</param>
+            <returns></returns>
+        </member>
+        <member name="M:SuperSocket.JTT809.JTT809Encoder.AnalysisHeaderStructure(SuperSocket.JTTBase.Interface.IJTTPackageInfo)">
+            <summary>
+            分析消息头结构
+            </summary>
+            <param name="packageInfo">消息包</param>
+            <returns></returns>
+        </member>
+        <member name="T:SuperSocket.JTT809.JTT809MessageHeader">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTT809.JTT809MessageHeader.Msg_Length">
+            <summary>
+            数据长度
+            </summary>
+            <remarks>
+            <para>4字节</para>
+            <para>包括头标识、数据头、数据体和尾标识</para>
+            </remarks>
+        </member>
+        <member name="P:SuperSocket.JTT809.JTT809MessageHeader.Msg_SN">
+            <summary>
+            报文序列号
+            </summary>
+            <remarks>
+            <para>4字节</para>
+            <para>为发送信息的序列号，用于接收方检测是否有信息的丢失。</para>
+            <para>上级平台和下级平台按自己发送数据包的个数计数，互不影响。</para>
+            <para>程序开始运行时等于零，发送第一帧数据时开始计数，到最大数后自动归零</para>
+            </remarks>
+        </member>
+        <member name="P:SuperSocket.JTT809.JTT809MessageHeader.Msg_ID">
+            <summary>
+            协议号/业务数据类型
+            </summary>
+            <remarks>2字节</remarks>
+        </member>
+        <member name="P:SuperSocket.JTT809.JTT809MessageHeader.Msg_GnsscenterID">
+            <summary>
+            下级平台接入码
+            </summary>
+            <remarks>
+            <para>32字节</para>
+            <para>上级平台给下级平台分配的唯一标识号</para>
+            </remarks>
+        </member>
+        <member name="P:SuperSocket.JTT809.JTT809MessageHeader.Version_Flag">
+            <summary>
+            协议版本号标识
+            </summary>
+            <remarks>
+            <para>3字节</para>
+            <para>上下级平台之间采用的标准协议版本编号</para>
+            <para>0x01 0x02 0x0F 表示的版本号是 V1.2.15，依此类推</para>
+            </remarks>
+        </member>
+        <member name="P:SuperSocket.JTT809.JTT809MessageHeader.Encrypt_Flag">
+            <summary>
+            报文加密标识位
+            </summary>
+            <remarks>
+            <para>1字节</para>
+            <para>用来区分报文是否进行加密，</para>
+            <para>如果标识为 1，则说明对后续相应业务的数据体采用 ENCRYPT_KEY 对应的密钥进行加密处理。</para>
+            <para>如果标识为 0，则说明不进行加密处理</para>
+            </remarks>
+        </member>
+        <member name="P:SuperSocket.JTT809.JTT809MessageHeader.Encrtpt_Key">
+            <summary>
+            数据加密的密钥
+            </summary>
+            <remarks>4字节</remarks>
+        </member>
+        <member name="P:SuperSocket.JTT809.JTT809MessageHeader.Time">
+            <summary>
+            发送消息时的系统UTC时间
+            </summary>
+            <remarks>8字节</remarks>
+        </member>
+        <member name="T:SuperSocket.JTT809.JTT809PipelineFilter">
+            <summary>
+            JTT809协议流数据拦截器
+            <!--可以重写或新增方法-->
+            </summary>
+        </member>
+        <member name="T:SuperSocket.JTT809.JTT809Protocol">
+            <summary>
+            JTT809协议
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTT809.JTT809Protocol.DefaultVersionFlag">
+            <summary>
+            默认协议版本号标识
+            </summary>
+            <remarks>
+            <para>3字节</para>
+            <para>上下级平台之间采用的标准协议版本编号</para>
+            <para>0x01 0x02 0x0F 表示的版本号是 V1.2.15，依此类推</para>
+            </remarks>
+        </member>
+        <member name="T:SuperSocket.JTT809.JTT809ProtocolHandler">
+            <summary>
+            JTT809协议处理类
+            <!--可以重写或新增方法-->
+            </summary>
+        </member>
+        <member name="M:SuperSocket.JTT809.JTT809ProtocolHandler.GetMessageHeader(System.UInt32,System.Byte[],System.Boolean,System.UInt32)">
+            <summary>
+            获取消息头
+            </summary>
+            <param name="gnsscenterID">下级平台接入码</param>
+            <param name="version">协议版本号（为null时使用默认配置）</param>
+            <param name="encrypt">报文是加密（默认值 false）</param>
+            <param name="encrtptKey">数据加密的密钥（encrypt为true时需要设置此参数）</param>
+            <returns></returns>
+        </member>
+        <member name="F:SuperSocket.JTT809.JTT809ProtocolHandler.jtt809protocol">
+            <summary>
+            JTT协议
+            </summary>
+        </member>
+        <member name="T:SuperSocket.JTT809.MessageBody.LoginReplyBody">
+            <summary>
+            主链路登录应答消息数据体
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTT809.MessageBody.LoginReplyBody.Result">
+            <summary>
+            验证结果
+            <see cref="T:SuperSocket.JTT809.Const.LoginReplyResult"/>
+            </summary>
+            <remarks>1字节</remarks>
+        </member>
+        <member name="P:SuperSocket.JTT809.MessageBody.LoginReplyBody.Result_Mapping">
+            <summary>
+            验证结果
+            </summary>
+            <remarks>映射值</remarks>
+        </member>
+        <member name="P:SuperSocket.JTT809.MessageBody.LoginReplyBody.Verify_Code">
+            <summary>
+            校验码
+            </summary>
+            <remarks>4字节</remarks>
+        </member>
+        <member name="T:SuperSocket.JTT809.MessageBody.LoginRequestBody">
+            <summary>
+            主链路登录请求消息数据体
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTT809.MessageBody.LoginRequestBody.UserID">
+            <summary>
+            用户Id
+            </summary>
+            <remarks>4字节</remarks>
+        </member>
+        <member name="P:SuperSocket.JTT809.MessageBody.LoginRequestBody.Password">
+            <summary>
+            密码
+            </summary>
+            <remarks>8字节</remarks>
+        </member>
+        <member name="P:SuperSocket.JTT809.MessageBody.LoginRequestBody.Msg_GnsscenterID">
+            <summary>
+            下级平台接入码
+            </summary>
+            <remarks>
+            <para>32字节</para>
+            <para>上级平台给下级平台分配的唯一标识号</para>
+            </remarks>
+        </member>
+        <member name="P:SuperSocket.JTT809.MessageBody.LoginRequestBody.Down_link_IP">
+            <summary>
+            下级平台提供对应的从链路服务端IP地址
+            </summary>
+            <remarks>32字节</remarks>
+        </member>
+        <member name="P:SuperSocket.JTT809.MessageBody.LoginRequestBody.Down_link_Port">
+            <summary>
+            下级平台提供对应的从链路服务端口号
+            </summary>
+            <remarks>2字节</remarks>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,50 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="appsettings.json" />
+    <None Remove="jsonconfig\jtt809-protocol-datamappings.json" />
+    <None Remove="jsonconfig\jtt809-protocol-internalentitysmappings.json" />
+    <None Remove="jsonconfig\jtt809-protocol-structures.json" />
+    <None Remove="jsonconfig\jtt809-protocol.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="jsonconfig\jtt809-protocol-datamappings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="jsonconfig\jtt809-protocol-internalentitysmappings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="jsonconfig\jtt809-protocol-structures.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="jsonconfig\jtt809-protocol.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\.editorconfig" Link=".editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microservice.Library.ConsoleTool" Version="0.0.0-g266fcfe23f-alpha" />
+    <PackageReference Include="Microservice.Library.Container" Version="0.0.0-g266fcfe23f-alpha" />
+    <PackageReference Include="Microservice.Library.NLogger" Version="0.0.0-g266fcfe23f-alpha" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\nuget\SuperSocket.JTT.All\SuperSocket.JTT.All.csproj" />
+  </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties jsonconfig_4jtt809-protocol_1json__JsonSchema="https://json.schemastore.org/appsettings" jsonconfig_4jtt809-protocol-datamappings_1json__JsonSchema="https://json.schemastore.org/appsettings" jsonconfig_4jtt809-protocol-internalentitysmappings_1json__JsonSchema="https://json.schemastore.org/appsettings" jsonconfig_4jtt809-protocol-structures_1json__JsonSchema="https://json.schemastore.org/appsettings" /></VisualStudio></ProjectExtensions>
+
+</Project>

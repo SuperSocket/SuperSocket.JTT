@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <UserSecretsId>1bf85f23-ec03-448d-b166-512310497b02</UserSecretsId>
+    <DockerDefaultTargetOS>Windows</DockerDefaultTargetOS>
+    <DockerfileContext>..\..</DockerfileContext>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microservice.Library.Configuration" Version="0.0.0-g266fcfe23f-alpha" />
+    <PackageReference Include="Microservice.Library.ConsoleTool" Version="0.0.0-g266fcfe23f-alpha" />
+    <PackageReference Include="Microservice.Library.Container" Version="0.0.0-g266fcfe23f-alpha" />
+    <PackageReference Include="Microservice.Library.DataMapping" Version="0.0.0-g266fcfe23f-alpha" />
+    <PackageReference Include="Microservice.Library.Extension" Version="0.0.0-g266fcfe23f-alpha" />
+    <PackageReference Include="Microservice.Library.NLogger" Version="0.0.0-g266fcfe23f-alpha" />
+    <PackageReference Include="Microservice.Library.OpenApi" Version="0.0.0-g266fcfe23f-alpha" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.10" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\nuget\SuperSocket.JTT.All\SuperSocket.JTT.All.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Model\" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,270 @@
+﻿{
+  "DataMappings": { //数据映射集合
+    "LoginResult": [ //示例 主链路登录应答返回验证结果
+      {
+        "Matching": "0x00", //匹配值
+        "Value": "成功" //替换值
+      },
+      {
+        "Matching": "0x01",
+        "Value": "IP地址不正确"
+      },
+      {
+        "Matching": "0x02",
+        "Value": "接入码不正确"
+      },
+      {
+        "Matching": "0x03",
+        "Value": "用户没注册"
+      },
+      {
+        "Matching": "0x04",
+        "Value": "密码错误"
+      },
+      {
+        "Matching": "0x05",
+        "Value": "资源紧张，稍后再连接（已经占用）"
+      },
+      {
+        "Matching": "0xff",
+        "Value": "其他"
+      }
+    ],
+    "ForwardResult": [
+      {
+        "Matching": "0x00",
+        "Value": "成功"
+      },
+      {
+        "Matching": "0x01",
+        "Value": "未登录"
+      },
+      {
+        "Matching": "0xff",
+        "Value": "其他"
+      }
+    ],
+    "ForwardErrorReason": [
+      {
+        "Matching": "0x00",
+        "Value": "目标终端不在线"
+      },
+      {
+        "Matching": "0x01",
+        "Value": "未登录"
+      },
+      {
+        "Matching": "0x02",
+        "Value": "系统繁忙"
+      }
+    ],
+
+    //JTT1078
+    //子业务类型
+    "SubDataType": [
+      {
+        "Matching": "0x1701",
+        "Value": "UP_AUTHORIZE_MSG_STARTUP"
+      },
+      {
+        "Matching": "0x1702",
+        "Value": "UP_AUTHORIZE_MSG_STARTUP_REQ"
+      },
+      {
+        "Matching": "0x9702",
+        "Value": "DOWN_AUTHORIZE_MSG_STARTUP_REQ_ACK"
+      },
+      {
+        "Matching": "0x1801",
+        "Value": "DOWN_AUTHORIZE_MSG_STARTUP_REQ_ACK"
+      },
+      {
+        "Matching": "0x1802",
+        "Value": "DOWN_REALVIDEO_MSG_STARTUP"
+      },
+      {
+        "Matching": "0x9801",
+        "Value": "DOWN_REALVIDEO_MSG_STARTUP"
+      },
+      {
+        "Matching": "0x9802",
+        "Value": "DOWN_REALVIDEO_MSG_END"
+      },
+      {
+        "Matching": "0x1901",
+        "Value": "UP_FILELIST_MSG"
+      },
+      {
+        "Matching": "0x1902",
+        "Value": "UP_REALVIDEO_FILELIST_REQ_ACK"
+      },
+      {
+        "Matching": "0x9901",
+        "Value": "DOWN_FILELIST_MSG_ACK"
+      },
+      {
+        "Matching": "0x9902",
+        "Value": "DOWN_REALVIDEO_FILELIST_REQ"
+      },
+      {
+        "Matching": "0x1A01",
+        "Value": "UP_PLAYBACK_MSG_STARTUP_ACK"
+      },
+      {
+        "Matching": "0x1A02",
+        "Value": "UP__PLAYBACK_MSG_CONTROL_ACK"
+      },
+      {
+        "Matching": "0x9A01",
+        "Value": "DOWN_PLAYBACK_MSG_STARTUP"
+      },
+      {
+        "Matching": "0x9A02",
+        "Value": "DOWN__PLAYBACK_MSG_CONTROL"
+      },
+      {
+        "Matching": "0x1B01",
+        "Value": "UP_DOWNLOAD_MSG_STARTUP_ACK"
+      },
+      {
+        "Matching": "0x1B02",
+        "Value": "UP_DOWNLOAD_MSG_END_INFORM"
+      },
+      {
+        "Matching": "0x1B03",
+        "Value": "UP_DOWNLOAD_MSG_CONTROL_ACK"
+      },
+      {
+        "Matching": "0x9B01",
+        "Value": "DOWN_DOWNLOAD_MSG_STARTUP"
+      },
+      {
+        "Matching": "0x9B02",
+        "Value": "UP_DOWNLOAD_MSG_END_INFORM_ACK"
+      },
+      {
+        "Matching": "0x9B03",
+        "Value": "DOWN_DOWNLOAD_MSG_CONTROL"
+      }
+    ],
+    //应答消息应答结果
+    "ReplyResult": [
+      {
+        "Matching": "0x00",
+        "Value": "成功"
+      },
+      {
+        "Matching": "0x01",
+        "Value": "失败"
+      },
+      {
+        "Matching": "0x02",
+        "Value": "不支持"
+      },
+      {
+        "Matching": "0x03",
+        "Value": "会话结束"
+      },
+      {
+        "Matching": "0x04",
+        "Value": "时效口令错误"
+      },
+      {
+        "Matching": "0x05",
+        "Value": "不满足跨域条件"
+      }
+    ],
+    //音视频类型
+    "AvitemType": [
+      {
+        "Matching": "0x00",
+        "Value": "音视频"
+      },
+      {
+        "Matching": "0x01",
+        "Value": "音频"
+      },
+      {
+        "Matching": "0x02",
+        "Value": "视频"
+      },
+      {
+        "Matching": "0x03",
+        "Value": "视频或音视频"
+      }
+    ],
+    //回放控制类型
+    "PlaybackControlType": [
+      {
+        "Matching": "0x00",
+        "Value": "正常回放"
+      },
+      {
+        "Matching": "0x01",
+        "Value": "暂停回放"
+      },
+      {
+        "Matching": "0x02",
+        "Value": "结束回放"
+      },
+      {
+        "Matching": "0x03",
+        "Value": "快进回放"
+      },
+      {
+        "Matching": "0x04",
+        "Value": "关键帧快退回放"
+      },
+      {
+        "Matching": "0x05",
+        "Value": "拖动回放"
+      },
+      {
+        "Matching": "0x06",
+        "Value": "关键帧播放"
+      }
+    ],
+    //回放控制快进或快退倍数
+    "PlaybackFastTime": [
+      {
+        "Matching": "0x00",
+        "Value": "无效"
+      },
+      {
+        "Matching": "0x01",
+        "Value": "x1"
+      },
+      {
+        "Matching": "0x02",
+        "Value": "x2"
+      },
+      {
+        "Matching": "0x03",
+        "Value": "x4"
+      },
+      {
+        "Matching": "0x04",
+        "Value": "x8"
+      },
+      {
+        "Matching": "0x05",
+        "Value": "x16"
+      }
+    ],
+    //远程录像下载控制请求控制类型
+    "DownloadControlType": [
+      {
+        "Matching": "0x00",
+        "Value": "暂停"
+      },
+      {
+        "Matching": "0x01",
+        "Value": "继续"
+      },
+      {
+        "Matching": "0x02",
+        "Value": "取消"
+      }
+    ]
+  }
+}
