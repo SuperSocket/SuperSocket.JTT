@@ -1,0 +1,45 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="appsettings.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microservice.Library.ConsoleTool" Version="0.0.0-g266fcfe23f-alpha" />
+    <PackageReference Include="Microservice.Library.Container" Version="0.0.0-g266fcfe23f-alpha" />
+    <PackageReference Include="Microservice.Library.NLogger" Version="0.0.0-g266fcfe23f-alpha" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\nuget\SuperSocket.JTT.Server\SuperSocket.JTT.Server.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="jttconfig\jttcustom-protocol-datamappings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="jttconfig\jttcustom-protocol-internalentitysmappings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="jttconfig\jttcustom-protocol-structures.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="jttconfig\jttcustom-protocol.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties /></VisualStudio></ProjectExtensions>
+
+</Project>

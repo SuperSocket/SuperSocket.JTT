@@ -1,0 +1,88 @@
+﻿/*
+ * JTT协议配置文件示例模板
+*/
+{
+  "JTT809": { //这里应该填写JTT协议的版本号 SuperSocket.JTTBase.Model.JTTVersion
+
+    /* JTT协议配置信息 开始 */
+    "BigEndian": true, //数据流是否遵循大端
+    "ZHCNEncoding": "gbk", //汉子采用何种编码
+    "Padding": { //定长字符的补位字符
+      "Encode": { //应该以何种方式编码Value值
+        "CodeType": "string_hex"
+      },
+      "Value": "0x00" //值
+    },
+    "CrcCcitt": { //CRC数据校验配置
+      "Type": "16", //类型（位数） SuperSocket.JTTBase.Model.CrcLength
+      "InitialValue": "NonZero1", //初始值 SuperSocket.JTTBase.Model.InitialCrcValue
+      "IgnoreLength": { //需要跳过部分的长度
+        "Front": 0, //前段
+        "Posterior": 0 //后端
+      },
+      //取值长度（负数为跳过指定长度后再取剩下的值）
+      //如果crc校验码位于流数据末端，则应该设置为负数
+      "ValueLength": -2,
+      "Property": "Crc_Code" //属性名称（PackageInfo中的属性）
+    },
+    "Encrypt": { //加密配置
+      "M1": 1,
+      "IA1": 2,
+      "IC1": 3,
+      "Targets": { //需要解密的结构
+        "MessageBody": { //结构的Id
+          "Flag": "MessageHeader.Encrypt_Flag", //加密标识属性名称（用该属性的值来判断是否需要解密）
+          "Key": "MessageHeader.Encrtpt_Key" //秘钥属性名称（用该属性的值来获取用于解密的密钥）
+        }
+      }
+    },
+    "Escapes": [ //转义配置
+      { //byte[] { 5b } 转为 byte[] { 5a, 01 }
+        "Target": "0x5b",
+        "Trans": [ "0x5a", "0x01" ], //必须为两字节
+        "Encode": { //应该以何种方式编码Target值和Trans值
+          "CodeType": "string_hex"
+        }
+      },
+      {
+        "Target": "0x5a",
+        "Trans": [ "0x5a", "0x02" ],
+        "Encode": {
+          "CodeType": "string_hex"
+        }
+      },
+      {
+        "Target": "0x5d",
+        "Trans": [ "0x5e", "0x01" ],
+        "Encode": {
+          "CodeType": "string_hex"
+        }
+      },
+      {
+        "Target": "0x5e",
+        "Trans": [ "0x5e", "0x02" ],
+        "Encode": {
+          "CodeType": "string_hex"
+        }
+      }
+    ],
+    /* JTT协议配置信息 结束 */
+
+
+
+    /* 消息包基础信息 开始 */
+    "HeadFlag": { //头标识
+      "Encode": { //应该以何种方式编码Value值
+        "CodeType": "string_hex" //类型 SuperSocket.JTTBase.Model.CodeType
+      },
+      "Value": "0x5b"
+    },
+    "EndFlag": { //尾标识
+      "Encode": {
+        "CodeType": "string_hex"
+      },
+      "Value": "0x5d"
+    }
+    /* 消息包结构信息 结束 */
+  }
+}

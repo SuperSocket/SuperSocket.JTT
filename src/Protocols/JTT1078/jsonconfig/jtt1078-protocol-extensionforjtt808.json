@@ -1,0 +1,17 @@
+﻿/*
+ * JTT1078协议对JTT808协议的拓展，终端和平台 之间通讯的消息结构
+*/
+{
+  //数据映射配置
+  "DataMappings": {
+
+  },
+  //内部结构映射实体集合
+  "InternalEntitysMappings": {
+
+  },
+  //内部结构配置
+  "InternalStructures": {
+
+  }
+}

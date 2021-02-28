@@ -1,0 +1,2459 @@
+﻿/*
+ * JTT1078协议对JTT809协议的拓展，平台和平台 之间通讯的消息结构
+*/
+{
+  //数据映射配置
+  "DataMappings": {
+    //子业务类型
+    "SubDataType": [
+      {
+        "Matching": "0x1701",
+        "Value": "UP_AUTHORIZE_MSG_STARTUP"
+      },
+      {
+        "Matching": "0x1702",
+        "Value": "UP_AUTHORIZE_MSG_STARTUP_REQ"
+      },
+      {
+        "Matching": "0x9702",
+        "Value": "DOWN_AUTHORIZE_MSG_STARTUP_REQ_ACK"
+      },
+      {
+        "Matching": "0x1801",
+        "Value": "DOWN_AUTHORIZE_MSG_STARTUP_REQ_ACK"
+      },
+      {
+        "Matching": "0x1802",
+        "Value": "DOWN_REALVIDEO_MSG_STARTUP"
+      },
+      {
+        "Matching": "0x9801",
+        "Value": "DOWN_REALVIDEO_MSG_STARTUP"
+      },
+      {
+        "Matching": "0x9802",
+        "Value": "DOWN_REALVIDEO_MSG_END"
+      },
+      {
+        "Matching": "0x1901",
+        "Value": "UP_FILELIST_MSG"
+      },
+      {
+        "Matching": "0x1902",
+        "Value": "UP_REALVIDEO_FILELIST_REQ_ACK"
+      },
+      {
+        "Matching": "0x9901",
+        "Value": "DOWN_FILELIST_MSG_ACK"
+      },
+      {
+        "Matching": "0x9902",
+        "Value": "DOWN_REALVIDEO_FILELIST_REQ"
+      },
+      {
+        "Matching": "0x1A01",
+        "Value": "UP_PLAYBACK_MSG_STARTUP_ACK"
+      },
+      {
+        "Matching": "0x1A02",
+        "Value": "UP__PLAYBACK_MSG_CONTROL_ACK"
+      },
+      {
+        "Matching": "0x9A01",
+        "Value": "DOWN_PLAYBACK_MSG_STARTUP"
+      },
+      {
+        "Matching": "0x9A02",
+        "Value": "DOWN__PLAYBACK_MSG_CONTROL"
+      },
+      {
+        "Matching": "0x1B01",
+        "Value": "UP_DOWNLOAD_MSG_STARTUP_ACK"
+      },
+      {
+        "Matching": "0x1B02",
+        "Value": "UP_DOWNLOAD_MSG_END_INFORM"
+      },
+      {
+        "Matching": "0x1B03",
+        "Value": "UP_DOWNLOAD_MSG_CONTROL_ACK"
+      },
+      {
+        "Matching": "0x9B01",
+        "Value": "DOWN_DOWNLOAD_MSG_STARTUP"
+      },
+      {
+        "Matching": "0x9B02",
+        "Value": "UP_DOWNLOAD_MSG_END_INFORM_ACK"
+      },
+      {
+        "Matching": "0x9B03",
+        "Value": "DOWN_DOWNLOAD_MSG_CONTROL"
+      }
+    ],
+    //应答消息应答结果
+    "ReplyResult": [
+      {
+        "Matching": "0x00",
+        "Value": "成功"
+      },
+      {
+        "Matching": "0x01",
+        "Value": "失败"
+      },
+      {
+        "Matching": "0x02",
+        "Value": "不支持"
+      },
+      {
+        "Matching": "0x03",
+        "Value": "会话结束"
+      },
+      {
+        "Matching": "0x04",
+        "Value": "时效口令错误"
+      },
+      {
+        "Matching": "0x05",
+        "Value": "不满足跨域条件"
+      }
+    ],
+    //音视频类型
+    "AvitemType": [
+      {
+        "Matching": "0x00",
+        "Value": "音视频"
+      },
+      {
+        "Matching": "0x01",
+        "Value": "音频"
+      },
+      {
+        "Matching": "0x02",
+        "Value": "视频"
+      },
+      {
+        "Matching": "0x03",
+        "Value": "视频或音视频"
+      }
+    ],
+    //回放控制类型
+    "PlaybackControlType": [
+      {
+        "Matching": "0x00",
+        "Value": "正常回放"
+      },
+      {
+        "Matching": "0x01",
+        "Value": "暂停回放"
+      },
+      {
+        "Matching": "0x02",
+        "Value": "结束回放"
+      },
+      {
+        "Matching": "0x03",
+        "Value": "快进回放"
+      },
+      {
+        "Matching": "0x04",
+        "Value": "关键帧快退回放"
+      },
+      {
+        "Matching": "0x05",
+        "Value": "拖动回放"
+      },
+      {
+        "Matching": "0x06",
+        "Value": "关键帧播放"
+      }
+    ],
+    //回放控制快进或快退倍数
+    "PlaybackFastTime": [
+      {
+        "Matching": "0x00",
+        "Value": "无效"
+      },
+      {
+        "Matching": "0x01",
+        "Value": "x1"
+      },
+      {
+        "Matching": "0x02",
+        "Value": "x2"
+      },
+      {
+        "Matching": "0x03",
+        "Value": "x4"
+      },
+      {
+        "Matching": "0x04",
+        "Value": "x8"
+      },
+      {
+        "Matching": "0x05",
+        "Value": "x16"
+      }
+    ],
+    //远程录像下载控制请求控制类型
+    "DownloadControlType": [
+      {
+        "Matching": "0x00",
+        "Value": "暂停"
+      },
+      {
+        "Matching": "0x01",
+        "Value": "继续"
+      },
+      {
+        "Matching": "0x02",
+        "Value": "取消"
+      }
+    ]
+  },
+  //内部结构映射实体集合
+  "InternalEntitysMappings": {
+    //主链路时效口令交互消息数据体
+    "0x1700": {
+      "Assembly": "SuperSocket.JTT1078",
+      "TypeName": "SuperSocket.JTT1078.MessageBody.UpAuthorizeMsgBody",
+      "Length": null //2+
+    },
+    //时效口令上报消息数据体
+    "0x1701": {
+      "Assembly": "SuperSocket.JTT1078",
+      "TypeName": "SuperSocket.JTT1078.MessageBody.Internal.AuthorizeStartupBody",
+      "Length": 139
+    },
+    //时效口令请求消息数据体
+    "0x1702": {
+      "Assembly": "SuperSocket.JTT1078",
+      "TypeName": "SuperSocket.JTT1078.MessageBody.Internal.AuthorizeStartupRequestBody",
+      "Length": 28
+    },
+
+    //从链路时效口令交互消息数据体
+    "0x9700": {
+      "Assembly": "SuperSocket.JTT1078",
+      "TypeName": "SuperSocket.JTT1078.MessageBody.DownAuthorizeMsgBody",
+      "Length": null //28+
+    },
+    //时效口令请求应答消息数据体
+    "0x9702": {
+      "Assembly": "SuperSocket.JTT1078",
+      "TypeName": "SuperSocket.JTT1078.MessageBody.Internal.AuthorizeStartupReplyBody",
+      "Length": 128
+    },
+
+    //从链路实时音视频交互消息数据体
+    "0x9800": {
+      "Assembly": "SuperSocket.JTT1078",
+      "TypeName": "SuperSocket.JTT1078.MessageBody.DownRealVideoMsgBody",
+      "Length": null //28+
+    },
+    //实时音视频请求消息数据体
+    "0x9801": {
+      "Assembly": "SuperSocket.JTT1078",
+      "TypeName": "SuperSocket.JTT1078.MessageBody.Internal.RealVideoStartupRequestBody",
+      "Length": 102
+    },
+    //主动请求停止实时音视频传输消息数据体
+    "0x9802": {
+      "Assembly": "SuperSocket.JTT1078",
+      "TypeName": "SuperSocket.JTT1078.MessageBody.Internal.RealVideoEndRequestBody",
+      "Length": 2
+    },
+
+    //主链路实时音视频交互消息数据体
+    "0x1800": {
+      "Assembly": "SuperSocket.JTT1078",
+      "TypeName": "SuperSocket.JTT1078.MessageBody.UpRealVideoMsgBody",
+      "Length": null //28+
+    },
+    //实时音视频请求应答消息数据体
+    "0x1801": {
+      "Assembly": "SuperSocket.JTT1078",
+      "TypeName": "SuperSocket.JTT1078.MessageBody.Internal.RealVideoStartupReplyBody",
+      "Length": 35
+    },
+    //主动请求停止实时音视频传输应答消息数据体
+    "0x1802": {
+      "Assembly": "SuperSocket.JTT1078",
+      "TypeName": "SuperSocket.JTT1078.MessageBody.Internal.RealVideoEndReplyBody",
+      "Length": 1
+    },
+
+    //从链路远程录像检索交互消息数据体
+    "0x9900": {
+      "Assembly": "SuperSocket.JTT1078",
+      "TypeName": "SuperSocket.JTT1078.MessageBody.DownSearchMsgBody",
+      "Length": null //28+
+    },
+    //主动上传音视频资源目录请求应答消息数据体
+    "0x9901": {
+      "Assembly": "SuperSocket.JTT1078",
+      "TypeName": "SuperSocket.JTT1078.MessageBody.Internal.UploadFilelistReplyBody",
+      "Length": 2
+    },
+    //查询音视频资源目录请求消息数据体
+    "0x9902": {
+      "Assembly": "SuperSocket.JTT1078",
+      "TypeName": "SuperSocket.JTT1078.MessageBody.Internal.SearchFilelistRequestBody",
+      "Length": 128
+    },
+
+
+    //主链路远程录像检索交互消息数据体
+    "0x1900": {
+      "Assembly": "SuperSocket.JTT1078",
+      "TypeName": "SuperSocket.JTT1078.MessageBody.UpSearchMsgBody",
+      "Length": null //28+
+    },
+    //主动上传音视频资源目录信息消息数据体
+    "0x1901": {
+      "Assembly": "SuperSocket.JTT1078",
+      "TypeName": "SuperSocket.JTT1078.MessageBody.Internal.UploadFilelistRequestBody",
+      "Length": 36
+    },
+    //音视频资源目录项
+    "FilelistItemEntity": {
+      "Assembly": "SuperSocket.JTT1078",
+      "TypeName": "SuperSocket.JTT1078.MessageBody.Internal.FilelistItem",
+      "Length": 32
+    },
+    //查询音视频资源目录应答消息数据体
+    "0x1902": {
+      "Assembly": "SuperSocket.JTT1078",
+      "TypeName": "SuperSocket.JTT1078.MessageBody.Internal.SearchFilelistReplyBody",
+      "Length": 37
+    },
+
+    //从链路远程录像回放交互消息数据体
+    "0x9A00": {
+      "Assembly": "SuperSocket.JTT1078",
+      "TypeName": "SuperSocket.JTT1078.MessageBody.DownPlaybackMsgBody",
+      "Length": null //28+
+    },
+    //远程录像回放请求消息数据体
+    "0x9A01": {
+      "Assembly": "SuperSocket.JTT1078",
+      "TypeName": "SuperSocket.JTT1078.MessageBody.Internal.PlaybackStartupRequestBody",
+      "Length": 120
+    },
+    //远程录像回放控制消息数据体
+    "0x9A02": {
+      "Assembly": "SuperSocket.JTT1078",
+      "TypeName": "SuperSocket.JTT1078.MessageBody.Internal.PlaybackControlRequestBody",
+      "Length": 10
+    },
+
+    //从链路远程录像回放交互消息数据体
+    "0x1A00": {
+      "Assembly": "SuperSocket.JTT1078",
+      "TypeName": "SuperSocket.JTT1078.MessageBody.UpPlaybackMsgBody",
+      "Length": null //28+
+    },
+    //远程录像回放请求应答消息数据体
+    "0x1A01": {
+      "Assembly": "SuperSocket.JTT1078",
+      "TypeName": "SuperSocket.JTT1078.MessageBody.Internal.PlaybackStartupReplyBody",
+      "Length": 35
+    },
+    //远程录像回放控制应答消息数据体
+    "0x1A02": {
+      "Assembly": "SuperSocket.JTT1078",
+      "TypeName": "SuperSocket.JTT1078.MessageBody.Internal.PlaybackControlReplyBody",
+      "Length": 1
+    },
+
+    //从链路远程录像下载交互消息数据体
+    "0x9B00": {
+      "Assembly": "SuperSocket.JTT1078",
+      "TypeName": "SuperSocket.JTT1078.MessageBody.DownDownloadMsgBody",
+      "Length": null //28+
+    },
+    //远程录像下载请求消息数据体
+    "0x9B01": {
+      "Assembly": "SuperSocket.JTT1078",
+      "TypeName": "SuperSocket.JTT1078.MessageBody.Internal.DownloadStartupRequestBody",
+      "Length": 132
+    },
+    //远程录像下载完成通知应答消息数据体
+    "0x9B02": {
+      "Assembly": "SuperSocket.JTT1078",
+      "TypeName": "SuperSocket.JTT1078.MessageBody.Internal.DownloadEndInformReplyBody",
+      "Length": 3
+    },
+    //远程录像下载控制请求消息数据体
+    "0x9B03": {
+      "Assembly": "SuperSocket.JTT1078",
+      "TypeName": "SuperSocket.JTT1078.MessageBody.Internal.DownloadControlRequestBody",
+      "Length": 3
+    },
+
+    //主链路远程录像下载交互消息数据体
+    "0x1B00": {
+      "Assembly": "SuperSocket.JTT1078",
+      "TypeName": "SuperSocket.JTT1078.MessageBody.UpDownloadMsgBody",
+      "Length": null //28+
+    },
+    //远程录像下载请求应答消息数据体
+    "0x1B01": {
+      "Assembly": "SuperSocket.JTT1078",
+      "TypeName": "SuperSocket.JTT1078.MessageBody.Internal.DownloadStartupReplyBody",
+      "Length": 3
+    },
+    //远程录像下载完成通知消息数据体
+    "0x1B02": {
+      "Assembly": "SuperSocket.JTT1078",
+      "TypeName": "SuperSocket.JTT1078.MessageBody.Internal.DownloadEndInformRequestBody",
+      "Length": 308
+    },
+    //远程录像下载控制请求应答消息数据体
+    "0x1B03": {
+      "Assembly": "SuperSocket.JTT1078",
+      "TypeName": "SuperSocket.JTT1078.MessageBody.Internal.DownloadControlReplyBody",
+      "Length": 1
+    }
+  },
+  //内部结构配置
+  "InternalStructures": {
+    "0x1700": [
+      {
+        "Id": "UpAuthorizeMsgBodyEntity-DataType",
+        "Order": 1,
+        "Property": "DataType",
+        "Explain": "子业务类型标识",
+        "Length": 2,
+        "Encode": {
+          "CodeType": "uint16"
+        },
+        "DataMapping": {
+          "Key": "SubDataType",
+          "SetProperty": "DataType_Mapping",
+          "UseDecodeValue": true,
+          "Encode": {
+            "CodeType": "uint16_hex"
+          },
+          "Decode": {
+            "CodeType": "string_hex"
+          }
+        }
+      },
+      {
+        "Id": "UpAuthorizeMsgBodyEntity-SubBody",
+        "Order": 2,
+        "Property": "SubBody",
+        "Explain": "子业务数据体",
+        "Length": null,
+        "StructureType": "internal",
+        "InternalKey": {
+          "Property": ".DataType",
+          "Encode": {
+            "CodeType": "uint16_hex"
+          },
+          "Decode": {
+            "CodeType": "string_hex"
+          }
+        },
+        "Internal": {
+          "0x1701": [
+            {
+              "Id": "AuthorizeStartupBodyEntity-PlateformID",
+              "Order": 1,
+              "Property": "PlateformID",
+              "Explain": "企业视频监控平台唯一编码",
+              "Length": 11,
+              "Encode": {
+                "CodeType": "bytes"
+              }
+            },
+            {
+              "Id": "AuthorizeStartupBodyEntity-AuthorizeCode1",
+              "Order": 2,
+              "Property": "AuthorizeCode1",
+              "Explain": "归属地区政府平台使用的时效口令",
+              "Length": 64,
+              "Encode": {
+                "CodeType": "bytes"
+              }
+            },
+            {
+              "Id": "AuthorizeStartupBodyEntity-AuthorizeCode2",
+              "Order": 3,
+              "Property": "AuthorizeCode2",
+              "Explain": "跨域地区政府平台使用的时效口令",
+              "Length": 64,
+              "Encode": {
+                "CodeType": "bytes"
+              }
+            }
+          ],
+          "0x1702": [
+            {
+              "Id": "AuthorizeStartupRequestBodyEntity-VehicleNo",
+              "Order": 1,
+              "Property": "VehicleNo",
+              "Explain": "车牌号",
+              "Length": 21,
+              "Encode": {
+                "CodeType": "string"
+              }
+            },
+            {
+              "Id": "AuthorizeStartupRequestBodyEntity-VehicleColor",
+              "Order": 2,
+              "Property": "VehicleColor",
+              "Explain": "车牌颜色",
+              "Length": 1,
+              "Encode": {
+                "CodeType": "byte"
+              }
+            },
+            {
+              "Id": "AuthorizeStartupRequestBodyEntity-DataType",
+              "Order": 3,
+              "Property": "DataType",
+              "Explain": "子业务类型标识",
+              "Length": 2,
+              "Encode": {
+                "CodeType": "uint16"
+              },
+              "DataMapping": {
+                "Key": "SubDataType",
+                "SetProperty": "DataType_Mapping",
+                "UseDecodeValue": true,
+                "Encode": {
+                  "CodeType": "uint16_hex"
+                },
+                "Decode": {
+                  "CodeType": "string_hex"
+                }
+              }
+            },
+            {
+              "Id": "AuthorizeStartupRequestBodyEntity-DataLength",
+              "Order": 4,
+              "Property": "DataLength",
+              "Explain": "后续数据长度",
+              "Length": 4,
+              "Encode": {
+                "CodeType": "uint32"
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "0x9700": [
+      {
+        "Id": "DownAuthorizeMsgBodyEntity-VehicleNo",
+        "Order": 1,
+        "Property": "VehicleNo",
+        "Explain": "车牌号",
+        "Length": 21,
+        "Encode": {
+          "CodeType": "string"
+        }
+      },
+      {
+        "Id": "DownAuthorizeMsgBodyEntity-VehicleColor",
+        "Order": 2,
+        "Property": "VehicleColor",
+        "Explain": "车牌颜色",
+        "Length": 1,
+        "Encode": {
+          "CodeType": "byte"
+        }
+      },
+      {
+        "Id": "DownAuthorizeMsgBodyEntity-DataType",
+        "Order": 3,
+        "Property": "DataType",
+        "Explain": "子业务类型标识",
+        "Length": 2,
+        "Encode": {
+          "CodeType": "uint16"
+        },
+        "DataMapping": {
+          "Key": "SubDataType",
+          "SetProperty": "DataType_Mapping",
+          "UseDecodeValue": true,
+          "Encode": {
+            "CodeType": "uint16_hex"
+          },
+          "Decode": {
+            "CodeType": "string_hex"
+          }
+        }
+      },
+      {
+        "Id": "DownAuthorizeMsgBodyEntity-DataLength",
+        "Order": 4,
+        "Property": "DataLength",
+        "Explain": "后续数据长度",
+        "Length": 4,
+        "Encode": {
+          "CodeType": "uint32"
+        }
+      },
+      {
+        "Id": "DownAuthorizeMsgBodyEntity-SubBody",
+        "Order": 5,
+        "Property": "SubBody",
+        "Explain": "子业务数据体",
+        "Length": null,
+        "StructureType": "internal",
+        "InternalKey": {
+          "Property": ".DataType",
+          "Encode": {
+            "CodeType": "uint16_hex"
+          },
+          "Decode": {
+            "CodeType": "string_hex"
+          }
+        },
+        "Internal": {
+          "0x9702": [
+            {
+              "Id": "AuthorizeStartupReplyBodyEntity-AuthorizeCode1",
+              "Order": 1,
+              "Property": "AuthorizeCode1",
+              "Explain": "归属地区政府平台使用的时效口令",
+              "Length": 64,
+              "Encode": {
+                "CodeType": "bytes"
+              }
+            },
+            {
+              "Id": "AuthorizeStartupReplyBodyEntity-AuthorizeCode2",
+              "Order": 2,
+              "Property": "AuthorizeCode2",
+              "Explain": "跨域地区政府平台使用的时效口令",
+              "Length": 64,
+              "Encode": {
+                "CodeType": "bytes"
+              }
+            }
+          ]
+        }
+      }
+    ],
+
+    "0x9800": [
+      {
+        "Id": "DownRealVideoMsgBodyEntity-VehicleNo",
+        "Order": 1,
+        "Property": "VehicleNo",
+        "Explain": "车牌号",
+        "Length": 21,
+        "Encode": {
+          "CodeType": "string"
+        }
+      },
+      {
+        "Id": "DownRealVideoMsgBodyEntity-VehicleColor",
+        "Order": 2,
+        "Property": "VehicleColor",
+        "Explain": "车牌颜色",
+        "Length": 1,
+        "Encode": {
+          "CodeType": "byte"
+        }
+      },
+      {
+        "Id": "DownRealVideoMsgBodyEntity-DataType",
+        "Order": 3,
+        "Property": "DataType",
+        "Explain": "子业务类型标识",
+        "Length": 2,
+        "Encode": {
+          "CodeType": "uint16"
+        },
+        "DataMapping": {
+          "Key": "SubDataType",
+          "SetProperty": "DataType_Mapping",
+          "UseDecodeValue": true,
+          "Encode": {
+            "CodeType": "uint16_hex"
+          },
+          "Decode": {
+            "CodeType": "string_hex"
+          }
+        }
+      },
+      {
+        "Id": "DownRealVideoMsgBodyEntity-DataLength",
+        "Order": 4,
+        "Property": "DataLength",
+        "Explain": "后续字段数据长度",
+        "Length": 4,
+        "Encode": {
+          "CodeType": "uint32"
+        }
+      },
+      {
+        "Id": "DownRealVideoMsgBodyEntity-SubBody",
+        "Order": 5,
+        "Property": "SubBody",
+        "Explain": "子业务数据体",
+        "Length": null,
+        "StructureType": "internal",
+        "InternalLength": [
+          {
+            "0x9801": {
+              "Property": ".DataLength"
+            }
+          }
+        ],
+        "InternalKey": {
+          "Property": ".DataType",
+          "Encode": {
+            "CodeType": "uint16_hex"
+          },
+          "Decode": {
+            "CodeType": "string_hex"
+          }
+        },
+        "Internal": {
+          "0x9801": [
+            {
+              "Id": "RealVideoStartupRequestBodyEntity-ChannelID",
+              "Order": 1,
+              "Property": "ChannelID",
+              "Explain": "逻辑通道号",
+              "Length": 1,
+              "Encode": {
+                "CodeType": "byte"
+              }
+            },
+            {
+              "Id": "RealVideoStartupRequestBodyEntity-AvitemType",
+              "Order": 2,
+              "Property": "AvitemType",
+              "Explain": "音视频类型",
+              "Length": 1,
+              "Encode": {
+                "CodeType": "byte"
+              },
+              "DataMapping": {
+                "Key": "AvitemType",
+                "SetProperty": "AvitemType_Mapping",
+                "UseDecodeValue": true,
+                "Encode": {
+                  "CodeType": "byte_hex"
+                },
+                "Decode": {
+                  "CodeType": "string_hex"
+                }
+              }
+            },
+            {
+              "Id": "RealVideoStartupRequestBodyEntity-AuthorizeCode",
+              "Order": 3,
+              "Property": "AuthorizeCode",
+              "Explain": "时效口令",
+              "Length": 64,
+              "Encode": {
+                "CodeType": "bytes"
+              }
+            },
+            {
+              "Id": "RealVideoStartupRequestBodyEntity-GnssData",
+              "Order": 4,
+              "Property": "GnssData",
+              "Explain": "车辆进入跨域地区后5min之内的任一位置",
+              "Length": 36,
+              "Encode": {
+                "CodeType": "bytes"
+              }
+            }
+          ],
+          "0x9802": [
+            {
+              "Id": "RealVideoEndRequestBodyEntity-ChannelID",
+              "Order": 1,
+              "Property": "ChannelID",
+              "Explain": "逻辑通道号",
+              "Length": 1,
+              "Encode": {
+                "CodeType": "byte"
+              }
+            },
+            {
+              "Id": "RealVideoEndRequestBodyEntity-AvitemType",
+              "Order": 2,
+              "Property": "AvitemType",
+              "Explain": "音视频类型",
+              "Length": 1,
+              "Encode": {
+                "CodeType": "byte"
+              },
+              "DataMapping": {
+                "Key": "AvitemType",
+                "SetProperty": "AvitemType_Mapping",
+                "UseDecodeValue": true,
+                "Encode": {
+                  "CodeType": "byte_hex"
+                },
+                "Decode": {
+                  "CodeType": "string_hex"
+                }
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "0x1800": [
+      {
+        "Id": "UpRealVideoMsgBodyEntity-VehicleNo",
+        "Order": 1,
+        "Property": "VehicleNo",
+        "Explain": "车牌号",
+        "Length": 21,
+        "Encode": {
+          "CodeType": "string"
+        }
+      },
+      {
+        "Id": "UpRealVideoMsgBodyEntity-VehicleColor",
+        "Order": 2,
+        "Property": "VehicleColor",
+        "Explain": "车牌颜色",
+        "Length": 1,
+        "Encode": {
+          "CodeType": "byte"
+        }
+      },
+      {
+        "Id": "UpRealVideoMsgBodyEntity-DataType",
+        "Order": 3,
+        "Property": "DataType",
+        "Explain": "子业务类型标识",
+        "Length": 2,
+        "Encode": {
+          "CodeType": "uint16"
+        },
+        "DataMapping": {
+          "Key": "SubDataType",
+          "SetProperty": "DataType_Mapping",
+          "UseDecodeValue": true,
+          "Encode": {
+            "CodeType": "uint16_hex"
+          },
+          "Decode": {
+            "CodeType": "string_hex"
+          }
+        }
+      },
+      {
+        "Id": "UpRealVideoMsgBodyEntity-DataLength",
+        "Order": 4,
+        "Property": "DataLength",
+        "Explain": "后续字段数据长度",
+        "Length": 4,
+        "Encode": {
+          "CodeType": "uint32"
+        }
+      },
+      {
+        "Id": "UpRealVideoMsgBodyEntity-SubBody",
+        "Order": 5,
+        "Property": "SubBody",
+        "Explain": "子业务数据体",
+        "Length": null,
+        "StructureType": "internal",
+        "InternalKey": {
+          "Property": ".DataType",
+          "Encode": {
+            "CodeType": "uint16_hex"
+          },
+          "Decode": {
+            "CodeType": "string_hex"
+          }
+        },
+        "Internal": {
+          "0x1801": [
+            {
+              "Id": "RealVideoStartupReplyBodyEntity-Result",
+              "Order": 1,
+              "Property": "Result",
+              "Explain": "应答结果",
+              "Length": 1,
+              "Encode": {
+                "CodeType": "byte"
+              },
+              "DataMapping": {
+                "Key": "ReplyResult",
+                "SetProperty": "Result_Mapping",
+                "UseDecodeValue": true,
+                "Encode": {
+                  "CodeType": "byte_hex"
+                },
+                "Decode": {
+                  "CodeType": "string_hex"
+                }
+              }
+            },
+            {
+              "Id": "RealVideoStartupReplyBodyEntity-ServerIP",
+              "Order": 2,
+              "Property": "ServerIP",
+              "Explain": "企业视频服务器IP地址",
+              "Length": 32,
+              "Encode": {
+                "CodeType": "string"
+              }
+            },
+            {
+              "Id": "RealVideoStartupReplyBodyEntity-ServerPort",
+              "Order": 3,
+              "Property": "ServerPort",
+              "Explain": "企业视频服务器端口号",
+              "Length": 2,
+              "Encode": {
+                "CodeType": "uint16"
+              }
+            }
+          ],
+          "0x1802": [
+            {
+              "Id": "RealVideoEndReplyBodyEntity-Result",
+              "Order": 1,
+              "Property": "Result",
+              "Explain": "应答结果",
+              "Length": 1,
+              "Encode": {
+                "CodeType": "byte"
+              },
+              "DataMapping": {
+                "Key": "ReplyResult",
+                "SetProperty": "Result_Mapping",
+                "UseDecodeValue": true,
+                "Encode": {
+                  "CodeType": "byte_hex"
+                },
+                "Decode": {
+                  "CodeType": "string_hex"
+                }
+              }
+            }
+          ]
+        }
+      }
+    ],
+
+    "0x9900": [
+      {
+        "Id": "DownSearchMsgBodyEntity-VehicleNo",
+        "Order": 1,
+        "Property": "VehicleNo",
+        "Explain": "车牌号",
+        "Length": 21,
+        "Encode": {
+          "CodeType": "string"
+        }
+      },
+      {
+        "Id": "DownSearchMsgBodyEntity-VehicleColor",
+        "Order": 2,
+        "Property": "VehicleColor",
+        "Explain": "车牌颜色",
+        "Length": 1,
+        "Encode": {
+          "CodeType": "byte"
+        }
+      },
+      {
+        "Id": "DownSearchMsgBodyEntity-DataType",
+        "Order": 3,
+        "Property": "DataType",
+        "Explain": "子业务类型标识",
+        "Length": 2,
+        "Encode": {
+          "CodeType": "uint16"
+        },
+        "DataMapping": {
+          "Key": "SubDataType",
+          "SetProperty": "DataType_Mapping",
+          "UseDecodeValue": true,
+          "Encode": {
+            "CodeType": "uint16_hex"
+          },
+          "Decode": {
+            "CodeType": "string_hex"
+          }
+        }
+      },
+      {
+        "Id": "DownSearchMsgBodyEntity-DataLength",
+        "Order": 4,
+        "Property": "DataLength",
+        "Explain": "后续字段数据长度",
+        "Length": 4,
+        "Encode": {
+          "CodeType": "uint32"
+        }
+      },
+      {
+        "Id": "DownSearchMsgBodyEntity-SubBody",
+        "Order": 5,
+        "Property": "SubBody",
+        "Explain": "子业务数据体",
+        "Length": null,
+        "StructureType": "internal",
+        "InternalLength": [
+          {
+            "0x9902": {
+              "Property": ".DataLength"
+            }
+          }
+        ],
+        "InternalKey": {
+          "Property": ".DataType",
+          "Encode": {
+            "CodeType": "uint16_hex"
+          },
+          "Decode": {
+            "CodeType": "string_hex"
+          }
+        },
+        "Internal": {
+          "0x9901": [
+            {
+              "Id": "UploadFilelistReplyBodyEntity-Result",
+              "Order": 1,
+              "Property": "Result",
+              "Explain": "应答结果",
+              "Length": 1,
+              "Encode": {
+                "CodeType": "byte"
+              },
+              "DataMapping": {
+                "Key": "ReplyResult",
+                "SetProperty": "Result_Mapping",
+                "UseDecodeValue": true,
+                "Encode": {
+                  "CodeType": "byte_hex"
+                },
+                "Decode": {
+                  "CodeType": "string_hex"
+                }
+              }
+            },
+            {
+              "Id": "UploadFilelistReplyBodyEntity-ItemNumber",
+              "Order": 2,
+              "Property": "ItemNumber",
+              "Explain": "资源目录总数",
+              "Length": 1,
+              "Encode": {
+                "CodeType": "byte"
+              }
+            }
+          ],
+          "0x9902": [
+            {
+              "Id": "SearchFilelistRequestBodyEntity-ChannelID",
+              "Order": 1,
+              "Property": "ChannelID",
+              "Explain": "逻辑通道号",
+              "Length": 1,
+              "Encode": {
+                "CodeType": "byte"
+              }
+            },
+            {
+              "Id": "SearchFilelistRequestBodyEntity-StartTime",
+              "Order": 2,
+              "Property": "StartTime",
+              "Explain": "起始时间",
+              "Length": 8,
+              "Encode": {
+                "CodeType": "uint64_unix"
+              }
+            },
+            {
+              "Id": "SearchFilelistRequestBodyEntity-EndTime",
+              "Order": 3,
+              "Property": "EndTime",
+              "Explain": "终止时间",
+              "Length": 8,
+              "Encode": {
+                "CodeType": "uint64_unix"
+              }
+            },
+            {
+              "Id": "SearchFilelistRequestBodyEntity-AlarmType",
+              "Order": 4,
+              "Property": "AlarmType",
+              "Explain": "报警类型",
+              "Length": 8,
+              "Encode": {
+                "CodeType": "binary"
+              },
+              "FlagStruct": {
+                "Property": "AlarmType_Flag",
+                "Assembly": "SuperSocket.JTT1078",
+                "TypeName": "SuperSocket.JTT1078.Flag.VideoAlarmFlag"
+              }
+            },
+            {
+              "Id": "SearchFilelistRequestBodyEntity-AvitemType",
+              "Order": 5,
+              "Property": "AvitemType",
+              "Explain": "音视频类型",
+              "Length": 1,
+              "Encode": {
+                "CodeType": "byte"
+              },
+              "DataMapping": {
+                "Key": "AvitemType",
+                "SetProperty": "AvitemType_Mapping",
+                "UseDecodeValue": true,
+                "Encode": {
+                  "CodeType": "byte_hex"
+                },
+                "Decode": {
+                  "CodeType": "string_hex"
+                }
+              }
+            },
+            {
+              "Id": "SearchFilelistRequestBodyEntity-StreamType",
+              "Order": 6,
+              "Property": "StreamType",
+              "Explain": "码流类型",
+              "Length": 1,
+              "Encode": {
+                "CodeType": "byte"
+              },
+              "DataMapping": {
+                "Key": "StreamType",
+                "SetProperty": "StreamType_Mapping",
+                "UseDecodeValue": true,
+                "Encode": {
+                  "CodeType": "byte_hex"
+                },
+                "Decode": {
+                  "CodeType": "string_hex"
+                }
+              }
+            },
+            {
+              "Id": "SearchFilelistRequestBodyEntity-MemType",
+              "Order": 7,
+              "Property": "MemType",
+              "Explain": "存储器类型",
+              "Length": 1,
+              "Encode": {
+                "CodeType": "byte"
+              },
+              "DataMapping": {
+                "Key": "MemType",
+                "SetProperty": "MemType_Mapping",
+                "UseDecodeValue": true,
+                "Encode": {
+                  "CodeType": "byte_hex"
+                },
+                "Decode": {
+                  "CodeType": "string_hex"
+                }
+              }
+            },
+            {
+              "Id": "SearchFilelistRequestBodyEntity-AuthorizeCode",
+              "Order": 8,
+              "Property": "AuthorizeCode",
+              "Explain": "时效口令",
+              "Length": 64,
+              "Encode": {
+                "CodeType": "bytes"
+              }
+            },
+            {
+              "Id": "SearchFilelistRequestBodyEntity-GnssData",
+              "Order": 9,
+              "Property": "GnssData",
+              "Explain": "车辆进入跨域地区后5min之内的任一位置",
+              "Length": 36,
+              "Encode": {
+                "CodeType": "bytes"
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "0x1900": [
+      {
+        "Id": "UpSearchMsgBodyEntity-VehicleNo",
+        "Order": 1,
+        "Property": "VehicleNo",
+        "Explain": "车牌号",
+        "Length": 21,
+        "Encode": {
+          "CodeType": "string"
+        }
+      },
+      {
+        "Id": "UpSearchMsgBodyEntity-VehicleColor",
+        "Order": 2,
+        "Property": "VehicleColor",
+        "Explain": "车牌颜色",
+        "Length": 1,
+        "Encode": {
+          "CodeType": "byte"
+        }
+      },
+      {
+        "Id": "UpSearchMsgBodyEntity-DataType",
+        "Order": 3,
+        "Property": "DataType",
+        "Explain": "子业务类型标识",
+        "Length": 2,
+        "Encode": {
+          "CodeType": "uint16"
+        },
+        "DataMapping": {
+          "Key": "SubDataType",
+          "SetProperty": "DataType_Mapping",
+          "UseDecodeValue": true,
+          "Encode": {
+            "CodeType": "uint16_hex"
+          },
+          "Decode": {
+            "CodeType": "string_hex"
+          }
+        }
+      },
+      {
+        "Id": "UpSearchMsgBodyEntity-DataLength",
+        "Order": 4,
+        "Property": "DataLength",
+        "Explain": "后续字段数据长度",
+        "Length": 4,
+        "Encode": {
+          "CodeType": "uint32"
+        }
+      },
+      {
+        "Id": "UpSearchMsgBodyEntity-SubBody",
+        "Order": 5,
+        "Property": "SubBody",
+        "Explain": "子业务数据体",
+        "Length": null,
+        "StructureType": "internal",
+        "InternalKey": {
+          "Property": ".DataType",
+          "Encode": {
+            "CodeType": "uint16_hex"
+          },
+          "Decode": {
+            "CodeType": "string_hex"
+          }
+        },
+        "Internal": {
+          "0x1901": [
+            {
+              "Id": "UploadFilelistRequestBodyEntity-ItemNum",
+              "Order": 1,
+              "Property": "ItemNum",
+              "Explain": "资源目录项总数",
+              "Length": 1,
+              "Encode": {
+                "CodeType": "uint32"
+              }
+            },
+            {
+              "Id": "UploadFilelistRequestBodyEntity-ItemList",
+              "Order": 2,
+              "Property": "ItemList",
+              "Explain": "资源目录项列表",
+              "Length": 32,
+              "Collection": {
+                "CountProperty": "ItemNum"
+              },
+              "StructureType": "internal",
+              "InternalKey": null,
+              "Internal": {
+                "FilelistItemEntity": [
+                  {
+                    "Id": "FilelistItemEntity-ChannelID",
+                    "Order": 1,
+                    "Property": "ChannelID",
+                    "Explain": "逻辑通道号",
+                    "Length": 1,
+                    "Encode": {
+                      "CodeType": "byte"
+                    }
+                  },
+                  {
+                    "Id": "FilelistItemEntity-StartTime",
+                    "Order": 2,
+                    "Property": "StartTime",
+                    "Explain": "起始时间",
+                    "Length": 8,
+                    "Encode": {
+                      "CodeType": "uint64_unix"
+                    }
+                  },
+                  {
+                    "Id": "FilelistItemEntity-EndTime",
+                    "Order": 3,
+                    "Property": "EndTime",
+                    "Explain": "终止时间",
+                    "Length": 8,
+                    "Encode": {
+                      "CodeType": "uint64_unix"
+                    }
+                  },
+                  {
+                    "Id": "FilelistItemEntity-AlarmType",
+                    "Order": 4,
+                    "Property": "AlarmType",
+                    "Explain": "报警类型",
+                    "Length": 8,
+                    "Encode": {
+                      "CodeType": "binary"
+                    },
+                    "FlagStruct": {
+                      "Property": "AlarmType_Flag",
+                      "Assembly": "SuperSocket.JTT1078",
+                      "TypeName": "SuperSocket.JTT1078.Flag.VideoAlarmFlag"
+                    }
+                  },
+                  {
+                    "Id": "FilelistItemEntity-AvitemType",
+                    "Order": 5,
+                    "Property": "AvitemType",
+                    "Explain": "音视频类型",
+                    "Length": 1,
+                    "Encode": {
+                      "CodeType": "byte"
+                    },
+                    "DataMapping": {
+                      "Key": "AvitemType",
+                      "SetProperty": "AvitemType_Mapping",
+                      "UseDecodeValue": true,
+                      "Encode": {
+                        "CodeType": "byte_hex"
+                      },
+                      "Decode": {
+                        "CodeType": "string_hex"
+                      }
+                    }
+                  },
+                  {
+                    "Id": "FilelistItemEntity-StreamType",
+                    "Order": 6,
+                    "Property": "StreamType",
+                    "Explain": "码流类型",
+                    "Length": 1,
+                    "Encode": {
+                      "CodeType": "byte"
+                    },
+                    "DataMapping": {
+                      "Key": "StreamType",
+                      "SetProperty": "StreamType_Mapping",
+                      "UseDecodeValue": true,
+                      "Encode": {
+                        "CodeType": "byte_hex"
+                      },
+                      "Decode": {
+                        "CodeType": "string_hex"
+                      }
+                    }
+                  },
+                  {
+                    "Id": "FilelistItemEntity-MemType",
+                    "Order": 7,
+                    "Property": "MemType",
+                    "Explain": "存储器类型",
+                    "Length": 1,
+                    "Encode": {
+                      "CodeType": "byte"
+                    },
+                    "DataMapping": {
+                      "Key": "MemType",
+                      "SetProperty": "MemType_Mapping",
+                      "UseDecodeValue": true,
+                      "Encode": {
+                        "CodeType": "byte_hex"
+                      },
+                      "Decode": {
+                        "CodeType": "string_hex"
+                      }
+                    }
+                  },
+                  {
+                    "Id": "FilelistItemEntity-FileSize",
+                    "Order": 8,
+                    "Property": "FileSize",
+                    "Explain": "文件大小",
+                    "Length": 4,
+                    "Encode": {
+                      "CodeType": "uint32"
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "0x1902": [
+            {
+              "Id": "SearchFilelistReplyBodyEntity-Result",
+              "Order": 1,
+              "Property": "Result",
+              "Explain": "应答结果",
+              "Length": 1,
+              "Encode": {
+                "CodeType": "byte"
+              },
+              "DataMapping": {
+                "Key": "ReplyResult",
+                "SetProperty": "Result_Mapping",
+                "UseDecodeValue": true,
+                "Encode": {
+                  "CodeType": "byte_hex"
+                },
+                "Decode": {
+                  "CodeType": "string_hex"
+                }
+              }
+            },
+            {
+              "Id": "SearchFilelistReplyBodyEntity-ItemNum",
+              "Order": 2,
+              "Property": "ItemNum",
+              "Explain": "资源目录项总数",
+              "Length": 4,
+              "Encode": {
+                "CodeType": "uint32"
+              }
+            },
+            {
+              "Id": "SearchFilelistReplyBodyEntity-ItemList",
+              "Order": 3,
+              "Property": "ItemList",
+              "Explain": "资源目录项列表",
+              "Length": 32,
+              "Collection": {
+                "CountProperty": "ItemNum"
+              },
+              "StructureType": "internal",
+              "InternalKey": null,
+              "Internal": {
+                "FilelistItemEntity": [
+                  {
+                    "Id": "FilelistItemEntity-ChannelID",
+                    "Order": 1,
+                    "Property": "ChannelID",
+                    "Explain": "逻辑通道号",
+                    "Length": 1,
+                    "Encode": {
+                      "CodeType": "byte"
+                    }
+                  },
+                  {
+                    "Id": "FilelistItemEntity-StartTime",
+                    "Order": 2,
+                    "Property": "StartTime",
+                    "Explain": "起始时间",
+                    "Length": 8,
+                    "Encode": {
+                      "CodeType": "uint64_unix"
+                    }
+                  },
+                  {
+                    "Id": "FilelistItemEntity-EndTime",
+                    "Order": 3,
+                    "Property": "EndTime",
+                    "Explain": "终止时间",
+                    "Length": 8,
+                    "Encode": {
+                      "CodeType": "uint64_unix"
+                    }
+                  },
+                  {
+                    "Id": "FilelistItemEntity-AlarmType",
+                    "Order": 4,
+                    "Property": "AlarmType",
+                    "Explain": "报警类型",
+                    "Length": 8,
+                    "Encode": {
+                      "CodeType": "binary"
+                    },
+                    "FlagStruct": {
+                      "Property": "AlarmType_Flag",
+                      "Assembly": "SuperSocket.JTT1078",
+                      "TypeName": "SuperSocket.JTT1078.Flag.VideoAlarmFlag"
+                    }
+                  },
+                  {
+                    "Id": "FilelistItemEntity-AvitemType",
+                    "Order": 5,
+                    "Property": "AvitemType",
+                    "Explain": "音视频类型",
+                    "Length": 1,
+                    "Encode": {
+                      "CodeType": "byte"
+                    },
+                    "DataMapping": {
+                      "Key": "AvitemType",
+                      "SetProperty": "AvitemType_Mapping",
+                      "UseDecodeValue": true,
+                      "Encode": {
+                        "CodeType": "byte_hex"
+                      },
+                      "Decode": {
+                        "CodeType": "string_hex"
+                      }
+                    }
+                  },
+                  {
+                    "Id": "FilelistItemEntity-StreamType",
+                    "Order": 6,
+                    "Property": "StreamType",
+                    "Explain": "码流类型",
+                    "Length": 1,
+                    "Encode": {
+                      "CodeType": "byte"
+                    },
+                    "DataMapping": {
+                      "Key": "StreamType",
+                      "SetProperty": "StreamType_Mapping",
+                      "UseDecodeValue": true,
+                      "Encode": {
+                        "CodeType": "byte_hex"
+                      },
+                      "Decode": {
+                        "CodeType": "string_hex"
+                      }
+                    }
+                  },
+                  {
+                    "Id": "FilelistItemEntity-MemType",
+                    "Order": 7,
+                    "Property": "MemType",
+                    "Explain": "存储器类型",
+                    "Length": 1,
+                    "Encode": {
+                      "CodeType": "byte"
+                    },
+                    "DataMapping": {
+                      "Key": "MemType",
+                      "SetProperty": "MemType_Mapping",
+                      "UseDecodeValue": true,
+                      "Encode": {
+                        "CodeType": "byte_hex"
+                      },
+                      "Decode": {
+                        "CodeType": "string_hex"
+                      }
+                    }
+                  },
+                  {
+                    "Id": "FilelistItemEntity-FileSize",
+                    "Order": 8,
+                    "Property": "FileSize",
+                    "Explain": "文件大小",
+                    "Length": 4,
+                    "Encode": {
+                      "CodeType": "uint32"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ],
+
+    "0x9A00": [
+      {
+        "Id": "DownPlaybackMsgBodyEntity-VehicleNo",
+        "Order": 1,
+        "Property": "VehicleNo",
+        "Explain": "车牌号",
+        "Length": 21,
+        "Encode": {
+          "CodeType": "string"
+        }
+      },
+      {
+        "Id": "DownPlaybackMsgBodyEntity-VehicleColor",
+        "Order": 2,
+        "Property": "VehicleColor",
+        "Explain": "车牌颜色",
+        "Length": 1,
+        "Encode": {
+          "CodeType": "byte"
+        }
+      },
+      {
+        "Id": "DownPlaybackMsgBodyEntity-DataType",
+        "Order": 3,
+        "Property": "DataType",
+        "Explain": "子业务类型标识",
+        "Length": 2,
+        "Encode": {
+          "CodeType": "uint16"
+        },
+        "DataMapping": {
+          "Key": "SubDataType",
+          "SetProperty": "DataType_Mapping",
+          "UseDecodeValue": true,
+          "Encode": {
+            "CodeType": "uint16_hex"
+          },
+          "Decode": {
+            "CodeType": "string_hex"
+          }
+        }
+      },
+      {
+        "Id": "DownPlaybackMsgBodyEntity-DataLength",
+        "Order": 4,
+        "Property": "DataLength",
+        "Explain": "后续字段数据长度",
+        "Length": 4,
+        "Encode": {
+          "CodeType": "uint32"
+        }
+      },
+      {
+        "Id": "DownPlaybackMsgBodyEntity-SubBody",
+        "Order": 5,
+        "Property": "SubBody",
+        "Explain": "子业务数据体",
+        "Length": null,
+        "StructureType": "internal",
+        "InternalLength": [
+          {
+            "0x9A01": {
+              "Property": ".DataLength"
+            }
+          }
+        ],
+        "InternalKey": {
+          "Property": ".DataType",
+          "Encode": {
+            "CodeType": "uint16_hex"
+          },
+          "Decode": {
+            "CodeType": "string_hex"
+          }
+        },
+        "Internal": {
+          "0x9A01": [
+            {
+              "Id": "PlaybackStartupRequestBodyEntity-ChannelID",
+              "Order": 1,
+              "Property": "ChannelID",
+              "Explain": "逻辑通道号",
+              "Length": 1,
+              "Encode": {
+                "CodeType": "byte"
+              }
+            },
+            {
+              "Id": "PlaybackStartupRequestBodyEntity-AvitemType",
+              "Order": 2,
+              "Property": "AvitemType",
+              "Explain": "音视频类型",
+              "Length": 1,
+              "Encode": {
+                "CodeType": "byte"
+              },
+              "DataMapping": {
+                "Key": "AvitemType",
+                "SetProperty": "AvitemType_Mapping",
+                "UseDecodeValue": true,
+                "Encode": {
+                  "CodeType": "byte_hex"
+                },
+                "Decode": {
+                  "CodeType": "string_hex"
+                }
+              }
+            },
+            {
+              "Id": "PlaybackStartupRequestBodyEntity-StreamType",
+              "Order": 3,
+              "Property": "StreamType",
+              "Explain": "码流类型",
+              "Length": 1,
+              "Encode": {
+                "CodeType": "byte"
+              },
+              "DataMapping": {
+                "Key": "StreamType",
+                "SetProperty": "StreamType_Mapping",
+                "UseDecodeValue": true,
+                "Encode": {
+                  "CodeType": "byte_hex"
+                },
+                "Decode": {
+                  "CodeType": "string_hex"
+                }
+              }
+            },
+            {
+              "Id": "PlaybackStartupRequestBodyEntity-MemType",
+              "Order": 4,
+              "Property": "MemType",
+              "Explain": "存储器类型",
+              "Length": 1,
+              "Encode": {
+                "CodeType": "byte"
+              },
+              "DataMapping": {
+                "Key": "MemType",
+                "SetProperty": "MemType_Mapping",
+                "UseDecodeValue": true,
+                "Encode": {
+                  "CodeType": "byte_hex"
+                },
+                "Decode": {
+                  "CodeType": "string_hex"
+                }
+              }
+            },
+            {
+              "Id": "PlaybackStartupRequestBodyEntity-PlayBackStartTime",
+              "Order": 5,
+              "Property": "PlayBackStartTime",
+              "Explain": "回放结束时间",
+              "Length": 8,
+              "Encode": {
+                "CodeType": "uint64_unix"
+              }
+            },
+            {
+              "Id": "PlaybackStartupRequestBodyEntity-PlayBackEndTime",
+              "Order": 6,
+              "Property": "PlayBackEndTime",
+              "Explain": "回放结束时间",
+              "Length": 8,
+              "Encode": {
+                "CodeType": "uint64_unix"
+              }
+            },
+            {
+              "Id": "PlaybackStartupRequestBodyEntity-AuthorizeCode",
+              "Order": 7,
+              "Property": "AuthorizeCode",
+              "Explain": "时效口令",
+              "Length": 64,
+              "Encode": {
+                "CodeType": "bytes"
+              }
+            },
+            {
+              "Id": "PlaybackStartupRequestBodyEntity-GnssData",
+              "Order": 8,
+              "Property": "GnssData",
+              "Explain": "车辆进入跨域地区后5min之内的任一位置",
+              "Length": 36,
+              "Encode": {
+                "CodeType": "bytes"
+              }
+            }
+          ],
+          "0x9A02": [
+            {
+              "Id": "PlaybackControlRequestBodyEntity-ControlType",
+              "Order": 1,
+              "Property": "ControlType",
+              "Explain": "回放控制类型",
+              "Length": 1,
+              "Encode": {
+                "CodeType": "byte"
+              },
+              "DataMapping": {
+                "Key": "PlaybackControlType",
+                "SetProperty": "ControlType_Mapping",
+                "UseDecodeValue": true,
+                "Encode": {
+                  "CodeType": "byte_hex"
+                },
+                "Decode": {
+                  "CodeType": "string_hex"
+                }
+              }
+            },
+            {
+              "Id": "PlaybackControlRequestBodyEntity-FastTime",
+              "Order": 2,
+              "Property": "FastTime",
+              "Explain": "快进或快退倍数",
+              "Length": 1,
+              "Encode": {
+                "CodeType": "byte"
+              },
+              "DataMapping": {
+                "Key": "PlaybackFastTime",
+                "SetProperty": "FastTime_Mapping",
+                "UseDecodeValue": true,
+                "Encode": {
+                  "CodeType": "byte_hex"
+                },
+                "Decode": {
+                  "CodeType": "string_hex"
+                }
+              }
+            },
+            {
+              "Id": "PlaybackControlRequestBodyEntity-DateTime",
+              "Order": 3,
+              "Property": "DateTime",
+              "Explain": "拖动位置时间",
+              "Length": 8,
+              "Encode": {
+                "CodeType": "uint64_unix"
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "0x1A00": [
+      {
+        "Id": "UpPlaybackMsgBodyEntity-VehicleNo",
+        "Order": 1,
+        "Property": "VehicleNo",
+        "Explain": "车牌号",
+        "Length": 21,
+        "Encode": {
+          "CodeType": "string"
+        }
+      },
+      {
+        "Id": "UpPlaybackMsgBodyEntity-VehicleColor",
+        "Order": 2,
+        "Property": "VehicleColor",
+        "Explain": "车牌颜色",
+        "Length": 1,
+        "Encode": {
+          "CodeType": "byte"
+        }
+      },
+      {
+        "Id": "UpPlaybackMsgBodyEntity-DataType",
+        "Order": 3,
+        "Property": "DataType",
+        "Explain": "子业务类型标识",
+        "Length": 2,
+        "Encode": {
+          "CodeType": "uint16"
+        },
+        "DataMapping": {
+          "Key": "SubDataType",
+          "SetProperty": "DataType_Mapping",
+          "UseDecodeValue": true,
+          "Encode": {
+            "CodeType": "uint16_hex"
+          },
+          "Decode": {
+            "CodeType": "string_hex"
+          }
+        }
+      },
+      {
+        "Id": "UpPlaybackMsgBodyEntity-DataLength",
+        "Order": 4,
+        "Property": "DataLength",
+        "Explain": "后续字段数据长度",
+        "Length": 4,
+        "Encode": {
+          "CodeType": "uint32"
+        }
+      },
+      {
+        "Id": "UpPlaybackMsgBodyEntity-SubBody",
+        "Order": 5,
+        "Property": "SubBody",
+        "Explain": "子业务数据体",
+        "Length": null,
+        "StructureType": "internal",
+        "InternalKey": {
+          "Property": ".DataType",
+          "Encode": {
+            "CodeType": "uint16_hex"
+          },
+          "Decode": {
+            "CodeType": "string_hex"
+          }
+        },
+        "Internal": {
+          "0x1A01": [
+            {
+              "Id": "PlaybackStartupReplyBodyEntity-ServerIP",
+              "Order": 1,
+              "Property": "ServerIP",
+              "Explain": "企业视频服务器IP地址",
+              "Length": 32,
+              "Encode": {
+                "CodeType": "string"
+              }
+            },
+            {
+              "Id": "PlaybackStartupReplyBodyEntity-ServerPort",
+              "Order": 2,
+              "Property": "ServerPort",
+              "Explain": "企业视频服务器端口号",
+              "Length": 2,
+              "Encode": {
+                "CodeType": "uint16"
+              }
+            },
+            {
+              "Id": "PlaybackStartupReplyBodyEntity-Result",
+              "Order": 3,
+              "Property": "Result",
+              "Explain": "应答结果",
+              "Length": 1,
+              "Encode": {
+                "CodeType": "byte"
+              },
+              "DataMapping": {
+                "Key": "ReplyResult",
+                "SetProperty": "Result_Mapping",
+                "UseDecodeValue": true,
+                "Encode": {
+                  "CodeType": "byte_hex"
+                },
+                "Decode": {
+                  "CodeType": "string_hex"
+                }
+              }
+            }
+          ],
+          "0x1A02": [
+            {
+              "Id": "PlaybackControlReplyBodyEntity-Result",
+              "Order": 1,
+              "Property": "Result",
+              "Explain": "应答结果",
+              "Length": 1,
+              "Encode": {
+                "CodeType": "byte"
+              },
+              "DataMapping": {
+                "Key": "ReplyResult",
+                "SetProperty": "Result_Mapping",
+                "UseDecodeValue": true,
+                "Encode": {
+                  "CodeType": "byte_hex"
+                },
+                "Decode": {
+                  "CodeType": "string_hex"
+                }
+              }
+            }
+          ]
+        }
+      }
+    ],
+
+    "0x9B00": [
+      {
+        "Id": "DownDownloadMsgBodyEntity-VehicleNo",
+        "Order": 1,
+        "Property": "VehicleNo",
+        "Explain": "车牌号",
+        "Length": 21,
+        "Encode": {
+          "CodeType": "string"
+        }
+      },
+      {
+        "Id": "DownDownloadMsgBodyEntity-VehicleColor",
+        "Order": 2,
+        "Property": "VehicleColor",
+        "Explain": "车牌颜色",
+        "Length": 1,
+        "Encode": {
+          "CodeType": "byte"
+        }
+      },
+      {
+        "Id": "DownDownloadMsgBodyEntity-DataType",
+        "Order": 3,
+        "Property": "DataType",
+        "Explain": "子业务类型标识",
+        "Length": 2,
+        "Encode": {
+          "CodeType": "uint16"
+        },
+        "DataMapping": {
+          "Key": "SubDataType",
+          "SetProperty": "DataType_Mapping",
+          "UseDecodeValue": true,
+          "Encode": {
+            "CodeType": "uint16_hex"
+          },
+          "Decode": {
+            "CodeType": "string_hex"
+          }
+        }
+      },
+      {
+        "Id": "DownDownloadMsgBodyEntity-DataLength",
+        "Order": 4,
+        "Property": "DataLength",
+        "Explain": "后续字段数据长度",
+        "Length": 4,
+        "Encode": {
+          "CodeType": "uint32"
+        }
+      },
+      {
+        "Id": "DownDownloadMsgBodyEntity-SubBody",
+        "Order": 5,
+        "Property": "SubBody",
+        "Explain": "子业务数据体",
+        "Length": null,
+        "StructureType": "internal",
+        "InternalLength": [
+          {
+            "0x9B01": {
+              "Property": ".DataLength"
+            }
+          }
+        ],
+        "InternalKey": {
+          "Property": ".DataType",
+          "Encode": {
+            "CodeType": "uint16_hex"
+          },
+          "Decode": {
+            "CodeType": "string_hex"
+          }
+        },
+        "Internal": {
+          "0x9B01": [
+            {
+              "Id": "DownloadStartupRequestBodyEntity-ChannelID",
+              "Order": 1,
+              "Property": "ChannelID",
+              "Explain": "逻辑通道号",
+              "Length": 1,
+              "Encode": {
+                "CodeType": "byte"
+              }
+            },
+            {
+              "Id": "DownloadStartupRequestBodyEntity-StartTime",
+              "Order": 2,
+              "Property": "StartTime",
+              "Explain": "起始时间",
+              "Length": 8,
+              "Encode": {
+                "CodeType": "uint64_unix"
+              }
+            },
+            {
+              "Id": "DownloadStartupRequestBodyEntity-EndTime",
+              "Order": 3,
+              "Property": "EndTime",
+              "Explain": "终止时间",
+              "Length": 8,
+              "Encode": {
+                "CodeType": "uint64_unix"
+              }
+            },
+            {
+              "Id": "DownloadStartupRequestBodyEntity-AlarmType",
+              "Order": 4,
+              "Property": "AlarmType",
+              "Explain": "报警类型",
+              "Length": 8,
+              "Encode": {
+                "CodeType": "binary"
+              },
+              "FlagStruct": {
+                "Property": "AlarmType_Flag",
+                "Assembly": "SuperSocket.JTT1078",
+                "TypeName": "SuperSocket.JTT1078.Flag.VideoAlarmFlag"
+              }
+            },
+            {
+              "Id": "DownloadStartupRequestBodyEntity-AvitemType",
+              "Order": 5,
+              "Property": "AvitemType",
+              "Explain": "音视频类型",
+              "Length": 1,
+              "Encode": {
+                "CodeType": "byte"
+              },
+              "DataMapping": {
+                "Key": "AvitemType",
+                "SetProperty": "AvitemType_Mapping",
+                "UseDecodeValue": true,
+                "Encode": {
+                  "CodeType": "byte_hex"
+                },
+                "Decode": {
+                  "CodeType": "string_hex"
+                }
+              }
+            },
+            {
+              "Id": "DownloadStartupRequestBodyEntity-StreamType",
+              "Order": 6,
+              "Property": "StreamType",
+              "Explain": "码流类型",
+              "Length": 1,
+              "Encode": {
+                "CodeType": "byte"
+              },
+              "DataMapping": {
+                "Key": "StreamType",
+                "SetProperty": "StreamType_Mapping",
+                "UseDecodeValue": true,
+                "Encode": {
+                  "CodeType": "byte_hex"
+                },
+                "Decode": {
+                  "CodeType": "string_hex"
+                }
+              }
+            },
+            {
+              "Id": "DownloadStartupRequestBodyEntity-MemType",
+              "Order": 7,
+              "Property": "MemType",
+              "Explain": "存储器类型",
+              "Length": 1,
+              "Encode": {
+                "CodeType": "byte"
+              },
+              "DataMapping": {
+                "Key": "MemType",
+                "SetProperty": "MemType_Mapping",
+                "UseDecodeValue": true,
+                "Encode": {
+                  "CodeType": "byte_hex"
+                },
+                "Decode": {
+                  "CodeType": "string_hex"
+                }
+              }
+            },
+            {
+              "Id": "DownloadStartupRequestBodyEntity-FileSize",
+              "Order": 8,
+              "Property": "FileSize",
+              "Explain": "文件大小",
+              "Length": 4,
+              "Encode": {
+                "CodeType": "uint32"
+              }
+            },
+            {
+              "Id": "DownloadStartupRequestBodyEntity-AuthorizeCode",
+              "Order": 9,
+              "Property": "AuthorizeCode",
+              "Explain": "时效口令",
+              "Length": 64,
+              "Encode": {
+                "CodeType": "bytes"
+              }
+            },
+            {
+              "Id": "DownloadStartupRequestBodyEntity-GnssData",
+              "Order": 10,
+              "Property": "GnssData",
+              "Explain": "车辆进入跨域地区后5min之内的任一位置",
+              "Length": 36,
+              "Encode": {
+                "CodeType": "bytes"
+              }
+            }
+          ],
+          "0x9B02": [
+            {
+              "Id": "DownloadEndInformReplyBodyEntity-Result",
+              "Order": 1,
+              "Property": "Result",
+              "Explain": "应答结果",
+              "Length": 1,
+              "Encode": {
+                "CodeType": "byte"
+              },
+              "DataMapping": {
+                "Key": "ReplyResult",
+                "SetProperty": "Result_Mapping",
+                "UseDecodeValue": true,
+                "Encode": {
+                  "CodeType": "byte_hex"
+                },
+                "Decode": {
+                  "CodeType": "string_hex"
+                }
+              }
+            },
+            {
+              "Id": "DownloadEndInformReplyBodyEntity-SessionID",
+              "Order": 2,
+              "Property": "SessionID",
+              "Explain": "对应平台文件上传消息的流水号",
+              "Length": 2,
+              "Encode": {
+                "CodeType": "uint16"
+              }
+            }
+          ],
+          "0x9B03": [
+            {
+              "Id": "DownloadControlRequestBodyEntity-SessionID",
+              "Order": 1,
+              "Property": "SessionID",
+              "Explain": "对应平台文件上传消息的流水号",
+              "Length": 2,
+              "Encode": {
+                "CodeType": "uint16"
+              }
+            },
+            {
+              "Id": "DownloadControlRequestBodyEntity-Type",
+              "Order": 2,
+              "Property": "Type",
+              "Explain": "下载控制类型",
+              "Length": 1,
+              "Encode": {
+                "CodeType": "byte"
+              },
+              "DataMapping": {
+                "Key": "DownloadControlType",
+                "SetProperty": "Type_Mapping",
+                "UseDecodeValue": true,
+                "Encode": {
+                  "CodeType": "byte_hex"
+                },
+                "Decode": {
+                  "CodeType": "string_hex"
+                }
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "0x1B00": [
+      {
+        "Id": "UpDownloadMsgBodyEntity-VehicleNo",
+        "Order": 1,
+        "Property": "VehicleNo",
+        "Explain": "车牌号",
+        "Length": 21,
+        "Encode": {
+          "CodeType": "string"
+        }
+      },
+      {
+        "Id": "UpDownloadMsgBodyEntity-VehicleColor",
+        "Order": 2,
+        "Property": "VehicleColor",
+        "Explain": "车牌颜色",
+        "Length": 1,
+        "Encode": {
+          "CodeType": "byte"
+        }
+      },
+      {
+        "Id": "UpDownloadMsgBodyEntity-DataType",
+        "Order": 3,
+        "Property": "DataType",
+        "Explain": "子业务类型标识",
+        "Length": 2,
+        "Encode": {
+          "CodeType": "uint16"
+        },
+        "DataMapping": {
+          "Key": "SubDataType",
+          "SetProperty": "DataType_Mapping",
+          "UseDecodeValue": true,
+          "Encode": {
+            "CodeType": "uint16_hex"
+          },
+          "Decode": {
+            "CodeType": "string_hex"
+          }
+        }
+      },
+      {
+        "Id": "UpDownloadMsgBodyEntity-DataLength",
+        "Order": 4,
+        "Property": "DataLength",
+        "Explain": "后续字段数据长度",
+        "Length": 4,
+        "Encode": {
+          "CodeType": "uint32"
+        }
+      },
+      {
+        "Id": "UpDownloadMsgBodyEntity-SubBody",
+        "Order": 5,
+        "Property": "SubBody",
+        "Explain": "子业务数据体",
+        "Length": null,
+        "StructureType": "internal",
+        "InternalKey": {
+          "Property": ".DataType",
+          "Encode": {
+            "CodeType": "uint16_hex"
+          },
+          "Decode": {
+            "CodeType": "string_hex"
+          }
+        },
+        "Internal": {
+          "0x1B01": [
+            {
+              "Id": "DownloadStartupReplyBodyEntity-Result",
+              "Order": 1,
+              "Property": "Result",
+              "Explain": "应答结果",
+              "Length": 1,
+              "Encode": {
+                "CodeType": "byte"
+              },
+              "DataMapping": {
+                "Key": "ReplyResult",
+                "SetProperty": "Result_Mapping",
+                "UseDecodeValue": true,
+                "Encode": {
+                  "CodeType": "byte_hex"
+                },
+                "Decode": {
+                  "CodeType": "string_hex"
+                }
+              }
+            },
+            {
+              "Id": "DownloadStartupReplyBodyEntity-SessionID",
+              "Order": 2,
+              "Property": "SessionID",
+              "Explain": "对应平台文件上传消息的流水号",
+              "Length": 2,
+              "Encode": {
+                "CodeType": "uint16"
+              }
+            }
+          ],
+          "0x1B02": [
+            {
+              "Id": "DownloadEndInformRequestBodyEntity-Result",
+              "Order": 1,
+              "Property": "Result",
+              "Explain": "应答结果",
+              "Length": 1,
+              "Encode": {
+                "CodeType": "byte"
+              },
+              "DataMapping": {
+                "Key": "ReplyResult",
+                "SetProperty": "Result_Mapping",
+                "UseDecodeValue": true,
+                "Encode": {
+                  "CodeType": "byte_hex"
+                },
+                "Decode": {
+                  "CodeType": "string_hex"
+                }
+              }
+            },
+            {
+              "Id": "DownloadEndInformRequestBodyEntity-SessionID",
+              "Order": 2,
+              "Property": "SessionID",
+              "Explain": "对应平台文件上传消息的流水号",
+              "Length": 2,
+              "Encode": {
+                "CodeType": "uint16"
+              }
+            },
+            {
+              "Id": "DownloadEndInformRequestBodyEntity-ServerIP",
+              "Order": 3,
+              "Property": "ServerIP",
+              "Explain": "FTP服务器IP地址",
+              "Length": 32,
+              "Encode": {
+                "CodeType": "string"
+              }
+            },
+            {
+              "Id": "DownloadEndInformRequestBodyEntity-TCPPort",
+              "Order": 4,
+              "Property": "TCPPort",
+              "Explain": "FTP端口",
+              "Length": 2,
+              "Encode": {
+                "CodeType": "uint16"
+              }
+            },
+            {
+              "Id": "DownloadEndInformRequestBodyEntity-Username",
+              "Order": 5,
+              "Property": "Username",
+              "Explain": "FTP用户名",
+              "Length": 49,
+              "Encode": {
+                "CodeType": "string"
+              }
+            },
+            {
+              "Id": "DownloadEndInformRequestBodyEntity-Password",
+              "Order": 6,
+              "Property": "Password",
+              "Explain": "FTP密码",
+              "Length": 22,
+              "Encode": {
+                "CodeType": "string"
+              }
+            },
+            {
+              "Id": "DownloadEndInformRequestBodyEntity-FilePath",
+              "Order": 7,
+              "Property": "FilePath",
+              "Explain": "文件存储路径",
+              "Length": 200,
+              "Encode": {
+                "CodeType": "string"
+              }
+            }
+          ],
+          "0x1B03": [
+            {
+              "Id": "DownloadControlReplyBodyEntity-Result",
+              "Order": 1,
+              "Property": "Result",
+              "Explain": "应答结果",
+              "Length": 1,
+              "Encode": {
+                "CodeType": "byte"
+              },
+              "DataMapping": {
+                "Key": "ReplyResult",
+                "SetProperty": "Result_Mapping",
+                "UseDecodeValue": true,
+                "Encode": {
+                  "CodeType": "byte_hex"
+                },
+                "Decode": {
+                  "CodeType": "string_hex"
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
