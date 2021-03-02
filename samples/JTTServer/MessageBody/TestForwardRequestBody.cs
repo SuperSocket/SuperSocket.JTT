@@ -1,9 +1,4 @@
-﻿using SuperSocket.JTT.JTTBase.Interface;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using SuperSocket.JTT.Base.Interface;
 
 namespace JTTServer.MessageBody
 {

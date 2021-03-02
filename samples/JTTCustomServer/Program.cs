@@ -7,7 +7,7 @@ using Microservice.Library.ConsoleTool;
 using Microservice.Library.Container;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using SuperSocket.JTT.Gen;
+using SuperSocket.JTT.Server.Gen;
 using System;
 using System.Threading;
 using System.Threading.Tasks;

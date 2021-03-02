@@ -1,7 +1,5 @@
-﻿using SuperSocket.JTT.JTTBase.Interface;
+﻿using SuperSocket.JTT.Base.Interface;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace JTTServer.MessageBody
 {
