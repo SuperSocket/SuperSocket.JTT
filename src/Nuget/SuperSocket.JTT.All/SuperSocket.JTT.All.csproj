@@ -23,10 +23,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Protocols\JTT1078\JTT1078.csproj" />
-    <ProjectReference Include="..\..\Protocols\JTT808\JTT808.csproj" />
-    <ProjectReference Include="..\..\Protocols\JTT809\JTT809.csproj" />
-    <ProjectReference Include="..\SuperSocket.JTT.Server\SuperSocket.JTT.Server.csproj" />
+    <ProjectReference Include="..\..\Protocols\SuperSocket.JTT.JTT1078\SuperSocket.JTT.1078.csproj" />
+    <ProjectReference Include="..\..\Protocols\SuperSocket.JTT.JTT808\SuperSocket.JTT.JTT808.csproj" />
+    <ProjectReference Include="..\..\Protocols\SuperSocket.JTT.JTT809\SuperSocket.JTT.JTT809.csproj" />
+    <ProjectReference Include="..\..\SuperSocket.JTT.Server\SuperSocket.JTT.Server.csproj" />
   </ItemGroup>
 
   <ItemGroup>

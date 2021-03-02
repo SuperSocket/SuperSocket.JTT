@@ -6,8 +6,8 @@ using Microservice.Library.Extension;
 using SuperSocket.Client;
 using SuperSocket.JTT.JTT809;
 using SuperSocket.JTT.JTT809.MessageBody;
-using SuperSocket.JTT.JTTBase.Extension;
-using SuperSocket.JTT.JTTBase.Interface;
+using SuperSocket.JTT.Base.Extension;
+using SuperSocket.JTT.Base.Interface;
 using SuperSocket.ProtoBase;
 using System;
 using System.Buffers;
@@ -536,7 +536,7 @@ namespace DebugClient
                             LogType.系统跟踪,
                             $"接收[其他信息], " +
                             $"\r\n\tServer: {Config.ServerHost}:{Config.ServerPort}, " +
-                            $"\r\n\tMsg_ID: {Protocol.JTT809Handler.Decode(Protocol.JTT809Handler.Encode(jtt809PackageInfo.JTT809MessageHeader.Msg_ID, new SuperSocket.JTT.JTTBase.Model.CodeInfo { CodeType = SuperSocket.JTT.JTTBase.Model.CodeType.uint16_hex }), new SuperSocket.JTT.JTTBase.Model.CodeInfo { CodeType = SuperSocket.JTT.JTTBase.Model.CodeType.string_hex })}, " +
+                            $"\r\n\tMsg_ID: {Protocol.JTT809Handler.Decode(Protocol.JTT809Handler.Encode(jtt809PackageInfo.JTT809MessageHeader.Msg_ID, new SuperSocket.JTT.Base.Model.CodeInfo { CodeType = SuperSocket.JTT.Base.Model.CodeType.uint16_hex }), new SuperSocket.JTT.Base.Model.CodeInfo { CodeType = SuperSocket.JTT.Base.Model.CodeType.string_hex })}, " +
                             $"\r\n\tbuffer: {string.Join('\t', jtt809PackageInfo.Buffer.ToArray().Select(o => o.To0XString()))}.");
                         break;
                 }

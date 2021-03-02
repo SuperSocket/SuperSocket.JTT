@@ -16,7 +16,7 @@ namespace JTTCustomServer
         {
             services.AddJTT(options =>
             {
-                options.ProtocolOptions = new SuperSocket.JTT.Model.JTTProtocolOptions
+                options.ProtocolOptions = new SuperSocket.JTT.Server.Model.JTTProtocolOptions
                 {
                     Version = config.JTTVersion,
                     JTTCustomAssemblyName = Assembly.GetExecutingAssembly().GetName().Name,
@@ -27,7 +27,7 @@ namespace JTTCustomServer
                     InternalEntitysMappings = config.InternalEntitysMappings,
                 };
 
-                options.ServerOptions = new SuperSocket.JTT.Model.JTTServerOptions
+                options.ServerOptions = new SuperSocket.JTT.Server.Model.JTTServerOptions
                 {
                     Name = config.ServerName,
                     IP = config.ServerIP,
@@ -52,7 +52,7 @@ namespace JTTCustomServer
                     }
                 };
 
-                options.LoggingOptions = new SuperSocket.JTT.Model.JTTLoggingOptions
+                options.LoggingOptions = new SuperSocket.JTT.Server.Model.JTTLoggingOptions
                 {
                     AddConsole = true,
                     AddDebug = true,

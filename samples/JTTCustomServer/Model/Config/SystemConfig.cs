@@ -1,6 +1,6 @@
 ﻿using JTTCustomServer.Log;
 using Microservice.Library.Configuration.Annotations;
-using SuperSocket.JTT.JTTBase.Model;
+using SuperSocket.JTT.Base.Model;
 using System.Collections.Generic;
 
 namespace JTTCustomServer.Model.Config

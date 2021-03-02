@@ -1,0 +1,44 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <AssemblyName>SuperSocket.JTT.Server</AssemblyName>
+    <RootNamespace>SuperSocket.JTT.Server</RootNamespace>
+    <Version>0.0.0.1-alpha</Version>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/SuperSocket/SuperSocket.JTT</PackageProjectUrl>
+    <Authors>SuperSocket</Authors>
+    <Company>SuperSocket</Company>
+    <Description>用于构建基于JTT(道路运输车辆卫星定位系统 平台数据交换)协议的服务器。</Description>
+    <Product>SuperSocket.JTT</Product>
+    <PackageId>SuperSocket.JTT.Server</PackageId>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>SuperSocket.JTT.Server.xml</DocumentationFile>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>SuperSocket.JTT.Server.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Annotations\" />
+    <Folder Include="Extension\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="5.0.0" />
+    <PackageReference Include="SuperSocket" Version="2.0.0-beta.8" />
+    <PackageReference Include="SuperSocket.Udp" Version="2.0.0-beta.8" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SuperSocket.JTT.Base\SuperSocket.JTT.Base.csproj" />
+  </ItemGroup>
+
+</Project>

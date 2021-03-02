@@ -14,7 +14,7 @@
     <PackageReference Include="Microservice.Library.DataMapping" Version="0.0.0-g266fcfe23f-alpha" />
     <PackageReference Include="Microservice.Library.Extension" Version="0.0.0-g266fcfe23f-alpha" />
     <PackageReference Include="Microservice.Library.NLogger" Version="0.0.0-g266fcfe23f-alpha" />
-    <PackageReference Include="Microservice.Library.OpenApi" Version="0.0.0-g266fcfe23f-alpha" />
+    <PackageReference Include="Microservice.Library.OpenApi" Version="0.0.0-gf3bfaf332c-alpha" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.10" />
   </ItemGroup>
 

@@ -1,0 +1,685 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SuperSocket.JTT.JTT808</name>
+    </assembly>
+    <members>
+        <member name="T:SuperSocket.JTT.JTT808.Extension.SubPackageExpire">
+            <summary>
+            分包数据过期策略
+            </summary>
+        </member>
+        <member name="F:SuperSocket.JTT.JTT808.Extension.SubPackageExpire.timeout">
+            <summary>
+            超时即过期
+            </summary>
+        </member>
+        <member name="F:SuperSocket.JTT.JTT808.Extension.SubPackageExpire.threshold">
+            <summary>
+            存储空间达到阈值
+            </summary>
+        </member>
+        <member name="T:SuperSocket.JTT.JTT808.Flag.AlarmFlag">
+            <summary>
+            报警预警标志位定义
+            </summary>
+            <remarks>JTT808-2019表25</remarks>
+        </member>
+        <member name="P:SuperSocket.JTT.JTT808.Flag.AlarmFlag.Emergency">
+            <summary>
+            <para>true 紧急报警，触动报警开关后触发</para>
+            <para>收到应答后清零</para>
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTT.JTT808.Flag.AlarmFlag.Speeding">
+            <summary>
+            <para>true 超速报警</para>
+            <para>标志维持至报警条件解除</para>
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTT.JTT808.Flag.AlarmFlag.Fatigue">
+            <summary>
+            <para>true 疲劳驾驶报警</para>
+            <para>标志维持至报警条件解除</para>
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTT.JTT808.Flag.AlarmFlag.Dangerous">
+            <summary>
+            <para>true 危险驾驶行为报警</para>
+            <para>标志维持至报警条件解除</para>
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTT.JTT808.Flag.AlarmFlag.GNSSOffline">
+            <summary>
+            <para>true GNSS模块发生故障报警</para>
+            <para>标志维持至报警条件解除</para>
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTT.JTT808.Flag.AlarmFlag.GNSSAntennaDisconnected">
+            <summary>
+            <para>true GNSS天线未接或被剪断报警</para>
+            <para>标志维持至报警条件解除</para>
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTT.JTT808.Flag.AlarmFlag.GNSSAntennaShortCircuit">
+            <summary>
+            <para>true GNSS天线短路报警</para>
+            <para>标志维持至报警条件解除</para>
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTT.JTT808.Flag.AlarmFlag.UVP">
+            <summary>
+            <para>true 终端主电源欠压报警</para>
+            <para>标志维持至报警条件解除</para>
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTT.JTT808.Flag.AlarmFlag.PowerOff">
+            <summary>
+            <para>true 终端主电源掉电报警</para>
+            <para>标志维持至报警条件解除</para>
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTT.JTT808.Flag.AlarmFlag.LCD">
+            <summary>
+            <para>true 终端LCD或显示器故障报警</para>
+            <para>标志维持至报警条件解除</para>
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTT.JTT808.Flag.AlarmFlag.TTS">
+            <summary>
+            <para>true TTS模块故障报警</para>
+            <para>标志维持至报警条件解除</para>
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTT.JTT808.Flag.AlarmFlag.Camera">
+            <summary>
+            <para>true 摄像头故障报警</para>
+            <para>标志维持至报警条件解除</para>
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTT.JTT808.Flag.AlarmFlag.ICCardOffline">
+            <summary>
+            <para>true 道路运输证IC卡模块故障报警</para>
+            <para>标志维持至报警条件解除</para>
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTT.JTT808.Flag.AlarmFlag.PreSpeeding">
+            <summary>
+            <para>true 超速预警</para>
+            <para>标志维持至报警条件解除</para>
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTT.JTT808.Flag.AlarmFlag.PreFatigue">
+            <summary>
+            <para>true 疲劳驾驶预警</para>
+            <para>标志维持至报警条件解除</para>
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTT.JTT808.Flag.AlarmFlag.Violation">
+            <summary>
+            <para>true 违规行驶报警</para>
+            <para>标志维持至报警条件解除</para>
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTT.JTT808.Flag.AlarmFlag.PreTirePressure">
+            <summary>
+            <para>true 胎压预警</para>
+            <para>标志维持至报警条件解除</para>
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTT.JTT808.Flag.AlarmFlag.RightBlindArea">
+            <summary>
+            <para>true 右转盲区异常报警</para>
+            <para>标志维持至报警条件解除</para>
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTT.JTT808.Flag.AlarmFlag.AccumulatedDay">
+            <summary>
+            <para>true 当天累计驾驶超时报警</para>
+            <para>标志维持至报警条件解除</para>
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTT.JTT808.Flag.AlarmFlag.OvertimeParking">
+            <summary>
+            <para>true 超时停车报警</para>
+            <para>标志维持至报警条件解除</para>
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTT.JTT808.Flag.AlarmFlag.AccessArea">
+            <summary>
+            <para>true 进出区域报警</para>
+            <para>收到应答后清零</para>
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTT.JTT808.Flag.AlarmFlag.AccessRoutes">
+            <summary>
+            <para>true 进出路线报警</para>
+            <para>收到应答后清零</para>
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTT.JTT808.Flag.AlarmFlag.RoadTravelTime">
+            <summary>
+            <para>true 路段行驶时间不足/过长报警</para>
+            <para>收到应答后清零</para>
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTT.JTT808.Flag.AlarmFlag.OffCourse">
+            <summary>
+            <para>true 路线偏离报警</para>
+            <para>标志维持至报警条件解除</para>
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTT.JTT808.Flag.AlarmFlag.VSS">
+            <summary>
+            <para>true 车辆VSS故障</para>
+            <para>标志维持至报警条件解除</para>
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTT.JTT808.Flag.AlarmFlag.OilQuantity">
+            <summary>
+            <para>true 车辆油量异常报警</para>
+            <para>标志维持至报警条件解除</para>
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTT.JTT808.Flag.AlarmFlag.BeStolen">
+            <summary>
+            <para>true 车辆被盗报警（通过车辆防盗器）</para>
+            <para>标志维持至报警条件解除</para>
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTT.JTT808.Flag.AlarmFlag.IllegalIgnition">
+            <summary>
+            <para>true 车辆非法点火报警</para>
+            <para>收到应答后清零</para>
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTT.JTT808.Flag.AlarmFlag.IllegalMoving">
+            <summary>
+            <para>true 车辆非法位移报警</para>
+            <para>收到应答后清零</para>
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTT.JTT808.Flag.AlarmFlag.ImpactRollover">
+            <summary>
+            <para>true 碰撞侧翻报警</para>
+            <para>标志维持至报警条件解除</para>
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTT.JTT808.Flag.AlarmFlag.PreRollover">
+            <summary>
+            <para>true 侧翻预警</para>
+            <para>标志维持至报警条件解除</para>
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTT.JTT808.Flag.AlarmFlag.Retain">
+            <summary>
+            保留
+            </summary>
+        </member>
+        <member name="T:SuperSocket.JTT.JTT808.Flag.StateFlag">
+            <summary>
+            状态位定义
+            </summary>
+            <remarks>JTT808-2019表24</remarks>
+        </member>
+        <member name="P:SuperSocket.JTT.JTT808.Flag.StateFlag.ACC">
+            <summary>
+            <para>true ACC开</para>
+            <para>false ACC关</para>
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTT.JTT808.Flag.StateFlag.Location">
+            <summary>
+            <para>true 定位</para>
+            <para>false 未定位</para>
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTT.JTT808.Flag.StateFlag.Latitude">
+            <summary>
+            <para>true 南纬</para>
+            <para>false 北纬</para>
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTT.JTT808.Flag.StateFlag.Longitude">
+            <summary>
+            <para>true 西经</para>
+            <para>false 东经</para>
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTT.JTT808.Flag.StateFlag.Operate">
+            <summary>
+            <para>true 停运状态</para>
+            <para>false 运营状态</para>
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTT.JTT808.Flag.StateFlag.Encryption">
+            <summary>
+            <para>true 经纬度已经保密插件加密</para>
+            <para>false 经纬度未经保密插件加密</para>
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTT.JTT808.Flag.StateFlag.ForwardCollisionWarning">
+            <summary>
+            <para>true 紧急刹车系统采集的前撞预警</para>
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTT.JTT808.Flag.StateFlag.LaneDepartureWarning">
+            <summary>
+            <para>true 车道偏移预警</para>
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTT.JTT808.Flag.StateFlag.Loading">
+            <summary>
+            <para>true,true 满载</para>
+            <para>true,false 保留</para>
+            <para>false,true 半载</para>
+            <para>false,false 空车</para>
+            <para>可表示客车的空载状态，</para>
+            <para>重车及货车的空载、满载状态，</para>
+            <para>该状态可由人工输入或传感器获取</para>
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTT.JTT808.Flag.StateFlag.OilCircuitDisconnected">
+            <summary>
+            <para>true 车辆油路断开</para>
+            <para>false 车辆油路正常</para>
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTT.JTT808.Flag.StateFlag.CircuitDisconnected">
+            <summary>
+            <para>true 车辆电路断开</para>
+            <para>false 车辆电路正常</para>
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTT.JTT808.Flag.StateFlag.DoorLocked">
+            <summary>
+            <para>true 车门加锁</para>
+            <para>false 车门解锁</para>
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTT.JTT808.Flag.StateFlag.Door1">
+            <summary>
+            <para>true 门1开</para>
+            <para>false 门1关</para>
+            <para>前门</para>
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTT.JTT808.Flag.StateFlag.Door2">
+            <summary>
+            <para>true 门2开</para>
+            <para>false 门2关</para>
+            <para>中门</para>
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTT.JTT808.Flag.StateFlag.Door3">
+            <summary>
+            <para>true 门3开</para>
+            <para>false 门3关</para>
+            <para>后门</para>
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTT.JTT808.Flag.StateFlag.Door4">
+            <summary>
+            <para>true 门4开</para>
+            <para>false 门4关</para>
+            <para>驾驶席门</para>
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTT.JTT808.Flag.StateFlag.Door5">
+            <summary>
+            <para>true 门5开</para>
+            <para>false 门5关</para>
+            <para>自定义</para>
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTT.JTT808.Flag.StateFlag.GPS">
+            <summary>
+            <para>true 使用GPS卫星进行定位</para>
+            <para>false 未使用GPS卫星进行定位</para>
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTT.JTT808.Flag.StateFlag.BDS">
+            <summary>
+            <para>true 使用北斗卫星进行定位</para>
+            <para>false 未使用北斗卫星进行定位</para>
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTT.JTT808.Flag.StateFlag.GLONASS">
+            <summary>
+            <para>true 使用GLONASS卫星进行定位</para>
+            <para>false 未使用GLONASS卫星进行定位</para>
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTT.JTT808.Flag.StateFlag.Galileo">
+            <summary>
+            <para>true 使用Galileo卫星进行定位</para>
+            <para>false 未使用Galileo卫星进行定位</para>
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTT.JTT808.Flag.StateFlag.Travel">
+            <summary>
+            <para>true 车辆处于行驶状态</para>
+            <para>false 车辆处于停止状态</para>
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTT.JTT808.Flag.StateFlag.Retain">
+            <summary>
+            保留
+            </summary>
+        </member>
+        <member name="T:SuperSocket.JTT.JTT808.Internal.MsgBodyProperty">
+            <summary>
+            消息体属性
+            </summary>
+            <remarks>JTT808-2019表图2</remarks>
+        </member>
+        <member name="M:SuperSocket.JTT.JTT808.Internal.MsgBodyProperty.GetValue">
+            <summary>
+            获取消息体属性值
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:SuperSocket.JTT.JTT808.Internal.MsgBodyProperty.Length">
+            <summary>
+            消息体长度
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTT.JTT808.Internal.MsgBodyProperty.EncryptType">
+            <summary>
+            数据加密方式
+            </summary>
+            <remarks>
+            <para>bit10-bit12为数据加密标识位；</para>
+            <para>当次三位都为0，表示消息体不加密；</para>
+            <para>当第10位为1，表示消息体经过RSA算法加密；</para>
+            <para>其他位为保留位</para>
+            </remarks>
+        </member>
+        <member name="P:SuperSocket.JTT.JTT808.Internal.MsgBodyProperty.SubPackage">
+            <summary>
+            <para>true 消息体为长消息，进行分包发送处理，具体分包信息由消息包封装项决定</para>
+            <para>false 消息头中无消息包封装项字段</para>
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTT.JTT808.Internal.MsgBodyProperty.VersionFlag">
+            <summary>
+            <para>true 表示协议为2011年的版本，
+            该版本未引入版本标识功能</para>
+            <para>false 表示协议已经引入版本标识功能，
+            并且在终端鉴权报文的鉴权码后跟随着协议版本号，
+            引入版本标识功能后初始版本号为1，
+            后续每次关键性修订版本号都会递增</para>
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTT.JTT808.Internal.MsgBodyProperty.Retain">
+            <summary>
+            保留
+            </summary>
+        </member>
+        <member name="T:SuperSocket.JTT.JTT808.Internal.SubPackage">
+            <summary>
+            消息包封装项内容
+            </summary>
+            <remarks>JTT808-2019表3</remarks>
+        </member>
+        <member name="P:SuperSocket.JTT.JTT808.Internal.SubPackage.Total">
+            <summary>
+            消息包总数
+            </summary>
+            <remarks>
+            <para>2字节</para>
+            <para>该消息分包后的总包数</para>
+            </remarks>
+        </member>
+        <member name="P:SuperSocket.JTT.JTT808.Internal.SubPackage.Order">
+            <summary>
+            包序号
+            </summary>
+            <remarks>
+            <para>2字节</para>
+            <para>从1开始</para>
+            </remarks>
+        </member>
+        <member name="M:SuperSocket.JTT.JTT808.JTT808Decoder.Decrypt(SuperSocket.JTT.Base.Interface.IJTTPackageInfo,System.ReadOnlySpan{System.Byte},SuperSocket.JTT.Base.Model.StructureInfo,System.Int32)">
+            <summary>
+            解密
+            </summary>
+            <param name="packageInfo">消息包</param>
+            <param name="buffer">数据</param>
+            <param name="structure">结构</param>
+            <param name="offset">偏移量</param>
+            <returns></returns>
+        </member>
+        <member name="F:SuperSocket.JTT.JTT808.JTT808Decoder.jtt808protocol">
+            <summary>
+            JTT协议
+            </summary>
+        </member>
+        <member name="F:SuperSocket.JTT.JTT808.JTT808Decoder.subPackages">
+            <summary>
+            分包数据
+            </summary>
+        </member>
+        <member name="F:SuperSocket.JTT.JTT808.JTT808Decoder.checkSubPackagesExpire">
+            <summary>
+            定时检查器
+            </summary>
+        </member>
+        <member name="F:SuperSocket.JTT.JTT808.JTT808Decoder.checkSubPackagesExpirePeriod">
+            <summary>
+            定时检查时间间隔
+            </summary>
+        </member>
+        <member name="F:SuperSocket.JTT.JTT808.JTT808Decoder.currentSubPackagesBytes">
+            <summary>
+            当前分包数据量
+            </summary>
+            <remarks>单位 Byte</remarks>
+        </member>
+        <member name="F:SuperSocket.JTT.JTT808.JTT808Decoder.subPackagesKeys">
+            <summary>
+            分包数据标识队列
+            </summary>
+        </member>
+        <member name="F:SuperSocket.JTT.JTT808.JTT808Decoder.subPackagesTimeout">
+            <summary>
+            分包数据过期时间
+            </summary>
+        </member>
+        <member name="M:SuperSocket.JTT.JTT808.JTT808Decoder.CheckSubPackagesExpire(System.Object)">
+            <summary>
+            检查分包数据是否已过期
+            </summary>
+        </member>
+        <member name="M:SuperSocket.JTT.JTT808.JTT808Decoder.IsSubPackagesComplete(SuperSocket.JTT.JTT808.JTT808MessageHeader,System.Byte[],System.Byte[]@)">
+            <summary>
+            是否已接收全部的分包数据
+            </summary>
+            <param name="JTT808MessageHeader">消息头</param>
+            <param name="bodyBuffer">消息体流数据</param>
+            <param name="completeBodyBuffer">完整的消息体流数据</param>
+        </member>
+        <member name="F:SuperSocket.JTT.JTT808.JTT808Encoder.jtt808protocol">
+            <summary>
+            JTT协议
+            </summary>
+        </member>
+        <member name="F:SuperSocket.JTT.JTT808.JTT808Encoder.msg_sn">
+            <summary>
+            报文序列号
+            </summary>
+        </member>
+        <member name="M:SuperSocket.JTT.JTT808.JTT808Encoder.GetMsgSN">
+            <summary>
+            获取报文序列号
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SuperSocket.JTT.JTT808.JTT808Encoder.AnalysisBodyStructure(SuperSocket.JTT.Base.Interface.IJTTPackageInfo)">
+            <summary>
+            分析消息体结构
+            </summary>
+            <param name="packageInfo">消息包</param>
+            <returns></returns>
+        </member>
+        <member name="M:SuperSocket.JTT.JTT808.JTT808Encoder.AnalysisHeaderStructure(SuperSocket.JTT.Base.Interface.IJTTPackageInfo)">
+            <summary>
+            分析消息头结构
+            </summary>
+            <param name="packageInfo">消息包</param>
+            <returns></returns>
+        </member>
+        <member name="M:SuperSocket.JTT.JTT808.JTT808Encoder.AnalysisHeaderStructure(SuperSocket.JTT.JTT808.JTT808MessageHeader)">
+            <summary>
+            分析消息头结构
+            </summary>
+            <param name="header">消息头</param>
+            <returns></returns>
+        </member>
+        <member name="T:SuperSocket.JTT.JTT808.JTT808MessageHeader">
+            <summary>
+            
+            </summary>
+            <remarks>JTT808-2019表2</remarks>
+        </member>
+        <member name="P:SuperSocket.JTT.JTT808.JTT808MessageHeader.MsgID">
+            <summary>
+            消息ID
+            </summary>
+            <remarks>2字节</remarks>
+        </member>
+        <member name="P:SuperSocket.JTT.JTT808.JTT808MessageHeader.MsgBodyProperty">
+            <summary>
+            消息体属性
+            </summary>
+            <remarks>
+            <para>2字节</para>
+            </remarks>
+        </member>
+        <member name="P:SuperSocket.JTT.JTT808.JTT808MessageHeader.MsgBodyPropertyInfo">
+            <summary>
+            消息体属性
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTT.JTT808.JTT808MessageHeader.Version">
+            <summary>
+            协议版本号
+            </summary>
+            <remarks>
+            <para>1字节</para>
+            <para>每次关键修订递增，初始版本为1</para>
+            </remarks>
+        </member>
+        <member name="P:SuperSocket.JTT.JTT808.JTT808MessageHeader.Tel">
+            <summary>
+            终端手机号码
+            </summary>
+            <remarks>
+            <para>10字节</para>
+            <para>根据安装后终端自身的手机号转换。</para>
+            <para>手机号不足位的，则在前补充数字0</para>
+            </remarks>
+        </member>
+        <member name="P:SuperSocket.JTT.JTT808.JTT808MessageHeader.Msg_SN">
+            <summary>
+            消息流水号
+            </summary>
+            <remarks>
+            <para>2字节</para>
+            <para>按发送顺序从0开始循环累加。</para>
+            </remarks>
+        </member>
+        <member name="P:SuperSocket.JTT.JTT808.JTT808MessageHeader.SubPackage">
+            <summary>
+            消息包封装项
+            </summary>
+            <remarks>
+            <para>4字节</para>
+            <para>如果消息体属性中相关标识位确定消息分包处理，则该项有内容，否则无该项</para>
+            </remarks>
+        </member>
+        <member name="P:SuperSocket.JTT.JTT808.JTT808PackageInfo.SubPackages">
+            <summary>
+            额外的分包数据
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTT.JTT808.JTT808PackageInfo.SubPackagesComplete">
+            <summary>
+            分包数据是否已完全处理
+            </summary>
+            <remarks>为 null时消息包未分包</remarks>
+        </member>
+        <member name="T:SuperSocket.JTT.JTT808.JTT808PipelineFilter">
+            <summary>
+            JTT808协议流数据拦截器
+            <!--可以重写或新增方法-->
+            </summary>
+        </member>
+        <member name="T:SuperSocket.JTT.JTT808.JTT808Protocol">
+            <summary>
+            JTT809协议
+            </summary>
+        </member>
+        <member name="P:SuperSocket.JTT.JTT808.JTT808Protocol.DefaultVersion">
+            <summary>
+            默认协议版本号
+            </summary>
+            <remarks>
+            <para>1字节</para>
+            <para>每次关键修订递增</para>
+            <para>初始版本为1</para>
+            </remarks>
+        </member>
+        <member name="P:SuperSocket.JTT.JTT808.JTT808Protocol.SubPackageExpire">
+            <summary>
+            分包数据的过期策略
+            </summary>
+            <remarks>默认 <see cref="F:SuperSocket.JTT.JTT808.Extension.SubPackageExpire.threshold"/></remarks>
+        </member>
+        <member name="P:SuperSocket.JTT.JTT808.JTT808Protocol.SubPackageThreshold">
+            <summary>
+            分包数据的存储空间阈值
+            </summary>
+            <remarks>
+            <para>单位 MB</para>
+            <para>默认值 100MB</para>
+            </remarks>
+        </member>
+        <member name="P:SuperSocket.JTT.JTT808.JTT808Protocol.SubPackageThresholdBytes">
+            <summary>
+            分包数据的存储空间阈值
+            </summary>
+            <remarks>
+            <para>单位 Byte</para>
+            </remarks>
+        </member>
+        <member name="P:SuperSocket.JTT.JTT808.JTT808Protocol.SubPackageTimeout">
+            <summary>
+            分包数据的超时时间
+            </summary>
+            <remarks>
+            <para>默认值 1小时</para>
+            </remarks>
+        </member>
+        <member name="T:SuperSocket.JTT.JTT808.JTT808ProtocolHandler">
+            <summary>
+            JTT808协议处理类
+            <!--可以重写或新增方法-->
+            </summary>
+        </member>
+        <member name="M:SuperSocket.JTT.JTT808.JTT808ProtocolHandler.GetMessageHeader(System.String,System.Nullable{System.Byte},System.Boolean)">
+            <summary>
+            获取消息头
+            </summary>
+            <param name="tel">终端手机号码</param>
+            <param name="version">协议版本号（为null时使用默认配置）</param>
+            <param name="encrypt">报文是加密（默认值 false）</param>
+            <returns></returns>
+        </member>
+        <member name="F:SuperSocket.JTT.JTT808.JTT808ProtocolHandler.jtt808protocol">
+            <summary>
+            JTT协议
+            </summary>
+        </member>
+    </members>
+</doc>

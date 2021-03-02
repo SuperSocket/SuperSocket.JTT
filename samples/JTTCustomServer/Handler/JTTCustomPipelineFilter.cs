@@ -1,7 +1,7 @@
 ﻿using JTTCustomServer.Model.Config;
 using Microservice.Library.Container;
-using SuperSocket.JTT.JTTBase.Filter;
-using SuperSocket.JTT.JTTBase.Interface;
+using SuperSocket.JTT.Base.Filter;
+using SuperSocket.JTT.Base.Interface;
 using System.Buffers;
 
 namespace JTTCustomServer.Handler

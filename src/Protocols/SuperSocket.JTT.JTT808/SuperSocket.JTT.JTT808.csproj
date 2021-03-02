@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <AssemblyName>SuperSocket.JTT.JTT808</AssemblyName>
+    <RootNamespace>SuperSocket.JTT.JTT808</RootNamespace>
+    <Description>JTT-808协议扩展包。</Description>
+    <Version>0.0.0.1-alpha</Version>
+    <Authors>SuperSocket</Authors>
+    <Company>SuperSocket</Company>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/SuperSocket/SuperSocket.JTT</PackageProjectUrl>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Product>SuperSocket.JTT</Product>
+    <PackageId>SuperSocket.JTT.JTT808</PackageId>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <WarningLevel>5</WarningLevel>
+    <DocumentationFile>SuperSocket.JTT.JTT808.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>SuperSocket.JTT.JTT808.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="jsonconfig\jtt808-protocol.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="jsonconfig\jtt808-protocol.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\SuperSocket.JTT.Base\SuperSocket.JTT.Base.csproj" />
+  </ItemGroup>
+
+</Project>
