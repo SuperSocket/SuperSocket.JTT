@@ -25,10 +25,6 @@ jobs:
             - name: Set env
               run: echo "DOTNET_CLI_TELEMETRY_OPTOUT=1" >> $GITHUB_ENV
               
-            - name: Clean
-              run: |
-                dotnet clean ./SuperSocket.JTT.sln --configuration Release
-                
                 
             - name: Build
               run: dotnet build ./SuperSocket.JTT.sln -c Release
