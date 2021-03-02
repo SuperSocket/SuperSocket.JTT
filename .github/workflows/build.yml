@@ -15,7 +15,7 @@ jobs:
                 - macos-latest
         runs-on: ${{matrix.os}}
         steps:
-            - run: sudo rmdir /home/runner/work/SuperSocket.JTT/SuperSocket.JTT/src
+            - run: sudo rmdir ./src
             
             - uses: actions/checkout@v1
             
