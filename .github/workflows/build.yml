@@ -28,7 +28,7 @@ jobs:
             - name: Clean
               run: |
                 dotnet clean ./SuperSocket.JTT.sln --configuration Release
-                dotnet nuget locals all --clear
+                
                 
             - name: Build
               run: dotnet build ./SuperSocket.JTT.sln -c Release
