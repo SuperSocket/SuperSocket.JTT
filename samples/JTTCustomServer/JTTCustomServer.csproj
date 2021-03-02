@@ -22,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\nuget\SuperSocket.JTT.Server\SuperSocket.JTT.Server.csproj" />
+    <ProjectReference Include="..\..\src\Nuget\SuperSocket.JTT.Server\SuperSocket.JTT.Server.csproj" />
   </ItemGroup>
 
   <ItemGroup>

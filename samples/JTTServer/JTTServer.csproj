@@ -42,7 +42,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\nuget\SuperSocket.JTT.All\SuperSocket.JTT.All.csproj" />
+    <ProjectReference Include="..\..\src\Nuget\SuperSocket.JTT.All\SuperSocket.JTT.All.csproj" />
   </ItemGroup>
 
   <ProjectExtensions><VisualStudio><UserProperties jsonconfig_4jtt809-protocol_1json__JsonSchema="https://json.schemastore.org/appsettings" jsonconfig_4jtt809-protocol-datamappings_1json__JsonSchema="https://json.schemastore.org/appsettings" jsonconfig_4jtt809-protocol-internalentitysmappings_1json__JsonSchema="https://json.schemastore.org/appsettings" jsonconfig_4jtt809-protocol-structures_1json__JsonSchema="https://json.schemastore.org/appsettings" /></VisualStudio></ProjectExtensions>

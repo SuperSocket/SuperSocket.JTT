@@ -19,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\nuget\SuperSocket.JTT.All\SuperSocket.JTT.All.csproj" />
+    <ProjectReference Include="..\..\src\Nuget\SuperSocket.JTT.All\SuperSocket.JTT.All.csproj" />
   </ItemGroup>
 
   <ItemGroup>
