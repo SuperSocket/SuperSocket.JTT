@@ -19,11 +19,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Nuget\SuperSocket.JTT.All\SuperSocket.JTT.All.csproj" />
+    <Folder Include="Model\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Model\" />
+    <ProjectReference Include="..\..\Nuget\SuperSocket.JTT.All\SuperSocket.JTT.All.csproj" />
   </ItemGroup>
 
 </Project>

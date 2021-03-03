@@ -8,7 +8,7 @@
     <Authors>SuperSocket</Authors>
     <Company>SuperSocket</Company>
     <Product>SuperSocket.JTT</Product>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Description>SuperSocket.JTT基础包。</Description>

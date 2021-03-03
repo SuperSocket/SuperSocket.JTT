@@ -9,7 +9,7 @@
     <Authors>SuperSocket</Authors>
     <Company>SuperSocket</Company>
     <Product>SuperSocket.JTT</Product>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/SuperSocket/SuperSocket.JTT</PackageProjectUrl>
     <Description>JTT-809协议扩展包。</Description>
     <RootNamespace>SuperSocket.JTT.JTT809</RootNamespace>
