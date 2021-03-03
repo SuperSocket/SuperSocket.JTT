@@ -1,4 +1,4 @@
-﻿using SuperSocket.JTT.JTTBase.Annotations;
+﻿using SuperSocket.JTT.Base.Annotations;
 using System;
 using System.Collections.Generic;
 using System.Text;

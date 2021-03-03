@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/SuperSocket/SuperSocket.JTT</PackageProjectUrl>
+    <Version>0.0.0.1-alpha</Version>
+    <Authors>SuperSocket</Authors>
+    <Company>SuperSocket</Company>
+    <Product>SuperSocket.JTT</Product>
+    <Description>SuperSocket.JTT全家桶。
+构建基于JTT(道路运输车辆卫星定位系统 平台数据交换)协议的服务器。</Description>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>SuperSocket.JTT.All.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>SuperSocket.JTT.All.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Protocols\SuperSocket.JTT.JTT1078\SuperSocket.JTT.JTT1078.csproj" />
+    <ProjectReference Include="..\..\src\Protocols\SuperSocket.JTT.JTT808\SuperSocket.JTT.JTT808.csproj" />
+    <ProjectReference Include="..\..\src\Protocols\SuperSocket.JTT.JTT809\SuperSocket.JTT.JTT809.csproj" />
+    <ProjectReference Include="..\..\src\SuperSocket.JTT.Server\SuperSocket.JTT.Server.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="SuperSocket.JTT.All.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

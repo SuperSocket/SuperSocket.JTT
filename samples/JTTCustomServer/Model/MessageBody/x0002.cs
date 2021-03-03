@@ -1,5 +1,5 @@
 ﻿using JTTCustomServer.Model.Flag;
-using SuperSocket.JTT.JTTBase.Interface;
+using SuperSocket.JTT.Base.Interface;
 using System;
 using System.Collections;
 

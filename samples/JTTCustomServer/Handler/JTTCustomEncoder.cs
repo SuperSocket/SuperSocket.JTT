@@ -1,7 +1,7 @@
 ﻿using JTTCustomServer.Model;
-using SuperSocket.JTT.JTTBase.Hadnler;
-using SuperSocket.JTT.JTTBase.Interface;
-using SuperSocket.JTT.JTTBase.Model;
+using SuperSocket.JTT.Base.Hadnler;
+using SuperSocket.JTT.Base.Interface;
+using SuperSocket.JTT.Base.Model;
 using System;
 using System.Buffers;
 using System.IO;
