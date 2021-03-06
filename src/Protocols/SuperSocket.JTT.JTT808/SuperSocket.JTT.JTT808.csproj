@@ -5,7 +5,6 @@
     <AssemblyName>SuperSocket.JTT.JTT808</AssemblyName>
     <RootNamespace>SuperSocket.JTT.JTT808</RootNamespace>
     <Description>JTT-808协议扩展包。</Description>
-    <Version>0.0.0.1-alpha</Version>
     <Authors>SuperSocket</Authors>
     <Company>SuperSocket</Company>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>

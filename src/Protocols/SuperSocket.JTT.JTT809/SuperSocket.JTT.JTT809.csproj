@@ -5,7 +5,6 @@
     <AssemblyName>SuperSocket.JTT.JTT809</AssemblyName>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <Version>0.0.0.1-alpha</Version>
     <Authors>SuperSocket</Authors>
     <Company>SuperSocket</Company>
     <Product>SuperSocket.JTT</Product>
