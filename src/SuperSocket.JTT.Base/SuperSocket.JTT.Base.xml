@@ -1067,6 +1067,9 @@
             <summary>
             编码类型
             </summary>
+            <remarks>
+            <see cref="T:SuperSocket.JTT.Base.Model.CodeType"/>
+            </remarks>
         </member>
         <member name="P:SuperSocket.JTT.Base.Model.CodeInfo.Assembly">
             <summary>
@@ -1414,6 +1417,9 @@
             <summary>
             编码类型
             </summary>
+            <remarks>
+            <see cref="T:SuperSocket.JTT.Base.Model.CodeType"/>
+            </remarks>
         </member>
         <member name="P:SuperSocket.JTT.Base.Model.EnCodeInfo.Assembly">
             <summary>

@@ -12,7 +12,10 @@ namespace SuperSocket.JTT.Base.Model
         /// <summary>
         /// 编码类型
         /// </summary>
-        public CodeType EncodeType { get; set; }
+        /// <remarks>
+        /// <see cref="Model.CodeType"/>
+        /// </remarks>
+        public string EncodeType { get; set; }
 
         /// <summary>
         /// 命名空间

@@ -7,136 +7,136 @@ namespace SuperSocket.JTT.Base.Model
     /// <summary>
     /// 编码类型
     /// </summary>
-    public enum CodeType
+    public static class CodeType
     {
         /// <summary>
         /// BitArray
         /// </summary>
-        binary,
+        public const string binary = "binary";
         /// <summary>
         /// BitConverter.ToBoolean(bytes);
         /// </summary>
-        boolean,
-        @byte,
-        bytes,
+        public const string boolean = "boolean";
+        public const string @byte = "byte";
+        public const string bytes = "bytes";
         /// <summary>
         /// 解码 BinaryPrimitives.ReadUInt16
         /// 编码 BinaryPrimitives.WriteUInt16
         /// </summary>
-        uint16,
+        public const string uint16 = "uint16";
         /// <summary>
         /// 解码 BinaryPrimitives.ReadUInt32
         /// 编码 BinaryPrimitives.WriteUInt32
         /// </summary>
-        uint32,
+        public const string uint32 = "uint32";
         /// <summary>
         /// 解码 BinaryPrimitives.ReadUInt64
         /// 编码 BinaryPrimitives.WriteUInt64
         /// </summary>
-        uint64,
+        public const string uint64 = "uint64";
         /// <summary>
         /// 解码 BinaryPrimitives.ReadInt16
         /// 编码 BinaryPrimitives.WriteInt16
         /// </summary>
-        int16,
+        public const string int16 = "int16";
         /// <summary>
         /// 解码 BinaryPrimitives.ReadInt32
         /// 编码 BinaryPrimitives.WriteInt32
         /// </summary>
-        int32,
+        public const string int32 = "int32";
         /// <summary>
         /// 解码 BinaryPrimitives.ReadInt64
         /// 编码 BinaryPrimitives.WriteInt64
         /// </summary>
-        int64,
+        public const string int64 = "int64";
         /// <summary>
         /// Convert.ToUInt16("0x", 16)
         /// </summary>
-        uint16_hex,
+        public const string uint16_hex = "uint16_hex";
         /// <summary>
         /// Convert.ToUInt32("0x", 16)
         /// </summary>
-        uint32_hex,
+        public const string uint32_hex = "uint32_hex";
         /// <summary>
         /// Convert.ToUInt64("0x", 16)
         /// </summary>
-        uint64_hex,
+        public const string uint64_hex = "uint64_hex";
         /// <summary>
         /// 时间戳
         /// 转为C# DateTime
         /// </summary>
-        uint64_unix,
+        public const string uint64_unix = "uint64_unix";
         /// <summary>
         /// Convert.ToByte("0x", 16)
         /// </summary>
-        byte_hex,
+        public const string byte_hex = "byte_hex";
         /// <summary>
         /// Convert.ToInt16("0x", 16)
         /// </summary>
-        int16_hex,
+        public const string int16_hex = "int16_hex";
         /// <summary>
         /// Convert.ToInt32("0x", 16)
         /// </summary>
-        int32_hex,
+        public const string int32_hex = "int32_hex";
         /// <summary>
         /// Convert.ToInt64("0x", 16)
         /// </summary>
-        int64_hex,
+        public const string int64_hex = "int64_hex";
         /// <summary>
         /// Enum.Parse(type, Encoding.GetEncoding("gbk").GetString(data).Replace("\0", ""))
         /// </summary>
-        @enum,
+        public const string @enum = "@enum";
         /// <summary>
         /// Encoding.GetEncoding("gbk").GetString(data).Replace("\0", "");
         /// </summary>
-        @string,
+        public const string @string = "@string";
         /// <summary>
         /// string.Join('\0', data.ToList().ForEach(o => o.ToString("x").PadLeft(2, '0')));
         /// </summary>
-        string_x_0,
+        public const string string_x_0 = "string_x_0";
         /// <summary>
         /// data.ToString("x2");
         /// </summary>
-        string_x2,
+        public const string string_x2 = "string_x2";
         /// <summary>
         /// $"0x{data.ToString("x2")}";
         /// </summary>
-        string_hex,
+        public const string string_hex = "string_hex";
         /// <summary>
         /// 
         /// </summary>
-        string_ascii,
+        public const string string_ascii = "string_ascii";
         /// <summary>
         /// 
         /// </summary>
-        string_bcd8421,
+        public const string string_bcd8421 = "string_bcd8421";
         /// <summary>
         /// 
         /// </summary>
-        char_bcd8421,
+        public const string char_bcd8421 = "char_bcd8421";
         /// <summary>
         /// yy-MM-dd HH:mm:ss
         /// </summary>
-        datetime_bcd8421,
+        public const string datetime_bcd8421 = "datetime_bcd8421";
         /// <summary>
         /// yy-MM-dd
         /// </summary>
-        date_bcd8421,
+        public const string date_bcd8421 = "date_bcd8421";
         /// <summary>
         /// HH:MM
         /// </summary>
-        time_bcd8421,
+        public const string time_bcd8421 = "time_bcd8421";
         /// <summary>
         /// string.Join(' ', data);
         /// </summary>
-        data,
+        public const string data = "data";
         /// <summary>
         /// 使用空格分隔
         /// </summary>
-        data_split,
+        public const string data_split = "data_split";
         /// <summary>
         /// Encoding.GetEncoding(jT.Encoding).GetBytes(value.ToJson())
         /// </summary>
-        json
+        public const string json = "json";
     }
 }
