@@ -1,0 +1,16 @@
+<Project>
+  <PropertyGroup>
+    <LangVersion>9.0</LangVersion>    
+    <LibTargetFramework>netstandard2.1</LibTargetFramework>
+    <SuperSocketVersion>2.0.0-beta.8</SuperSocketVersion>
+    <Version>2.0.0-beta.8</Version>
+  </PropertyGroup>
+  <PropertyGroup>    
+    <PackageProjectUrl>https://github.com/SuperSocket/SuperSocket.JTT</PackageProjectUrl>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <IncludeSource>true</IncludeSource>
+    <Authors>SuperSocket Developer Community</Authors>
+  </PropertyGroup>
+</Project>

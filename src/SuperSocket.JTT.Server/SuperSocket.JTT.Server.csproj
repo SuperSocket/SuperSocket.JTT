@@ -4,7 +4,6 @@
     <TargetFramework>netstandard2.1</TargetFramework>
     <AssemblyName>SuperSocket.JTT.Server</AssemblyName>
     <RootNamespace>SuperSocket.JTT.Server</RootNamespace>
-    <Version>0.0.0.1-alpha</Version>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
@@ -33,8 +32,8 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.1" />
     <PackageReference Include="Microsoft.Extensions.Options" Version="5.0.0" />
-    <PackageReference Include="SuperSocket" Version="2.0.0-beta.8" />
-    <PackageReference Include="SuperSocket.Udp" Version="2.0.0-beta.8" />
+    <PackageReference Include="SuperSocket" Version="$(SuperSocketVersion)" />
+    <PackageReference Include="SuperSocket.Udp" Version="$(SuperSocketVersion)" />
   </ItemGroup>
 
   <ItemGroup>

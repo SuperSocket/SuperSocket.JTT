@@ -3,6 +3,7 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net5.0</TargetFramework>
+    <IsPackable>false</IsPackable>
   </PropertyGroup>
 
   <ItemGroup>
@@ -35,7 +36,7 @@
     <PackageReference Include="Microservice.Library.ConsoleTool" Version="0.0.0.20284-alpha-g3c4fe539e3" />
     <PackageReference Include="Microservice.Library.Container" Version="0.0.0.20284-alpha-g3c4fe539e3" />
     <PackageReference Include="Microservice.Library.NLogger" Version="0.0.0.20284-alpha-g3c4fe539e3" />
-    <PackageReference Include="SuperSocket.Client" Version="2.0.0-beta7" />
+    <PackageReference Include="SuperSocket" Version="$(SuperSocketVersion)" />
   </ItemGroup>
 
   <ItemGroup>
