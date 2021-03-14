@@ -1,4 +1,5 @@
 ﻿using JTTCustomServer.Handler;
+using SuperSocket.JTT.Base.Extension;
 using SuperSocket.JTT.Base.Filter;
 using SuperSocket.JTT.Base.Hadnler;
 using SuperSocket.JTT.Base.Interface;
@@ -15,11 +16,18 @@ namespace JTTCustomServer.Model
     {
         public void Initialization()
         {
-            //不指定拦截器时将会使用默认拦截器
-            JTTPipelineFilter = new JTTCustomPipelineFilter(this);
-
             Decoder = new JTTCustomDecoder(this);
             Encoder = new JTTCustomEncoder(this);
+
+            //不指定拦截器时将会使用默认拦截器
+            //var handler = this.GetHandler();
+            //var beginMark = handler.GetHeadFlagValue();
+            //var endMark = handler.GetEndFlagValue();
+            //var filter = new JTTCustomPipelineFilter(beginMark, endMark)
+            //{
+            //    Decoder = this.Decoder
+            //};
+            //JTTPipelineFilter = filter;
         }
 
         public FlagInfo HeadFlag { get; set; }

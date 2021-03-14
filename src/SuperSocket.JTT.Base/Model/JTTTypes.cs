@@ -11,8 +11,6 @@ namespace SuperSocket.JTT.Base.Model
     {
         public static Type Protocol = typeof(IJTTProtocol);
 
-        public static Type PipelineFilter = typeof(JTTPipelineFilter);
-
         public static Type PackageInfo = typeof(IJTTPackageInfo);
 
         public static Type MessageHeader = typeof(IJTTMessageHeader);

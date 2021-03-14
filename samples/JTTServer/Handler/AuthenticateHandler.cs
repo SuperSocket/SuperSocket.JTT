@@ -14,8 +14,7 @@ namespace JTTServer
 {
     public static class AuthenticateHandler
     {
-        static readonly SystemConfig Config = AutofacHelper.GetService<IServiceProvider>()
-            .GetService<SystemConfig>();
+        static readonly SystemConfig Config = AutofacHelper.GetService<SystemConfig>();
 
         /// <summary>
         /// 已验证的会话

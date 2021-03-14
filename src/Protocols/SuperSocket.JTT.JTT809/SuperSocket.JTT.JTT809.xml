@@ -149,6 +149,13 @@
             <!--可以重写或新增方法-->
             </summary>
         </member>
+        <member name="M:SuperSocket.JTT.JTT809.JTT809PipelineFilter.#ctor(System.ReadOnlyMemory{System.Byte},System.ReadOnlyMemory{System.Byte})">
+            <summary>
+            
+            </summary>
+            <param name="beginMark">帧头</param>
+            <param name="endMark">帧尾</param>
+        </member>
         <member name="T:SuperSocket.JTT.JTT809.JTT809Protocol">
             <summary>
             JTT809协议

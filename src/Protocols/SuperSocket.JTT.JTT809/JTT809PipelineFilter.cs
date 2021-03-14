@@ -1,9 +1,5 @@
-﻿using System;
-using System.Buffers;
-using System.Collections.Generic;
-using System.Text;
-using SuperSocket.JTT.Base.Filter;
-using SuperSocket.JTT.Base.Interface;
+﻿using SuperSocket.JTT.Base.Filter;
+using System;
 
 namespace SuperSocket.JTT.JTT809
 {
@@ -13,8 +9,13 @@ namespace SuperSocket.JTT.JTT809
     /// </summary>
     public class JTT809PipelineFilter : JTTPipelineFilter
     {
-        public JTT809PipelineFilter(IJTTProtocol protocol)
-            : base(protocol)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="beginMark">帧头</param>
+        /// <param name="endMark">帧尾</param>
+        public JTT809PipelineFilter(ReadOnlyMemory<byte> beginMark, ReadOnlyMemory<byte> endMark)
+            : base(beginMark, endMark)
         {
 
         }
