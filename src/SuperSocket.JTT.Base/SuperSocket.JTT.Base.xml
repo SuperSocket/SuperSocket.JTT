@@ -344,11 +344,12 @@
             JTT协议流数据拦截器
             </summary>
         </member>
-        <member name="M:SuperSocket.JTT.Base.Filter.JTTPipelineFilter.#ctor(SuperSocket.JTT.Base.Interface.IJTTProtocol)">
+        <member name="M:SuperSocket.JTT.Base.Filter.JTTPipelineFilter.#ctor(System.ReadOnlyMemory{System.Byte},System.ReadOnlyMemory{System.Byte})">
             <summary>
             
             </summary>
-            <param name="protocol">JTT协议</param>
+            <param name="beginMark">帧头</param>
+            <param name="endMark">帧尾</param>
         </member>
         <member name="T:SuperSocket.JTT.Base.Hadnler.JTTDecoder">
             <summary>

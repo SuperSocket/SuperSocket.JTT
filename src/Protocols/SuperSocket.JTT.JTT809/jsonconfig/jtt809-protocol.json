@@ -100,18 +100,18 @@
     },
     "InternalEntitysMappings": { //内部结构映射实体集合
       "MessageHeaderEntity": { //映射标识
-        "Assembly": "SuperSocket.JTT809", //命名空间（.dll）
-        "TypeName": "SuperSocket.JTT809.JTT809MessageHeader", //类名
+        "Assembly": "SuperSocket.JTT.JTT809", //命名空间（.dll）
+        "TypeName": "SuperSocket.JTT.JTT809.JTT809MessageHeader", //类名
         "Length": 30 //字节长度 为空时表示可变长度
       },
       "0x1001": {
-        "Assembly": "SuperSocket.JTT809",
-        "TypeName": "SuperSocket.JTT809.MessageBody.LoginRequestBody",
+        "Assembly": "SuperSocket.JTT.JTT809",
+        "TypeName": "SuperSocket.JTT.JTT809.MessageBody.LoginRequestBody",
         "Length": 78
       },
       "0x1002": {
-        "Assembly": "SuperSocket.JTT809",
-        "TypeName": "SuperSocket.JTT809.MessageBody.LoginReplyBody",
+        "Assembly": "SuperSocket.JTT.JTT809",
+        "TypeName": "SuperSocket.JTT.JTT809.MessageBody.LoginReplyBody",
         "Length": 5
       }
     },

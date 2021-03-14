@@ -2,6 +2,7 @@
 using Microservice.Library.Container;
 using SuperSocket.JTT.Base.Filter;
 using SuperSocket.JTT.Base.Interface;
+using System;
 using System.Buffers;
 
 namespace JTTCustomServer.Handler
@@ -12,19 +13,15 @@ namespace JTTCustomServer.Handler
     /// </summary>
     public class JTTCustomPipelineFilter : JTTPipelineFilter
     {
-        public JTTCustomPipelineFilter(IJTTProtocol protocol)
-            : base(protocol)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="beginMark">帧头</param>
+        /// <param name="endMark">帧尾</param>
+        public JTTCustomPipelineFilter(ReadOnlyMemory<byte> beginMark, ReadOnlyMemory<byte> endMark)
+            : base(beginMark, endMark)
         {
 
-        }
-
-#pragma warning disable IDE0052 // 删除未读的私有成员
-        readonly SystemConfig Config = AutofacHelper.GetService<SystemConfig>();
-#pragma warning restore IDE0052 // 删除未读的私有成员
-
-        protected override IJTTPackageInfo DecodePackage(ref ReadOnlySequence<byte> buffer)
-        {
-            return base.DecodePackage(ref buffer);
         }
     }
 }

@@ -16,7 +16,7 @@ namespace Microsoft.Extensions.DependencyInjection
     public static class ServiceCollectionExtensions
     {
         /// <summary>
-        /// 添加微信服务
+        /// 添加JTT服务
         /// <para>单例模式</para>
         /// </summary>
         /// <param name="services"></param>
@@ -40,7 +40,7 @@ namespace Microsoft.Extensions.DependencyInjection
         }
 
         /// <summary>
-        /// 配置微信服务
+        /// 配置JTT服务
         /// </summary>
         /// <param name="services"></param>
         /// <param name="setupAction"></param>

@@ -16,7 +16,7 @@
         </member>
         <member name="M:Microsoft.Extensions.DependencyInjection.ServiceCollectionExtensions.AddJTT(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{SuperSocket.JTT.Server.Model.JTTGenOptions})">
             <summary>
-            添加微信服务
+            添加JTT服务
             <para>单例模式</para>
             </summary>
             <param name="services"></param>
@@ -25,7 +25,7 @@
         </member>
         <member name="M:Microsoft.Extensions.DependencyInjection.ServiceCollectionExtensions.ConfigureJTT(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{SuperSocket.JTT.Server.Model.JTTGenOptions})">
             <summary>
-            配置微信服务
+            配置JTT服务
             </summary>
             <param name="services"></param>
             <param name="setupAction"></param>

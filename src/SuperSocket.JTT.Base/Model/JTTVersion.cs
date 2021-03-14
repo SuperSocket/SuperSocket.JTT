@@ -27,6 +27,7 @@ namespace SuperSocket.JTT.Base.Model
         /// </summary>
         /// <remarks> https://github.com/SuperSocket/SuperSocket.JTT/blob/master/specs/JTT1078-2016.pdf </remarks>
         JTT1078,
+
         /// <summary>
         /// 自定义
         /// </summary>

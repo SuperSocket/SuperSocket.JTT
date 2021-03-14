@@ -15,7 +15,7 @@ namespace JTTServer
         /// 注册服务
         /// </summary>
         /// <param name="services"></param>
-        public static IServiceCollection RegisterServices(this IServiceCollection services, SystemConfig config)
+        public static IServiceCollection RegisterJTTServer(this IServiceCollection services, SystemConfig config)
         {
             services.AddJTT(options =>
             {
@@ -55,8 +55,7 @@ namespace JTTServer
                 options.LoggingOptions = new SuperSocket.JTT.Server.Model.JTTLoggingOptions
                 {
                     AddConsole = true,
-                    AddDebug = true,
-                    Provider = AutofacHelper.GetService<ILoggerProvider>()
+                    AddDebug = true
                 };
             });
 

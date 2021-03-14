@@ -52,7 +52,7 @@ namespace SuperSocket.JTT.Server.Gen
 
             var assemblyName = Options.ProtocolOptions.Version == JTTVersion.JTTCustom
                 ? Options.ProtocolOptions.JTTCustomAssemblyName
-                : $"SuperSocket.{Options.ProtocolOptions.Version}";
+                : $"SuperSocket.JTT.{Options.ProtocolOptions.Version}";
 
             var assembly = Assembly.Load(assemblyName);
             if (assembly == null)

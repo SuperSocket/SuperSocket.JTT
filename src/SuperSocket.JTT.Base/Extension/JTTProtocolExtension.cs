@@ -92,7 +92,14 @@ namespace SuperSocket.JTT.Base.Extension
         /// <returns></returns>
         public static IPipelineFilter<IJTTPackageInfo> GetFilter(this IJTTProtocol protocol)
         {
-            return protocol.JTTPipelineFilter ?? new JTTPipelineFilter(protocol);
+            var handler = protocol.GetHandler();
+            var beginMark = handler.GetHeadFlagValue();
+            var endMark = handler.GetEndFlagValue();
+            var filter = new JTTPipelineFilter(beginMark, endMark)
+            {
+                Decoder = protocol.Decoder
+            };
+            return filter;
         }
 
         /// <summary>

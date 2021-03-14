@@ -1061,8 +1061,8 @@
                   },
                   "FlagStruct": {
                     "Property": "AlarmType_Flag",
-                    "Assembly": "SuperSocket.JTT1078",
-                    "TypeName": "SuperSocket.JTT1078.Flag.VideoAlarmFlag"
+                    "Assembly": "SuperSocket.JTT.JTT1078",
+                    "TypeName": "SuperSocket.JTT.JTT1078.Flag.VideoAlarmFlag"
                   }
                 },
                 {
@@ -1286,8 +1286,8 @@
                         },
                         "FlagStruct": {
                           "Property": "AlarmType_Flag",
-                          "Assembly": "SuperSocket.JTT1078",
-                          "TypeName": "SuperSocket.JTT1078.Flag.VideoAlarmFlag"
+                          "Assembly": "SuperSocket.JTT.JTT1078",
+                          "TypeName": "SuperSocket.JTT.JTT1078.Flag.VideoAlarmFlag"
                         }
                       },
                       {
@@ -1453,8 +1453,8 @@
                         },
                         "FlagStruct": {
                           "Property": "AlarmType_Flag",
-                          "Assembly": "SuperSocket.JTT1078",
-                          "TypeName": "SuperSocket.JTT1078.Flag.VideoAlarmFlag"
+                          "Assembly": "SuperSocket.JTT.JTT1078",
+                          "TypeName": "SuperSocket.JTT.JTT1078.Flag.VideoAlarmFlag"
                         }
                       },
                       {
@@ -2043,8 +2043,8 @@
                   },
                   "FlagStruct": {
                     "Property": "AlarmType_Flag",
-                    "Assembly": "SuperSocket.JTT1078",
-                    "TypeName": "SuperSocket.JTT1078.Flag.VideoAlarmFlag"
+                    "Assembly": "SuperSocket.JTT.JTT1078",
+                    "TypeName": "SuperSocket.JTT.JTT1078.Flag.VideoAlarmFlag"
                   }
                 },
                 {

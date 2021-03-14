@@ -36,9 +36,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microservice.Library.ConsoleTool" Version="0.0.0-g266fcfe23f-alpha" />
-    <PackageReference Include="Microservice.Library.Container" Version="0.0.0-g266fcfe23f-alpha" />
-    <PackageReference Include="Microservice.Library.NLogger" Version="0.0.0-g266fcfe23f-alpha" />
+    <PackageReference Include="Microservice.Library.ConsoleTool" Version="0.0.0.20284-alpha-g3c4fe539e3" />
+    <PackageReference Include="Microservice.Library.Container" Version="0.0.0.20284-alpha-g3c4fe539e3" />
+    <PackageReference Include="Microservice.Library.NLogger" Version="0.0.0.20284-alpha-g3c4fe539e3" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,18 +1,18 @@
 ﻿{
   "InternalEntitysMappings": { //内部结构映射实体集合
     "MessageHeaderEntity": { //映射标识
-      "Assembly": "SuperSocket.JTT809", //命名空间（.dll）
-      "TypeName": "SuperSocket.JTT809.JTT809MessageHeader", //类名
+      "Assembly": "SuperSocket.JTT.JTT809", //命名空间（.dll）
+      "TypeName": "SuperSocket.JTT.JTT809.JTT809MessageHeader", //类名
       "Length": 30 //字节长度 为空时表示可变长度
     },
     "0x1001": {
-      "Assembly": "SuperSocket.JTT809",
-      "TypeName": "SuperSocket.JTT809.MessageBody.LoginRequestBody",
+      "Assembly": "SuperSocket.JTT.JTT809",
+      "TypeName": "SuperSocket.JTT.JTT809.MessageBody.LoginRequestBody",
       "Length": 78
     },
     "0x1002": {
-      "Assembly": "SuperSocket.JTT809",
-      "TypeName": "SuperSocket.JTT809.MessageBody.LoginReplyBody",
+      "Assembly": "SuperSocket.JTT.JTT809",
+      "TypeName": "SuperSocket.JTT.JTT809.MessageBody.LoginReplyBody",
       "Length": 5
     },
 
@@ -71,204 +71,204 @@
     //JTT1078
     //主链路时效口令交互消息数据体
     "0x1700": {
-      "Assembly": "SuperSocket.JTT1078",
-      "TypeName": "SuperSocket.JTT1078.MessageBody.UpAuthorizeMsgBody",
+      "Assembly": "SuperSocket.JTT.JTT1078",
+      "TypeName": "SuperSocket.JTT.JTT1078.MessageBody.UpAuthorizeMsgBody",
       "Length": null //2+
     },
     //时效口令上报消息数据体
     "0x1701": {
-      "Assembly": "SuperSocket.JTT1078",
-      "TypeName": "SuperSocket.JTT1078.MessageBody.Internal.AuthorizeStartupBody",
+      "Assembly": "SuperSocket.JTT.JTT1078",
+      "TypeName": "SuperSocket.JTT.JTT1078.MessageBody.Internal.AuthorizeStartupBody",
       "Length": 139
     },
     //时效口令请求消息数据体
     "0x1702": {
-      "Assembly": "SuperSocket.JTT1078",
-      "TypeName": "SuperSocket.JTT1078.MessageBody.Internal.AuthorizeStartupRequestBody",
+      "Assembly": "SuperSocket.JTT.JTT1078",
+      "TypeName": "SuperSocket.JTT.JTT1078.MessageBody.Internal.AuthorizeStartupRequestBody",
       "Length": 28
     },
 
     //从链路时效口令交互消息数据体
     "0x9700": {
-      "Assembly": "SuperSocket.JTT1078",
-      "TypeName": "SuperSocket.JTT1078.MessageBody.DownAuthorizeMsgBody",
+      "Assembly": "SuperSocket.JTT.JTT1078",
+      "TypeName": "SuperSocket.JTT.JTT1078.MessageBody.DownAuthorizeMsgBody",
       "Length": null //28+
     },
     //时效口令请求应答消息数据体
     "0x9702": {
-      "Assembly": "SuperSocket.JTT1078",
-      "TypeName": "SuperSocket.JTT1078.MessageBody.Internal.AuthorizeStartupReplyBody",
+      "Assembly": "SuperSocket.JTT.JTT1078",
+      "TypeName": "SuperSocket.JTT.JTT1078.MessageBody.Internal.AuthorizeStartupReplyBody",
       "Length": 128
     },
 
     //从链路实时音视频交互消息数据体
     "0x9800": {
-      "Assembly": "SuperSocket.JTT1078",
-      "TypeName": "SuperSocket.JTT1078.MessageBody.DownRealVideoMsgBody",
+      "Assembly": "SuperSocket.JTT.JTT1078",
+      "TypeName": "SuperSocket.JTT.JTT1078.MessageBody.DownRealVideoMsgBody",
       "Length": null //28+
     },
     //实时音视频请求消息数据体
     "0x9801": {
-      "Assembly": "SuperSocket.JTT1078",
-      "TypeName": "SuperSocket.JTT1078.MessageBody.Internal.RealVideoStartupRequestBody",
+      "Assembly": "SuperSocket.JTT.JTT1078",
+      "TypeName": "SuperSocket.JTT.JTT1078.MessageBody.Internal.RealVideoStartupRequestBody",
       "Length": 102
     },
     //主动请求停止实时音视频传输消息数据体
     "0x9802": {
-      "Assembly": "SuperSocket.JTT1078",
-      "TypeName": "SuperSocket.JTT1078.MessageBody.Internal.RealVideoEndRequestBody",
+      "Assembly": "SuperSocket.JTT.JTT1078",
+      "TypeName": "SuperSocket.JTT.JTT1078.MessageBody.Internal.RealVideoEndRequestBody",
       "Length": 2
     },
 
     //主链路实时音视频交互消息数据体
     "0x1800": {
-      "Assembly": "SuperSocket.JTT1078",
-      "TypeName": "SuperSocket.JTT1078.MessageBody.UpRealVideoMsgBody",
+      "Assembly": "SuperSocket.JTT.JTT1078",
+      "TypeName": "SuperSocket.JTT.JTT1078.MessageBody.UpRealVideoMsgBody",
       "Length": null //28+
     },
     //实时音视频请求应答消息数据体
     "0x1801": {
-      "Assembly": "SuperSocket.JTT1078",
-      "TypeName": "SuperSocket.JTT1078.MessageBody.Internal.RealVideoStartupReplyBody",
+      "Assembly": "SuperSocket.JTT.JTT1078",
+      "TypeName": "SuperSocket.JTT.JTT1078.MessageBody.Internal.RealVideoStartupReplyBody",
       "Length": 35
     },
     //主动请求停止实时音视频传输应答消息数据体
     "0x1802": {
-      "Assembly": "SuperSocket.JTT1078",
-      "TypeName": "SuperSocket.JTT1078.MessageBody.Internal.RealVideoEndReplyBody",
+      "Assembly": "SuperSocket.JTT.JTT1078",
+      "TypeName": "SuperSocket.JTT.JTT1078.MessageBody.Internal.RealVideoEndReplyBody",
       "Length": 1
     },
 
     //从链路远程录像检索交互消息数据体
     "0x9900": {
-      "Assembly": "SuperSocket.JTT1078",
-      "TypeName": "SuperSocket.JTT1078.MessageBody.DownSearchMsgBody",
+      "Assembly": "SuperSocket.JTT.JTT1078",
+      "TypeName": "SuperSocket.JTT.JTT1078.MessageBody.DownSearchMsgBody",
       "Length": null //28+
     },
     //主动上传音视频资源目录请求应答消息数据体
     "0x9901": {
-      "Assembly": "SuperSocket.JTT1078",
-      "TypeName": "SuperSocket.JTT1078.MessageBody.Internal.UploadFilelistReplyBody",
+      "Assembly": "SuperSocket.JTT.JTT1078",
+      "TypeName": "SuperSocket.JTT.JTT1078.MessageBody.Internal.UploadFilelistReplyBody",
       "Length": 2
     },
     //查询音视频资源目录请求消息数据体
     "0x9902": {
-      "Assembly": "SuperSocket.JTT1078",
-      "TypeName": "SuperSocket.JTT1078.MessageBody.Internal.SearchFilelistRequestBody",
+      "Assembly": "SuperSocket.JTT.JTT1078",
+      "TypeName": "SuperSocket.JTT.JTT1078.MessageBody.Internal.SearchFilelistRequestBody",
       "Length": 128
     },
 
 
     //主链路远程录像检索交互消息数据体
     "0x1900": {
-      "Assembly": "SuperSocket.JTT1078",
-      "TypeName": "SuperSocket.JTT1078.MessageBody.UpSearchMsgBody",
+      "Assembly": "SuperSocket.JTT.JTT1078",
+      "TypeName": "SuperSocket.JTT.JTT1078.MessageBody.UpSearchMsgBody",
       "Length": null //28+
     },
     //主动上传音视频资源目录信息消息数据体
     "0x1901": {
-      "Assembly": "SuperSocket.JTT1078",
-      "TypeName": "SuperSocket.JTT1078.MessageBody.Internal.UploadFilelistRequestBody",
+      "Assembly": "SuperSocket.JTT.JTT1078",
+      "TypeName": "SuperSocket.JTT.JTT1078.MessageBody.Internal.UploadFilelistRequestBody",
       "Length": 36
     },
     //音视频资源目录项
     "FilelistItemEntity": {
-      "Assembly": "SuperSocket.JTT1078",
-      "TypeName": "SuperSocket.JTT1078.MessageBody.Internal.FilelistItem",
+      "Assembly": "SuperSocket.JTT.JTT1078",
+      "TypeName": "SuperSocket.JTT.JTT1078.MessageBody.Internal.FilelistItem",
       "Length": 32
     },
     //查询音视频资源目录应答消息数据体
     "0x1902": {
-      "Assembly": "SuperSocket.JTT1078",
-      "TypeName": "SuperSocket.JTT1078.MessageBody.Internal.SearchFilelistReplyBody",
+      "Assembly": "SuperSocket.JTT.JTT1078",
+      "TypeName": "SuperSocket.JTT.JTT1078.MessageBody.Internal.SearchFilelistReplyBody",
       "Length": 37
     },
 
     //从链路远程录像回放交互消息数据体
     "0x9A00": {
-      "Assembly": "SuperSocket.JTT1078",
-      "TypeName": "SuperSocket.JTT1078.MessageBody.DownPlaybackMsgBody",
+      "Assembly": "SuperSocket.JTT.JTT1078",
+      "TypeName": "SuperSocket.JTT.JTT1078.MessageBody.DownPlaybackMsgBody",
       "Length": null //28+
     },
     //远程录像回放请求消息数据体
     "0x9A01": {
-      "Assembly": "SuperSocket.JTT1078",
-      "TypeName": "SuperSocket.JTT1078.MessageBody.Internal.PlaybackStartupRequestBody",
+      "Assembly": "SuperSocket.JTT.JTT1078",
+      "TypeName": "SuperSocket.JTT.JTT1078.MessageBody.Internal.PlaybackStartupRequestBody",
       "Length": 120
     },
     //远程录像回放控制消息数据体
     "0x9A02": {
-      "Assembly": "SuperSocket.JTT1078",
-      "TypeName": "SuperSocket.JTT1078.MessageBody.Internal.PlaybackControlRequestBody",
+      "Assembly": "SuperSocket.JTT.JTT1078",
+      "TypeName": "SuperSocket.JTT.JTT1078.MessageBody.Internal.PlaybackControlRequestBody",
       "Length": 10
     },
 
     //从链路远程录像回放交互消息数据体
     "0x1A00": {
-      "Assembly": "SuperSocket.JTT1078",
-      "TypeName": "SuperSocket.JTT1078.MessageBody.UpPlaybackMsgBody",
+      "Assembly": "SuperSocket.JTT.JTT1078",
+      "TypeName": "SuperSocket.JTT.JTT1078.MessageBody.UpPlaybackMsgBody",
       "Length": null //28+
     },
     //远程录像回放请求应答消息数据体
     "0x1A01": {
-      "Assembly": "SuperSocket.JTT1078",
-      "TypeName": "SuperSocket.JTT1078.MessageBody.Internal.PlaybackStartupReplyBody",
+      "Assembly": "SuperSocket.JTT.JTT1078",
+      "TypeName": "SuperSocket.JTT.JTT1078.MessageBody.Internal.PlaybackStartupReplyBody",
       "Length": 35
     },
     //远程录像回放控制应答消息数据体
     "0x1A02": {
-      "Assembly": "SuperSocket.JTT1078",
-      "TypeName": "SuperSocket.JTT1078.MessageBody.Internal.PlaybackControlReplyBody",
+      "Assembly": "SuperSocket.JTT.JTT1078",
+      "TypeName": "SuperSocket.JTT.JTT1078.MessageBody.Internal.PlaybackControlReplyBody",
       "Length": 1
     },
 
     //从链路远程录像下载交互消息数据体
     "0x9B00": {
-      "Assembly": "SuperSocket.JTT1078",
-      "TypeName": "SuperSocket.JTT1078.MessageBody.DownDownloadMsgBody",
+      "Assembly": "SuperSocket.JTT.JTT1078",
+      "TypeName": "SuperSocket.JTT.JTT1078.MessageBody.DownDownloadMsgBody",
       "Length": null //28+
     },
     //远程录像下载请求消息数据体
     "0x9B01": {
-      "Assembly": "SuperSocket.JTT1078",
-      "TypeName": "SuperSocket.JTT1078.MessageBody.Internal.DownloadStartupRequestBody",
+      "Assembly": "SuperSocket.JTT.JTT1078",
+      "TypeName": "SuperSocket.JTT.JTT1078.MessageBody.Internal.DownloadStartupRequestBody",
       "Length": 132
     },
     //远程录像下载完成通知应答消息数据体
     "0x9B02": {
-      "Assembly": "SuperSocket.JTT1078",
-      "TypeName": "SuperSocket.JTT1078.MessageBody.Internal.DownloadEndInformReplyBody",
+      "Assembly": "SuperSocket.JTT.JTT1078",
+      "TypeName": "SuperSocket.JTT.JTT1078.MessageBody.Internal.DownloadEndInformReplyBody",
       "Length": 3
     },
     //远程录像下载控制请求消息数据体
     "0x9B03": {
-      "Assembly": "SuperSocket.JTT1078",
-      "TypeName": "SuperSocket.JTT1078.MessageBody.Internal.DownloadControlRequestBody",
+      "Assembly": "SuperSocket.JTT.JTT1078",
+      "TypeName": "SuperSocket.JTT.JTT1078.MessageBody.Internal.DownloadControlRequestBody",
       "Length": 3
     },
 
     //主链路远程录像下载交互消息数据体
     "0x1B00": {
-      "Assembly": "SuperSocket.JTT1078",
-      "TypeName": "SuperSocket.JTT1078.MessageBody.UpDownloadMsgBody",
+      "Assembly": "SuperSocket.JTT.JTT1078",
+      "TypeName": "SuperSocket.JTT.JTT1078.MessageBody.UpDownloadMsgBody",
       "Length": null //28+
     },
     //远程录像下载请求应答消息数据体
     "0x1B01": {
-      "Assembly": "SuperSocket.JTT1078",
-      "TypeName": "SuperSocket.JTT1078.MessageBody.Internal.DownloadStartupReplyBody",
+      "Assembly": "SuperSocket.JTT.JTT1078",
+      "TypeName": "SuperSocket.JTT.JTT1078.MessageBody.Internal.DownloadStartupReplyBody",
       "Length": 3
     },
     //远程录像下载完成通知消息数据体
     "0x1B02": {
-      "Assembly": "SuperSocket.JTT1078",
-      "TypeName": "SuperSocket.JTT1078.MessageBody.Internal.DownloadEndInformRequestBody",
+      "Assembly": "SuperSocket.JTT.JTT1078",
+      "TypeName": "SuperSocket.JTT.JTT1078.MessageBody.Internal.DownloadEndInformRequestBody",
       "Length": 308
     },
     //远程录像下载控制请求应答消息数据体
     "0x1B03": {
-      "Assembly": "SuperSocket.JTT1078",
-      "TypeName": "SuperSocket.JTT1078.MessageBody.Internal.DownloadControlReplyBody",
+      "Assembly": "SuperSocket.JTT.JTT1078",
+      "TypeName": "SuperSocket.JTT.JTT1078.MessageBody.Internal.DownloadControlReplyBody",
       "Length": 1
     }
   }

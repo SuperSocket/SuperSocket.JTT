@@ -39,7 +39,7 @@ namespace JTTCustomServer
             services.AddSingleton(config)
                     .AddLogging()
                     .RegisterNLog(config)
-                    .RegisterServices(config);
+                    .RegisterJTTServer(config);
 
             "已应用Autofac容器".ConsoleWrite();
             AutofacHelper.Container = new AutofacServiceProviderFactory().CreateBuilder(services).Build();

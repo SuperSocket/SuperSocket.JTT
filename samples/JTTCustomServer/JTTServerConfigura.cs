@@ -12,7 +12,7 @@ namespace JTTCustomServer
     /// </summary>
     public static class JTTServerConfigura
     {
-        public static IServiceCollection RegisterServices(this IServiceCollection services, SystemConfig config)
+        public static IServiceCollection RegisterJTTServer(this IServiceCollection services, SystemConfig config)
         {
             services.AddJTT(options =>
             {

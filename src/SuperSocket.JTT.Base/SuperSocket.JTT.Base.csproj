@@ -40,7 +40,7 @@
 
   <ItemGroup>
     <PackageReference Include="Flee" Version="1.2.2" />
-    <PackageReference Include="Microservice.Library.Configuration" Version="0.0.0-g266fcfe23f-alpha" />
+    <PackageReference Include="Microservice.Library.Configuration" Version="0.0.0.20284-alpha-g3c4fe539e3" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
     <PackageReference Include="SuperSocket.ProtoBase" Version="2.0.0-beta7" />
     <PackageReference Include="System.Memory" Version="4.5.4" />

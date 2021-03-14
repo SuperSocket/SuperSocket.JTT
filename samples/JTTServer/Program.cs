@@ -39,7 +39,7 @@ namespace JTTServer
             var services = new ServiceCollection();
 
             services.AddSingleton(config)
-                .RegisterServices(config);
+                    .RegisterJTTServer(config);
 
             var provider = services.BuildServiceProvider();
 
@@ -68,7 +68,7 @@ namespace JTTServer
 
             SessionHandler.SetSessionContainer(jttServer.GetSessionContainer());
 
-            "应用程序已启动".ConsoleWrite();
+            "应用程序已启动\r\n".ConsoleWrite();
 
 #pragma warning disable IDE0090 // 使用 "new(...)"
             CancellationToken cancelToken = new CancellationToken(false);
