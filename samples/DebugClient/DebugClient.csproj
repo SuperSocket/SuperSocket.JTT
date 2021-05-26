@@ -37,10 +37,11 @@
     <PackageReference Include="Microservice.Library.Container" Version="0.0.0.20284-alpha-g3c4fe539e3" />
     <PackageReference Include="Microservice.Library.NLogger" Version="0.0.0.20284-alpha-g3c4fe539e3" />
     <PackageReference Include="SuperSocket" Version="$(SuperSocketVersion)" />
+    <PackageReference Include="SuperSocket.Client" Version="$(SuperSocketVersion)" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Nuget\SuperSocket.JTT.All\SuperSocket.JTT.All.csproj" />
+    <ProjectReference Include="..\..\nuget\SuperSocket.JTT.All\SuperSocket.JTT.All.csproj" />
   </ItemGroup>
 
   <ProjectExtensions><VisualStudio><UserProperties jsonconfig_4jtt809-protocol_1json__JsonSchema="https://json.schemastore.org/appsettings" jsonconfig_4jtt809-protocol-datamappings_1json__JsonSchema="https://json.schemastore.org/appsettings" jsonconfig_4jtt809-protocol-structures_1json__JsonSchema="https://json.schemastore.org/appsettings" /></VisualStudio></ProjectExtensions>

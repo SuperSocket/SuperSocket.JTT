@@ -2,13 +2,6 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/SuperSocket/SuperSocket.JTT</PackageProjectUrl>
-    <Authors>SuperSocket</Authors>
-    <Company>SuperSocket</Company>
-    <Product>SuperSocket.JTT</Product>
     <Description>SuperSocket.JTT全家桶。
 构建基于JTT(道路运输车辆卫星定位系统 平台数据交换)协议的服务器。</Description>
   </PropertyGroup>

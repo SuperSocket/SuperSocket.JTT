@@ -11,6 +11,9 @@
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <IncludeSource>true</IncludeSource>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <Authors>SuperSocket Developer Community</Authors>
+    <Company>SuperSocket</Company>    
+    <Product>SuperSocket.JTT</Product>
   </PropertyGroup>
 </Project>

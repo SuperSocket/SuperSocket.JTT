@@ -4,12 +4,6 @@
     <TargetFramework>netstandard2.1</TargetFramework>
     <RootNamespace>SuperSocket.JTT.Base</RootNamespace>
     <AssemblyName>SuperSocket.JTT.Base</AssemblyName>
-    <Authors>SuperSocket</Authors>
-    <Company>SuperSocket</Company>
-    <Product>SuperSocket.JTT</Product>
-    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
-    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Description>SuperSocket.JTT基础包。</Description>
     <PackageId>SuperSocket.JTT.Base</PackageId>
   </PropertyGroup>

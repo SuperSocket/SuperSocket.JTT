@@ -3,15 +3,8 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
     <AssemblyName>SuperSocket.JTT.Server</AssemblyName>
-    <RootNamespace>SuperSocket.JTT.Server</RootNamespace>
-    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/SuperSocket/SuperSocket.JTT</PackageProjectUrl>
-    <Authors>SuperSocket</Authors>
-    <Company>SuperSocket</Company>
+    <RootNamespace>SuperSocket.JTT.Server</RootNamespace>    
     <Description>用于构建基于JTT(道路运输车辆卫星定位系统 平台数据交换)协议的服务器。</Description>
-    <Product>SuperSocket.JTT</Product>
     <PackageId>SuperSocket.JTT.Server</PackageId>
   </PropertyGroup>
 
