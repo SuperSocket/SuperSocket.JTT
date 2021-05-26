@@ -2,7 +2,7 @@
   <PropertyGroup>
     <LangVersion>9.0</LangVersion>    
     <LibTargetFramework>netstandard2.1</LibTargetFramework>
-    <SuperSocketVersion>2.0.0-beta.8</SuperSocketVersion>
+    <SuperSocketVersion>2.0.0-beta.9</SuperSocketVersion>
     <Version>2.0.0-beta.8</Version>
   </PropertyGroup>
   <PropertyGroup>    
